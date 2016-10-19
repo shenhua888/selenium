@@ -1,0 +1,35 @@
+2016-10-18 at 16:43:58 CST INFO  com.test.first_maven.base.NewWebDriverEventListener 90 afterChangeValueOf - WebDriver changing value in element found By.id: kw from ‘eeeeeeeee‘ to ‘‘
+2016-10-18 at 16:43:58 CST INFO  com.test.first_maven.base.NewWebDriverEventListener 90 afterChangeValueOf - WebDriver changing value in element found By.id: kw from ‘selenium‘ to ‘‘
+2016-10-18 at 16:43:58 CST INFO  com.test.first_maven.base.NewWebDriverEventListener 90 afterChangeValueOf - WebDriver changing value in element found By.id: kw from ‘‘ to ‘selenium‘
+2016-10-18 at 16:43:58 CST INFO  com.test.first_maven.base.NewWebDriverEventListener 75 beforeClickOn - beforeClickOn:‘By.id: kw‘
+2016-10-18 at 16:43:58 CST INFO  com.test.first_maven.base.NewWebDriverEventListener 66 beforeFindBy - beforeFindBy:‘By.id: kw‘
+2016-10-18 at 16:43:58 CST ERROR com.test.first_maven.base.ScreenShotListener 41 onTestSkipped - Test Skipped
+2016-10-18 at 16:43:58 CST INFO  com.test.first_maven.base.ScreenShotListener 47 onTestStart - Test Finsh
+2016-10-18 at 16:43:58 CST INFO  com.test.first_maven.base.NewWebDriverEventListener 90 afterChangeValueOf - WebDriver changing value in element found By.id: kw from ‘selenium‘ to ‘‘
+2016-10-18 at 16:43:58 CST INFO  com.test.first_maven.base.NewWebDriverEventListener 90 afterChangeValueOf - WebDriver changing value in element found By.id: kw from ‘‘ to ‘selenium‘
+2016-10-18 at 16:43:58 CST INFO  com.test.first_maven.base.NewWebDriverEventListener 75 beforeClickOn - beforeClickOn:‘By.id: kw‘
+2016-10-18 at 16:43:58 CST INFO  com.test.first_maven.base.NewWebDriverEventListener 66 beforeFindBy - beforeFindBy:‘By.id: kw‘
+2016-10-18 at 16:43:58 CST INFO  com.test.first_maven.base.NewWebDriverEventListener 90 afterChangeValueOf - WebDriver changing value in element found By.id: kw from ‘‘ to ‘eeeeeeeee‘
+2016-10-18 at 16:43:58 CST INFO  com.test.first_maven.base.NewWebDriverEventListener 75 beforeClickOn - beforeClickOn:‘By.id: kw‘
+2016-10-18 at 16:43:58 CST ERROR com.test.first_maven.base.ScreenShotListener 41 onTestSkipped - Test Skipped
+2016-10-18 at 16:43:58 CST INFO  com.test.first_maven.base.ScreenShotListener 47 onTestStart - Test Finsh
+2016-10-18 at 16:43:59 CST INFO  com.test.first_maven.base.NewWebDriverEventListener 66 beforeFindBy - beforeFindBy:‘By.id: kw‘
+2016-10-18 at 16:43:59 CST INFO  com.test.first_maven.base.NewWebDriverEventListener 90 afterChangeValueOf - WebDriver changing value in element found By.id: kw from ‘selenium‘ to ‘‘
+2016-10-18 at 16:43:59 CST ERROR com.test.first_maven.base.ScreenShotListener 41 onTestSkipped - Test Skipped
+2016-10-18 at 16:43:59 CST INFO  com.test.first_maven.base.ScreenShotListener 47 onTestStart - Test Finsh
+2016-10-18 at 16:43:59 CST INFO  com.test.first_maven.base.NewWebDriverEventListener 90 afterChangeValueOf - WebDriver changing value in element found By.id: kw from ‘eeeeeeeee‘ to ‘‘
+2016-10-18 at 16:43:59 CST INFO  com.test.first_maven.base.NewWebDriverEventListener 90 afterChangeValueOf - WebDriver changing value in element found By.id: kw from ‘‘ to ‘selenium‘
+2016-10-18 at 16:43:59 CST INFO  com.test.first_maven.base.NewWebDriverEventListener 75 beforeClickOn - beforeClickOn:‘By.id: kw‘
+2016-10-18 at 16:43:59 CST INFO  com.test.first_maven.base.NewWebDriverEventListener 66 beforeFindBy - beforeFindBy:‘By.id: kw‘
+2016-10-18 at 16:43:59 CST INFO  com.test.first_maven.base.NewWebDriverEventListener 90 afterChangeValueOf - WebDriver changing value in element found By.id: kw from ‘‘ to ‘eeeeeeeee‘
+2016-10-18 at 16:43:59 CST INFO  com.test.first_maven.base.NewWebDriverEventListener 75 beforeClickOn - beforeClickOn:‘By.id: kw‘
+2016-10-18 at 16:43:59 CST ERROR com.test.first_maven.base.ScreenShotListener 41 onTestSkipped - Test Skipped
+2016-10-18 at 16:43:59 CST INFO  com.test.first_maven.base.ScreenShotListener 47 onTestStart - Test Finsh
+2016-10-18 at 16:43:59 CST INFO  com.test.first_maven.base.NewWebDriverEventListener 90 afterChangeValueOf - WebDriver changing value in element found By.id: kw from ‘selenium‘ to ‘‘
+2016-10-18 at 16:43:59 CST INFO  com.test.first_maven.base.NewWebDriverEventListener 66 beforeFindBy - beforeFindBy:‘By.id: kw‘
+2016-10-18 at 16:43:59 CST ERROR com.test.first_maven.base.ScreenShotListener 41 onTestSkipped - Test Skipped
+2016-10-18 at 16:43:59 CST INFO  com.test.first_maven.base.ScreenShotListener 47 onTestStart - Test Finsh
+2016-10-18 at 16:43:59 CST INFO  com.test.first_maven.base.NewWebDriverEventListener 90 afterChangeValueOf - WebDriver changing value in element found By.id: kw from ‘eeeeeeeee‘ to ‘‘
+2016-10-18 at 16:43:59 CST INFO  com.test.first_maven.base.NewWebDriverEventListener 90 afterChangeValueOf - WebDriver changing value in element found By.id: kw from ‘‘ to ‘eeeeeeeee‘
+2016-10-18 at 16:43:59 CST INFO  com.test.first_maven.base.NewWebDriverEventListener 75 beforeClickOn - beforeClickOn:‘By.id: kw‘
+2016-10-18 at 16:43:59 CST INFO  com.test.first_maven.base.NewWebDriverEventListener 90 afterChangeValueOf - WebDriver changing value in element found By.id: kw from ‘‘ to ‘selenium‘

@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>TestNG Report</title>
+<style type="text/css">
+table {margin-bottom:10px;border-collapse:collapse;empty-cells:show}
+td,th {border:1px solid #009;padding:.25em .5em}
+.result th {vertical-align:bottom}
+.param th {padding-left:1em;padding-right:1em}
+.param td {padding-left:.5em;padding-right:2em}
+.stripe td,.stripe th {background-color: #E6EBF9}
+.numi,.numi_attn {text-align:right}
+.total td {font-weight:bold}
+.passedodd td {background-color: #0A0}
+.passedeven td {background-color: #3F3}
+.skippedodd td {background-color: #CCC}
+.skippedodd td {background-color: #DDD}
+.failedodd td,.numi_attn {background-color: #F33}
+.failedeven td,.stripe .numi_attn {background-color: #D00}
+.stacktrace {white-space:pre;font-family:monospace}
+.totop {font-size:85%;text-align:center;border-bottom:2px solid #000}
+</style>
+</head>
+<body>
+<center><h1>TestNG Customized Report - 2016/10/19 08:59:13</h1></center><table cellspacing="0" cellpadding="0" class="testOverview">
+<tr><th>Test</th><th>Methods<br/>Passed</th><th># skipped</th><th># failed</th><th>Browser</th><th>Start<br/>Time</th><th>End<br/>Time</th><th>Total<br/>Time(hh:mm:ss)</th><th>Included<br/>Groups</th><th>Excluded<br/>Groups</th></tr>
+<tr><th colspan="10">Suite1</th></tr>
+<tr><td style="text-align:left;padding-right:2em"><a href="#t1"><b>test1</b></a></td><td class="numi">2</td><td class="numi">0</td><td class="numi_attn">1</td><td class="numi">null</td></td>
+<td class="numi">08:59:01</td></td>
+<td class="numi">08:59:13</td></td>
+<td class="numi">00:00:11</td><td class="numi"></td><td class="numi"></td></tr>
+</table>
+<table cellspacing="0" cellpadding="0" class="methodOverview" id="summary">
+<tr><th>Class</th><th>Method</th><th>Exception Info</th><th>Start Time </th><th>Execution Time<br/>(hh:mm:ss)</th><th>Log</th></tr>
+<tr><th colspan="6">Suite1</th></tr>
+<tr id="t1"><th colspan="6">test1 &#8212; failed</th></tr>
+<tr class="failedodd"><td>com.test.first_maven.test.BaiduTest2</td><td><a href="#m1"><b>searchTest2</b>  </a></td><td class="numi" style="text-align:left;padding-right:2em">java.lang.AssertionError: expected [ssssssss] but found [eeeeeeeee]<br/></td><td style="text-align:right">08:59:11</td><td class="numi">00:00:00</td><td class="log"><a href="D:/workSpace/first_maven/logs" target="_blank" type="text/plain">show log</a></td></tr>
+<tr><th colspan="6">test1 &#8212; passed</th></tr>
+<tr class="passedodd"><td>com.test.first_maven.test.BaiduTest</td><td><a href="#m2"><b>searchTest</b>  </a></td><td class="numi" style="text-align:left;padding-right:2em"><br/></td><td style="text-align:right">08:59:07</td><td class="numi">00:00:00</td><td class="log"><a href="D:/workSpace/first_maven/logs" target="_blank" type="text/plain">show log</a></td></tr>
+<tr class="passedeven"><td>com.test.first_maven.test.BaiduTest2</td><td><a href="#m3"><b>searchTest</b>  </a></td><td class="numi" style="text-align:left;padding-right:2em"><br/></td><td style="text-align:right">08:59:09</td><td class="numi">00:00:00</td><td class="log"><a href="D:/workSpace/first_maven/logs" target="_blank" type="text/plain">show log</a></td></tr>
+</table>
+<h1>test1</h1>
+<h2 id="m1">com.test.first_maven.test.BaiduTest2:searchTest2</h2>
+<div>
+<div class="stacktrace">java.lang.AssertionError: expected [ssssssss] but found [eeeeeeeee]
+	at com.test.first_maven.page.ResultPage.checkKeyword(ResultPage.java:30)
+	at com.test.first_maven.test.BaiduTest2.searchTest2(BaiduTest2.java:42)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+... Removed 16 stack frames</div>
+</div>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m2">com.test.first_maven.test.BaiduTest:searchTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<h2 id="m3">com.test.first_maven.test.BaiduTest2:searchTest</h2>
+<p class="totop"><a href="#summary">back to summary</a></p>
+<center> TestNG Report </center>
+</body></html>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" guice-stage="DEVELOPMENT" name="Failed suite [Suite1]" parallel="classes">
+  <listeners>
+    <listener class-name="com.test.first_maven.base.RetryListener"/>
+    <listener class-name="com.test.first_maven.base.TestListener"/>
+    <listener class-name="com.test.first_maven.base.ScreenShotListener"/>
+    <listener class-name="com.test.first_maven.base.TestNGCustomReportListener"/>
+  </listeners>
+  <test name="test1">
+    <classes>
+      <class name="com.test.first_maven.test.BaiduTest">
+        <methods>
+          <include name="searchTest"/>
+        </methods>
+      </class> <!-- com.test.first_maven.test.BaiduTest -->
+      <class name="com.test.first_maven.test.BaiduTest2"/>
+    </classes>
+  </test> <!-- test1 -->
+  <test name="test1(failed)" parallel="classes">
+    <classes>
+      <class name="com.test.first_maven.test.BaiduTest2">
+        <methods>
+          <include name="beforeTest"/>
+          <include name="afterSuite"/>
+          <include name="afterTest"/>
+          <include name="searchTest2"/>
+        </methods>
+      </class> <!-- com.test.first_maven.test.BaiduTest2 -->
+      <class name="com.test.first_maven.test.BaiduTest">
+        <methods>
+          <include name="afterSuite"/>
+          <include name="afterTest"/>
+          <include name="beforeTest"/>
+        </methods>
+      </class> <!-- com.test.first_maven.test.BaiduTest -->
+    </classes>
+  </test> <!-- test1(failed) -->
+</suite> <!-- Failed suite [Suite1] -->
