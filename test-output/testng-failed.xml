@@ -9,31 +9,14 @@
   </listeners>
   <test name="test1">
     <classes>
-      <class name="com.test.first_maven.test.BaiduTest">
+      <class name="com.test.first_maven.test.OATest">
         <methods>
-          <include name="searchTest"/>
+          <include name="loginTest"/>
+          <include name="enterCatalog"/>
+          <include name="clickUploadCV"/>
+          <include name="upLoadCV"/>
         </methods>
-      </class> <!-- com.test.first_maven.test.BaiduTest -->
-      <class name="com.test.first_maven.test.BaiduTest2"/>
+      </class> <!-- com.test.first_maven.test.OATest -->
     </classes>
   </test> <!-- test1 -->
-  <test name="test1(failed)" parallel="classes">
-    <classes>
-      <class name="com.test.first_maven.test.BaiduTest2">
-        <methods>
-          <include name="beforeTest"/>
-          <include name="afterSuite"/>
-          <include name="afterTest"/>
-          <include name="searchTest2"/>
-        </methods>
-      </class> <!-- com.test.first_maven.test.BaiduTest2 -->
-      <class name="com.test.first_maven.test.BaiduTest">
-        <methods>
-          <include name="afterSuite"/>
-          <include name="afterTest"/>
-          <include name="beforeTest"/>
-        </methods>
-      </class> <!-- com.test.first_maven.test.BaiduTest -->
-    </classes>
-  </test> <!-- test1(failed) -->
 </suite> <!-- Failed suite [Suite1] -->

@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Suite1">
-              <span class="suite-name border-failed">Suite1</span>
+              <span class="suite-name border-passed">Suite1</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -54,7 +54,7 @@
                 </li>
                 <li>
                   <a href="#" class="navigator-link " panel-name="testlist-Suite1">
-                    <span class="test-stats">2 tests</span>
+                    <span class="test-stats">1 test</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,21 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">3 methods, 1 failed,   2 passed</span>
-                  </li>
-                  <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Suite1" class="hide-methods failed suite-Suite1"> (hide)</a> <!-- hide-methods failed suite-Suite1 -->
-                      <a href="#" panel-name="suite-Suite1" class="show-methods failed suite-Suite1"> (show)</a> <!-- show-methods failed suite-Suite1 -->
-                    </span>
-                    <div class="method-list-content failed suite-Suite1">
-                      <span>
-                        <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite1" title="com.test.first_maven.test.BaiduTest2" hash-for-method="searchTest2">searchTest2</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                    </div> <!-- method-list-content failed suite-Suite1 -->
+                    <span class="method-stats">4 methods,   4 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -116,12 +102,22 @@
                     <div class="method-list-content passed suite-Suite1">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite1" title="com.test.first_maven.test.BaiduTest" hash-for-method="searchTest">searchTest</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite1" title="com.test.first_maven.test.OATest" hash-for-method="clickUploadCV">clickUploadCV</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite1" title="com.test.first_maven.test.BaiduTest2" hash-for-method="searchTest">searchTest</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite1" title="com.test.first_maven.test.OATest" hash-for-method="enterCatalog">enterCatalog</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite1" title="com.test.first_maven.test.OATest" hash-for-method="loginTest">loginTest</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite1" title="com.test.first_maven.test.OATest" hash-for-method="upLoadCV">upLoadCV</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite1 -->
@@ -136,55 +132,38 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite1" class="panel Suite1">
-          <div class="suite-Suite1-class-failed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">com.test.first_maven.test.BaiduTest2</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="searchTest2">
-                  </a> <!-- searchTest2 -->
-                  <span class="method-name">searchTest2</span>
-                  <div class="stack-trace">java.lang.AssertionError: expected [ssssssss] but found [eeeeeeeee]
-	at com.test.first_maven.page.ResultPage.checkKeyword(ResultPage.java:30)
-	at com.test.first_maven.test.BaiduTest2.searchTest2(BaiduTest2.java:42)
-	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
-	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
-	at java.lang.Thread.run(Unknown Source)
-... Removed 16 stack frames
-</div> <!-- stack-trace -->
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite1-class-failed -->
           <div class="suite-Suite1-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">com.test.first_maven.test.BaiduTest2</span>
+              <span class="class-name">com.test.first_maven.test.OATest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="searchTest">
-                  </a> <!-- searchTest -->
-                  <span class="method-name">searchTest</span>
+                  <a name="clickUploadCV">
+                  </a> <!-- clickUploadCV -->
+                  <span class="method-name">clickUploadCV</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
-            </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite1-class-passed -->
-          <div class="suite-Suite1-class-passed">
-            <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
-              <span class="class-name">com.test.first_maven.test.BaiduTest</span>
-            </div> <!-- main-panel-header rounded-window-top -->
-            <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="searchTest">
-                  </a> <!-- searchTest -->
-                  <span class="method-name">searchTest</span>
+                  <a name="enterCatalog">
+                  </a> <!-- enterCatalog -->
+                  <span class="method-name">enterCatalog</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="loginTest">
+                  </a> <!-- loginTest -->
+                  <span class="method-name">loginTest</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="upLoadCV">
+                  </a> <!-- upLoadCV -->
+                  <span class="method-name">upLoadCV</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -207,33 +186,16 @@
   &lt;/listeners&gt;
   &lt;test name=&quot;test1&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.test.first_maven.test.BaiduTest&quot;&gt;
+      &lt;class name=&quot;com.test.first_maven.test.OATest&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;searchTest&quot;/&gt;
+          &lt;include name=&quot;loginTest&quot;/&gt;
+          &lt;include name=&quot;enterCatalog&quot;/&gt;
+          &lt;include name=&quot;clickUploadCV&quot;/&gt;
+          &lt;include name=&quot;upLoadCV&quot;/&gt;
         &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- com.test.first_maven.test.BaiduTest --&gt;
-      &lt;class name=&quot;com.test.first_maven.test.BaiduTest2&quot;/&gt;
+      &lt;/class&gt; &lt;!-- com.test.first_maven.test.OATest --&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- test1 --&gt;
-  &lt;test name=&quot;test1(failed)&quot; parallel=&quot;classes&quot;&gt;
-    &lt;classes&gt;
-      &lt;class name=&quot;com.test.first_maven.test.BaiduTest2&quot;&gt;
-        &lt;methods&gt;
-          &lt;include name=&quot;beforeTest&quot;/&gt;
-          &lt;include name=&quot;afterSuite&quot;/&gt;
-          &lt;include name=&quot;afterTest&quot;/&gt;
-          &lt;include name=&quot;searchTest2&quot;/&gt;
-        &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- com.test.first_maven.test.BaiduTest2 --&gt;
-      &lt;class name=&quot;com.test.first_maven.test.BaiduTest&quot;&gt;
-        &lt;methods&gt;
-          &lt;include name=&quot;afterSuite&quot;/&gt;
-          &lt;include name=&quot;afterTest&quot;/&gt;
-          &lt;include name=&quot;beforeTest&quot;/&gt;
-        &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- com.test.first_maven.test.BaiduTest --&gt;
-    &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- test1(failed) --&gt;
 &lt;/suite&gt; &lt;!-- Suite1 --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -245,10 +207,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">test1 (2 classes)</span>
-              </li>
-              <li>
-                <span class="test-name">test1(failed) (2 classes)</span>
+                <span class="test-name">test1 (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -274,24 +233,28 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(3);
+data.addRows(4);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'searchTest2')
-data.setCell(0, 2, 'com.test.first_maven.test.BaiduTest2')
-data.setCell(0, 3, 176);
+data.setCell(0, 1, 'upLoadCV')
+data.setCell(0, 2, 'com.test.first_maven.test.OATest')
+data.setCell(0, 3, 33864);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'searchTest')
-data.setCell(1, 2, 'com.test.first_maven.test.BaiduTest')
-data.setCell(1, 3, 125);
+data.setCell(1, 1, 'loginTest')
+data.setCell(1, 2, 'com.test.first_maven.test.OATest')
+data.setCell(1, 3, 11402);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'searchTest')
-data.setCell(2, 2, 'com.test.first_maven.test.BaiduTest2')
-data.setCell(2, 3, 124);
+data.setCell(2, 1, 'enterCatalog')
+data.setCell(2, 2, 'com.test.first_maven.test.OATest')
+data.setCell(2, 3, 4355);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'clickUploadCV')
+data.setCell(3, 2, 'com.test.first_maven.test.OATest')
+data.setCell(3, 3, 1260);
 window.suiteTableData['Suite1']= { tableData: data, tableDiv: 'times-div-Suite1'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 425 ms</span>
+              <span class="suite-total-time">Total running time: 50 seconds</span>
               <div id="times-div-Suite1">
               </div> <!-- times-div-Suite1 -->
             </div> <!-- times-div -->
@@ -306,16 +269,9 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Suite1" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">1 ignored method</span>
+            <span class="header-content">0 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
-            <div class="ignored-class-div">
-              <span class="ignored-class-name">com.test.first_maven.test.BaiduTest</span>
-              <div class="ignored-methods-div">
-                <span class="ignored-method-name">searchTest2</span>
-                <br/>
-              </div> <!-- ignored-methods-div -->
-            </div> <!-- ignored-class-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="chronological-Suite1" class="panel">
@@ -324,125 +280,34 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.test.first_maven.test.BaiduTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.test.first_maven.test.OATest</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">beforeTest</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.test.first_maven.test.BaiduTest2</div> <!-- chronological-class-name -->
-              <div class="configuration-test before">
-                <span class="method-name">beforeTest</span>
-                <span class="method-start">3204 ms</span>
-              </div> <!-- configuration-test before -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.test.first_maven.test.BaiduTest</div> <!-- chronological-class-name -->
               <div class="test-method">
-                <span class="method-name">searchTest</span>
-                <span class="method-start">5833 ms</span>
+                <span class="method-name">loginTest</span>
+                <span class="method-start">4449 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">searchTest</span>
-                <span class="method-start">6132 ms</span>
-              </div> <!-- test-method -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.test.first_maven.test.BaiduTest2</div> <!-- chronological-class-name -->
-              <div class="test-method">
-                <span class="method-name">searchTest</span>
-                <span class="method-start">6259 ms</span>
+                <span class="method-name">enterCatalog</span>
+                <span class="method-start">15853 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">searchTest</span>
-                <span class="method-start">6678 ms</span>
+                <span class="method-name">clickUploadCV</span>
+                <span class="method-start">20210 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">searchTest</span>
-                <span class="method-start">7392 ms</span>
+                <span class="method-name">upLoadCV</span>
+                <span class="method-start">21471 ms</span>
               </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">searchTest</span>
-                <span class="method-start">7523 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">searchTest</span>
-                <span class="method-start">7653 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">searchTest2</span>
-                <span class="method-start">7778 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">searchTest2</span>
-                <span class="method-start">8030 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">searchTest2</span>
-                <span class="method-start">8171 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">searchTest2</span>
-                <span class="method-start">8431 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">searchTest2</span>
-                <span class="method-start">8596 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">searchTest2</span>
-                <span class="method-start">8733 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">searchTest2</span>
-                <span class="method-start">8858 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">searchTest2</span>
-                <span class="method-start">9035 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">searchTest2</span>
-                <span class="method-start">9161 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">searchTest2</span>
-                <span class="method-start">9351 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">searchTest2</span>
-                <span class="method-start">9492 ms</span>
-              </div> <!-- test-method -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.test.first_maven.test.BaiduTest</div> <!-- chronological-class-name -->
               <div class="configuration-test after">
                 <span class="method-name">afterTest</span>
-                <span class="method-start">9889 ms</span>
+                <span class="method-start">55340 ms</span>
               </div> <!-- configuration-test after -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.test.first_maven.test.BaiduTest2</div> <!-- chronological-class-name -->
-              <div class="configuration-test after">
-                <span class="method-name">afterTest</span>
-                <span class="method-start">11145 ms</span>
-              </div> <!-- configuration-test after -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.test.first_maven.test.BaiduTest</div> <!-- chronological-class-name -->
               <div class="configuration-suite after">
                 <span class="method-name">afterSuite</span>
-                <span class="method-start">11902 ms</span>
-              </div> <!-- configuration-suite after -->
-            </div> <!-- chronological-class -->
-            <div class="chronological-class">
-              <div class="chronological-class-name">com.test.first_maven.test.BaiduTest2</div> <!-- chronological-class-name -->
-              <div class="configuration-suite after">
-                <span class="method-name">afterSuite</span>
-                <span class="method-start">11902 ms</span>
+                <span class="method-start">55357 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

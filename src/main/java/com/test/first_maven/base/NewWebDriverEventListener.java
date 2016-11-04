@@ -73,7 +73,12 @@ public class NewWebDriverEventListener implements WebDriverEventListener {
 
 	public void beforeClickOn(WebElement element, WebDriver driver) {
 		log.info("beforeClickOn:‘"+lastFindBy.toString()+"‘");
-
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	public void afterClickOn(WebElement element, WebDriver driver) {

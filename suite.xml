@@ -8,13 +8,23 @@
 	</listeners>
 	<test name="test1">
 		<classes>
+		<!-- 
 			<class name="com.test.first_maven.test.BaiduTest">
 				<methods>
-					<!-- <include name="searchTest2" />  -->
+					<include name="searchTest2" /> 
 					<include name="searchTest" />
 				</methods>
 			</class>
 			<class name="com.test.first_maven.test.BaiduTest2">
+			</class>
+		 -->
+			<class name="com.test.first_maven.test.OATest">
+				<methods>
+					<include name="loginTest" />
+					<include name="enterCatalog" />
+					<include name="clickUploadCV" />
+					<include name="upLoadCV" />
+				</methods>
 			</class>
 		</classes>
 	</test>
