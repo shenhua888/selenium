@@ -64,8 +64,10 @@ public class ActionUtils {
 		try {
 			WebElement ele = driver.findElement(By.xpath(idOrXpath));
 		} catch (NoSuchElementException e) {
+			log.info(idOrXpath + ": not exist!");
 			return false;
 		}
+		log.info(idOrXpath + ": exist!");
 		return true;
 
 	}
@@ -75,11 +77,14 @@ public class ActionUtils {
 		try {
 			ele = driver.findElement(By.xpath(idOrXpath));
 		} catch (NoSuchElementException e) {
+			log.info(idOrXpath + ": not exist!");
 			return false;
 		}
 		if (ele.isDisplayed()) {
+			log.info(idOrXpath + ": visible!");
 			return true;
 		} else {
+			log.info(idOrXpath + ": not visible!");
 			return false;
 		}
 
@@ -97,6 +102,7 @@ public class ActionUtils {
 				ele = driver.findElement(By.xpath(idOrXpath));
 			} catch (NoSuchElementException e) {
 				if (i == sencond) {
+					log.info(idOrXpath + ": not exist!");
 					return false;
 				} else {
 					Tools.wait(1);
@@ -107,9 +113,11 @@ public class ActionUtils {
 		}
 		for (int i=0;i<=sencond;i++) {
 			if (ele.isDisplayed()) {
+				log.info(idOrXpath + ": visible!");
 				return true;
 			} else {
 				if (i == sencond) {
+					log.info(idOrXpath + ": not visible!");
 					return false;
 				} else {
 					Tools.wait(1);
@@ -122,40 +130,53 @@ public class ActionUtils {
 	}
 	
 	public static void enterFrameFromDef (WebDriver driver, String idOrName) {
-		driver.switchTo().defaultContent();
+		defaultFrame(driver);
 		enterFrame(driver, idOrName);
 	}
+	public static void enterFrameFromDef (WebDriver driver, WebElement ele) {
+		driver.switchTo().defaultContent();
+		enterFrame(driver, ele);
+	}	
 	public static void enterFrame (WebDriver driver, String idOrName) {
-		for (int i=0;i<5;i++) {
+		for (int i=0;i<=5;i++) {
 			try {
 				driver.switchTo().frame(idOrName);
 			} catch(NoSuchFrameException e) {
-				Tools.wait(2);
-				continue;
+				if (i==5) {
+					log.error("enter frame" + idOrName + "fail!");
+				} else {
+					Tools.wait(2);
+					continue;
+				}
+				
 			}
 			break;
 		}	
+		log.info("enter frame" + idOrName + "success!");
 	}
 
 	public static void enterFrame (WebDriver driver, WebElement ele) {
-		for (int i=0;i<5;i++) {
+		for (int i=0;i<=5;i++) {
 			try {
 				driver.switchTo().frame(ele);
 			} catch(NoSuchFrameException e) {
-				Tools.wait(2);
-				continue;
+				if (i==5) {
+					log.error("enter frame" + ele.toString() + "fail!");
+				} else {
+					Tools.wait(2);
+					continue;
+				}				
 			}
 			break;
 		}	
+		log.info("enter frame" + ele.toString() + "success!");
 	}
 	
 	public static void defaultFrame (WebDriver driver) {
 		driver.switchTo().defaultContent();
+		log.info("enter default content success!");
 	}	
-	public static void enterFrameFromDef (WebDriver driver, WebElement ele) {
-		driver.switchTo().defaultContent();
-		enterFrame(driver, ele);
-	}
+
 	public static void jsClick (WebDriver driver, WebElement ele) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].click();", ele);
