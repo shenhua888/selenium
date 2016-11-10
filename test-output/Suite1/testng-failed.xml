@@ -9,14 +9,13 @@
   </listeners>
   <test name="test1">
     <classes>
-      <class name="com.test.first_maven.test.OATest">
+      <class name="com.test.first_maven.test.HireEmployeeTest">
         <methods>
-          <include name="loginTest"/>
+          <include name="login"/>
           <include name="enterCatalog"/>
-          <include name="clickUploadCV"/>
-          <include name="upLoadCV"/>
+          <include name="hireEmployee"/>
         </methods>
-      </class> <!-- com.test.first_maven.test.OATest -->
+      </class> <!-- com.test.first_maven.test.HireEmployeeTest -->
     </classes>
   </test> <!-- test1 -->
 </suite> <!-- Failed suite [Suite1] -->

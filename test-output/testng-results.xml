@@ -1,41 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="4" passed="4">
+<testng-results skipped="0" failed="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite1" duration-ms="55347" started-at="2016-11-04T06:30:09Z" finished-at="2016-11-04T06:31:04Z">
+  <suite name="Suite1" duration-ms="86536" started-at="2016-11-10T09:48:47Z" finished-at="2016-11-10T09:50:13Z">
     <groups>
     </groups>
-    <test name="test1" duration-ms="55347" started-at="2016-11-04T06:30:09Z" finished-at="2016-11-04T06:31:04Z">
-      <class name="com.test.first_maven.test.OATest">
-        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.test.first_maven.test.OATest@73e9cf30]" name="beforeTest" is-config="true" duration-ms="4434" started-at="2016-11-04T14:30:09Z" finished-at="2016-11-04T14:30:14Z">
+    <test name="test1" duration-ms="86536" started-at="2016-11-10T09:48:47Z" finished-at="2016-11-10T09:50:13Z">
+      <class name="com.test.first_maven.test.HireEmployeeTest">
+        <test-method status="PASS" signature="beforeTest()[pri:0, instance:com.test.first_maven.test.HireEmployeeTest@73e9cf30]" name="beforeTest" is-config="true" duration-ms="4541" started-at="2016-11-10T17:48:47Z" finished-at="2016-11-10T17:48:51Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method status="PASS" signature="loginTest()[pri:0, instance:com.test.first_maven.test.OATest@73e9cf30]" name="loginTest" duration-ms="11402" started-at="2016-11-04T14:30:14Z" finished-at="2016-11-04T14:30:25Z">
+        <test-method status="PASS" signature="login()[pri:0, instance:com.test.first_maven.test.HireEmployeeTest@73e9cf30]" name="login" duration-ms="9457" started-at="2016-11-10T17:48:51Z" finished-at="2016-11-10T17:49:01Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginTest -->
-        <test-method status="PASS" signature="enterCatalog()[pri:0, instance:com.test.first_maven.test.OATest@73e9cf30]" name="enterCatalog" duration-ms="4355" started-at="2016-11-04T14:30:25Z" finished-at="2016-11-04T14:30:29Z">
+        </test-method> <!-- login -->
+        <test-method status="PASS" signature="enterCatalog()[pri:0, instance:com.test.first_maven.test.HireEmployeeTest@73e9cf30]" name="enterCatalog" duration-ms="3015" started-at="2016-11-10T17:49:01Z" finished-at="2016-11-10T17:49:04Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- enterCatalog -->
-        <test-method status="PASS" signature="clickUploadCV()[pri:0, instance:com.test.first_maven.test.OATest@73e9cf30]" name="clickUploadCV" duration-ms="1260" started-at="2016-11-04T14:30:29Z" finished-at="2016-11-04T14:30:31Z">
+        <test-method status="PASS" signature="hireEmployee()[pri:0, instance:com.test.first_maven.test.HireEmployeeTest@73e9cf30]" name="hireEmployee" duration-ms="69503" started-at="2016-11-10T17:49:04Z" finished-at="2016-11-10T17:50:13Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- clickUploadCV -->
-        <test-method status="PASS" signature="upLoadCV()[pri:0, instance:com.test.first_maven.test.OATest@73e9cf30]" name="upLoadCV" duration-ms="33864" started-at="2016-11-04T14:30:31Z" finished-at="2016-11-04T14:31:04Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- upLoadCV -->
-        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.test.first_maven.test.OATest@73e9cf30]" name="afterTest" is-config="true" duration-ms="0" started-at="2016-11-04T14:31:04Z" finished-at="2016-11-04T14:31:04Z">
+        </test-method> <!-- hireEmployee -->
+        <test-method status="PASS" signature="afterTest()[pri:0, instance:com.test.first_maven.test.HireEmployeeTest@73e9cf30]" name="afterTest" is-config="true" duration-ms="0" started-at="2016-11-10T17:50:13Z" finished-at="2016-11-10T17:50:13Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTest -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.test.first_maven.test.OATest@73e9cf30]" name="afterSuite" is-config="true" duration-ms="0" started-at="2016-11-04T14:31:04Z" finished-at="2016-11-04T14:31:04Z">
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:com.test.first_maven.test.HireEmployeeTest@73e9cf30]" name="afterSuite" is-config="true" duration-ms="1" started-at="2016-11-10T17:50:13Z" finished-at="2016-11-10T17:50:13Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
-      </class> <!-- com.test.first_maven.test.OATest -->
+      </class> <!-- com.test.first_maven.test.HireEmployeeTest -->
     </test> <!-- test1 -->
   </suite> <!-- Suite1 -->
 </testng-results>

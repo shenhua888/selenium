@@ -1,8 +1,5 @@
 package com.test.first_maven.test;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
-
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.annotations.AfterSuite;
@@ -14,11 +11,13 @@ import com.test.first_maven.base.ActionUtils;
 import com.test.first_maven.base.NewWebDriverEventListener;
 import com.test.first_maven.base.UITest;
 import com.test.first_maven.page.OALoginPage;
+import com.test.first_maven.page.flow.FlowCenter;
 import com.test.first_maven.page.hr.ApplicantsMgr;
 
-public class OATest extends UITest {
+public class HireEmployeeTest extends UITest {
 	OALoginPage oaLogin;
-	ApplicantsMgr applicants;
+	FlowCenter flowPage;
+	
 	@BeforeTest
 	public void beforeTest() throws InterruptedException {
 		System.setProperty("webdriver.chrome.driver", "D:\\jar\\chromedriver.exe");
@@ -31,26 +30,21 @@ public class OATest extends UITest {
 	}
 
 	@Test
-	public void loginTest() throws InterruptedException {
-//		System.out.println("searchTest");
+	public void login() throws InterruptedException {
 		oaLogin.login("admin", "1");
 	}
 
 	@Test
 	public void enterCatalog() {
-		applicants = new ApplicantsMgr(driver);
-		applicants.enterApplicantsMgr();
+		flowPage = new FlowCenter(driver);
+		flowPage.enterFlowCenter();
 	}
 	
-	@Test
-	public void clickUploadCV() {
-		applicants.clickUploadCV();
-	}
 
 	@Test
-	public void upLoadCV() {
-		String dataFile = "D:\\workSpace\\first_maven\\src\\main\\java\\applicants.properties";
-		applicants.upLoadCV(dataFile);
+	public void hireEmployee() {
+		String dataFile = "D:\\workSpace\\first_maven\\src\\main\\java\\hire.properties";
+		flowPage.hireEmployee(dataFile);
 	}
 	
 	@AfterTest

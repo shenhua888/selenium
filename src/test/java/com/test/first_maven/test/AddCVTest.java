@@ -1,8 +1,5 @@
 package com.test.first_maven.test;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
-
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.annotations.AfterSuite;
@@ -16,9 +13,10 @@ import com.test.first_maven.base.UITest;
 import com.test.first_maven.page.OALoginPage;
 import com.test.first_maven.page.hr.ApplicantsMgr;
 
-public class OATest extends UITest {
+public class AddCVTest extends UITest {
 	OALoginPage oaLogin;
 	ApplicantsMgr applicants;
+	
 	@BeforeTest
 	public void beforeTest() throws InterruptedException {
 		System.setProperty("webdriver.chrome.driver", "D:\\jar\\chromedriver.exe");
@@ -32,7 +30,6 @@ public class OATest extends UITest {
 
 	@Test
 	public void loginTest() throws InterruptedException {
-//		System.out.println("searchTest");
 		oaLogin.login("admin", "1");
 	}
 
@@ -42,15 +39,11 @@ public class OATest extends UITest {
 		applicants.enterApplicantsMgr();
 	}
 	
-	@Test
-	public void clickUploadCV() {
-		applicants.clickUploadCV();
-	}
 
 	@Test
-	public void upLoadCV() {
-		String dataFile = "D:\\workSpace\\first_maven\\src\\main\\java\\applicants.properties";
-		applicants.upLoadCV(dataFile);
+	public void addCV() {
+		String dataFile = "D:\\workSpace\\first_maven\\src\\main\\java\\applicants_add.properties";
+		applicants.addCV(dataFile);
 	}
 	
 	@AfterTest

@@ -14,6 +14,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 
 import com.test.first_maven.base.ActionUtils;
 import com.test.first_maven.base.Tools;
@@ -70,9 +71,9 @@ public class VCinputPage {
 		PageFactory.initElements(new AjaxElementLocatorFactory(driver,10), this);
 	}
 	
-	public void inputData() {
+	public void inputData(String dataFile) {
 		Properties pps = new Properties();
-		pps = Tools.readPropertiesFileObj("D:\\workSpace\\first_maven\\src\\main\\java\\applicants.properties");
+		pps = Tools.readPropertiesFileObj(dataFile);
 		jobDeptName.click();		
 		ActionUtils.enterRecentFrame(driver, "//*[contains(@id,'ligerwindow')]");	
 		ActionUtils.enterFrame(driver, "orgFrame");
@@ -96,7 +97,6 @@ public class VCinputPage {
 		ActionUtils.selectByValue(qualifications, pps.getProperty("qualifications"));
 		attachment.click();
 		Tools.wait(2);
-		ActionUtils.defaultFrame(driver);
 		ActionUtils.enterRecentFrame(driver, "//*[contains(@id,'ligerwindow')]");
 		driver.findElement(By.xpath("//*[@class='pull-left']/input")).click();
 		Tools.selectFile(pps.getProperty("attachement"));
@@ -107,7 +107,11 @@ public class VCinputPage {
 		ActionUtils.enterFirstFrame(driver, "//*[contains(@id,'ligerwindow')]");
 		saveBtn.click();
 		ActionUtils.clickWithWait(driver, "//*[text()='否']");
+		ActionUtils.enterFrameFromDef(driver, "10000004780032");
+		ActionUtils.waitUntilVisible(driver, "//*[@id='reResumeJobItem']/tbody/tr[1]/td[2]/a", 10);
+		Boolean flag = ActionUtils.isAddSuccess(driver.findElement(By.xpath("//*[@id='reResumeJobItem']/tbody/tr[1]/td[2]/a")), pps.getProperty("applicantName"));
 		ActionUtils.defaultFrame(driver);
+		Assert.assertTrue(flag);
 	}
 
 }

@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">4 methods,   4 passed</span>
+                    <span class="method-stats">3 methods,   3 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -102,22 +102,17 @@
                     <div class="method-list-content passed suite-Suite1">
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite1" title="com.test.first_maven.test.OATest" hash-for-method="clickUploadCV">clickUploadCV</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite1" title="com.test.first_maven.test.HireEmployeeTest" hash-for-method="enterCatalog">enterCatalog</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite1" title="com.test.first_maven.test.OATest" hash-for-method="enterCatalog">enterCatalog</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite1" title="com.test.first_maven.test.HireEmployeeTest" hash-for-method="hireEmployee">hireEmployee</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite1" title="com.test.first_maven.test.OATest" hash-for-method="loginTest">loginTest</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img width="3%" src="passed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite1" title="com.test.first_maven.test.OATest" hash-for-method="upLoadCV">upLoadCV</a> <!-- method navigator-link -->
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite1" title="com.test.first_maven.test.HireEmployeeTest" hash-for-method="login">login</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Suite1 -->
@@ -135,16 +130,9 @@
           <div class="suite-Suite1-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">com.test.first_maven.test.OATest</span>
+              <span class="class-name">com.test.first_maven.test.HireEmployeeTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
-              <div class="method">
-                <div class="method-content">
-                  <a name="clickUploadCV">
-                  </a> <!-- clickUploadCV -->
-                  <span class="method-name">clickUploadCV</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
                   <a name="enterCatalog">
@@ -154,16 +142,16 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="loginTest">
-                  </a> <!-- loginTest -->
-                  <span class="method-name">loginTest</span>
+                  <a name="hireEmployee">
+                  </a> <!-- hireEmployee -->
+                  <span class="method-name">hireEmployee</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="upLoadCV">
-                  </a> <!-- upLoadCV -->
-                  <span class="method-name">upLoadCV</span>
+                  <a name="login">
+                  </a> <!-- login -->
+                  <span class="method-name">login</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -186,14 +174,13 @@
   &lt;/listeners&gt;
   &lt;test name=&quot;test1&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.test.first_maven.test.OATest&quot;&gt;
+      &lt;class name=&quot;com.test.first_maven.test.HireEmployeeTest&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;loginTest&quot;/&gt;
+          &lt;include name=&quot;login&quot;/&gt;
           &lt;include name=&quot;enterCatalog&quot;/&gt;
-          &lt;include name=&quot;clickUploadCV&quot;/&gt;
-          &lt;include name=&quot;upLoadCV&quot;/&gt;
+          &lt;include name=&quot;hireEmployee&quot;/&gt;
         &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- com.test.first_maven.test.OATest --&gt;
+      &lt;/class&gt; &lt;!-- com.test.first_maven.test.HireEmployeeTest --&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- test1 --&gt;
 &lt;/suite&gt; &lt;!-- Suite1 --&gt;
@@ -233,28 +220,24 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(4);
+data.addRows(3);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'upLoadCV')
-data.setCell(0, 2, 'com.test.first_maven.test.OATest')
-data.setCell(0, 3, 33864);
+data.setCell(0, 1, 'hireEmployee')
+data.setCell(0, 2, 'com.test.first_maven.test.HireEmployeeTest')
+data.setCell(0, 3, 69503);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'loginTest')
-data.setCell(1, 2, 'com.test.first_maven.test.OATest')
-data.setCell(1, 3, 11402);
+data.setCell(1, 1, 'login')
+data.setCell(1, 2, 'com.test.first_maven.test.HireEmployeeTest')
+data.setCell(1, 3, 9457);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'enterCatalog')
-data.setCell(2, 2, 'com.test.first_maven.test.OATest')
-data.setCell(2, 3, 4355);
-data.setCell(3, 0, 3)
-data.setCell(3, 1, 'clickUploadCV')
-data.setCell(3, 2, 'com.test.first_maven.test.OATest')
-data.setCell(3, 3, 1260);
+data.setCell(2, 2, 'com.test.first_maven.test.HireEmployeeTest')
+data.setCell(2, 3, 3015);
 window.suiteTableData['Suite1']= { tableData: data, tableDiv: 'times-div-Suite1'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 50 seconds</span>
+              <span class="suite-total-time">Total running time: 1 minutes</span>
               <div id="times-div-Suite1">
               </div> <!-- times-div-Suite1 -->
             </div> <!-- times-div -->
@@ -280,34 +263,30 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.test.first_maven.test.OATest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.test.first_maven.test.HireEmployeeTest</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">beforeTest</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="test-method">
-                <span class="method-name">loginTest</span>
-                <span class="method-start">4449 ms</span>
+                <span class="method-name">login</span>
+                <span class="method-start">4547 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">enterCatalog</span>
-                <span class="method-start">15853 ms</span>
+                <span class="method-start">14006 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">clickUploadCV</span>
-                <span class="method-start">20210 ms</span>
-              </div> <!-- test-method -->
-              <div class="test-method">
-                <span class="method-name">upLoadCV</span>
-                <span class="method-start">21471 ms</span>
+                <span class="method-name">hireEmployee</span>
+                <span class="method-start">17022 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-test after">
                 <span class="method-name">afterTest</span>
-                <span class="method-start">55340 ms</span>
+                <span class="method-start">86528 ms</span>
               </div> <!-- configuration-test after -->
               <div class="configuration-suite after">
                 <span class="method-name">afterSuite</span>
-                <span class="method-start">55357 ms</span>
+                <span class="method-start">86544 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

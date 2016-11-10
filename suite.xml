@@ -8,6 +8,13 @@
 	</listeners>
 	<test name="test1">
 		<classes>
+			<class name="com.test.first_maven.test.HireEmployeeTest">
+				<methods>
+					<include name="login" />
+					<include name="enterCatalog" />
+					<include name="hireEmployee" />
+				</methods>
+			</class>
 		<!-- 
 			<class name="com.test.first_maven.test.BaiduTest">
 				<methods>
@@ -17,15 +24,19 @@
 			</class>
 			<class name="com.test.first_maven.test.BaiduTest2">
 			</class>
-		 -->
+
 			<class name="com.test.first_maven.test.OATest">
+			<class name="com.test.first_maven.test.AddCVTest">
 				<methods>
-					<include name="loginTest" />
+					<include name="login" />
 					<include name="enterCatalog" />
 					<include name="clickUploadCV" />
-					<include name="upLoadCV" />
+					<include name="upLoadCV" /> 
+					<include name="addCV" />
 				</methods>
 			</class>
+		 -->
+
 		</classes>
 	</test>
 </suite>

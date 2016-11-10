@@ -15,6 +15,10 @@ public class ApplicantsMgrFrame {
 	@CacheLookup
 	private WebElement uploadBtn;
 	
+	@FindBy(xpath = "//a[text()='添加']")
+	@CacheLookup
+	private WebElement addBtn;	
+	
 	private WebDriver driver;
 	
 	public ApplicantsMgrFrame (WebDriver driver) {
@@ -22,8 +26,12 @@ public class ApplicantsMgrFrame {
 		PageFactory.initElements(new AjaxElementLocatorFactory(driver,10), this);
 	}
 	
-	public void enterUploadVC() {
+	public void enterUploadCV () {
 		uploadBtn.click();	
+	}
+	
+	public void enterAddCV () {
+		addBtn.click();	
 	}
 
 }

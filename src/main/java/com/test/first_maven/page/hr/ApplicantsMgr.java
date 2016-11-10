@@ -13,6 +13,7 @@ import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 import org.testng.Assert;
 
 import com.test.first_maven.base.ActionUtils;
+import com.test.first_maven.base.Tools;
 
 public class ApplicantsMgr {
 	@FindBy(id = "10000004780011")
@@ -46,15 +47,24 @@ public class ApplicantsMgr {
 	public void clickUploadCV() {
 		ActionUtils.enterFrameFromDef(driver, "10000004780032");
 		ApplicantsMgrFrame applicantsFrame = new ApplicantsMgrFrame(driver);
-		applicantsFrame.enterUploadVC();
+		applicantsFrame.enterUploadCV();
 		
 	}
 
-	public void upLoadCV() {
+	public void upLoadCV(String dataFile) {
 		ActionUtils.defaultFrame(driver);
 		ActionUtils.enterFrameFromDef(driver, driver.findElement(By.xpath("//*[contains(@id,'ligerwindow')]")));
 		VCinputPage vcInput = new VCinputPage(driver);
-		vcInput.inputData();		
+		vcInput.inputData(dataFile);		
+	}
+	
+	public void addCV(String dataFile) {
+		ActionUtils.enterFrameFromDef(driver, "10000004780032");
+		ApplicantsMgrFrame applicantsFrame = new ApplicantsMgrFrame(driver);
+		applicantsFrame.enterAddCV();
+		Tools.wait(2);
+		AddApplicants addApplicants = new AddApplicants(driver);
+		addApplicants.addCV(dataFile);
 	}
 
 }

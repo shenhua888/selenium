@@ -1,6 +1,7 @@
 package com.test.first_maven.base;
 
 import java.util.List;
+import java.util.Set;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -89,7 +90,7 @@ public class ActionUtils {
 		}
 
 	}
-	
+		
 	public static Boolean waitUntilVisible (WebDriver driver, String idOrXpath, int sencond) {
 //		WebElement ele = (new WebDriverWait(driver, sencond))
 //				.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(idOrXpath)));
@@ -180,6 +181,11 @@ public class ActionUtils {
 	public static void jsClick (WebDriver driver, WebElement ele) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].click();", ele);
+	}
+	public static void jsSendKeys (WebDriver driver, WebElement ele, String value) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		log.info("jsSendKeys:" + value);
+        js.executeScript("arguments[0].value = \"" + value + "\";", ele);
 	}	
 	public static void clickWithWait (WebDriver driver, String idOrXpath) {
 		clickWithWait(driver, idOrXpath, 5);
@@ -203,4 +209,32 @@ public class ActionUtils {
 		Select sel = new Select(ele);
 		sel.selectByValue(value);
 	}
+	
+	public static void selectByVisibleText (WebElement ele, String value) {
+		Select sel = new Select(ele);
+		sel.selectByVisibleText(value);
+	}
+	public static Boolean isAddSuccess (WebElement ele, String expect) {
+		Boolean flag = false;
+		for (int i=0; i<5; i++) {
+			if(ele.getText().equals(expect)) {
+				flag = true;
+			} else {
+				Tools.wait(2);
+			}
+				
+		}
+		return flag;
+	}
+	public static void switchToNewWin (WebDriver driver, String oldHanle) {
+		ActionUtils.defaultFrame(driver);
+		Set<String> handles = driver.getWindowHandles();
+		for (String winHandle : handles) {
+			if (!winHandle.equals(oldHanle)) {
+				driver.switchTo().window(winHandle);
+			}
+		}
+	}
+	
+	
 }
