@@ -2,6 +2,7 @@ package com.test.first_maven.page.hr;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Properties;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -51,6 +52,18 @@ public class ApplicantsMgr {
 		
 	}
 
+	//发送面试
+	public void sendInterview(String dataFile) {
+		WebAction.enterFrameFromDef(driver, "10000004780032");
+		ApplicantsMgrFrame applicantsFrame = new ApplicantsMgrFrame(driver);
+		Properties pps = new Properties();
+		pps = Tools.readPropertiesFileObj(dataFile);
+		String name = pps.getProperty("applicantName");
+		applicantsFrame.sendInterview(name);
+		SendInterviewPage send = new SendInterviewPage(driver);
+		send.inputData(pps);
+	}
+	
 	public void upLoadCV(String dataFile) {
 		WebAction.defaultFrame(driver);
 		WebAction.enterFrameFromDef(driver, driver.findElement(By.xpath("//*[contains(@id,'ligerwindow')]")));

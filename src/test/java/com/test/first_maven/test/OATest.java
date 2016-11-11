@@ -31,7 +31,7 @@ public class OATest extends UITest {
 	}
 
 	@Test
-	public void loginTest() throws InterruptedException {
+	public void login() throws InterruptedException {
 //		System.out.println("searchTest");
 		oaLogin.login("admin", "1");
 	}
@@ -43,15 +43,21 @@ public class OATest extends UITest {
 	}
 	
 	@Test
-	public void clickUploadCV() {
-		applicants.clickUploadCV();
+	public void sendInterview() {
+		String dataFile = "D:\\workSpace\\first_maven\\dataFile\\sendInterview.properties";
+		applicants.sendInterview(dataFile);;
 	}
-
-	@Test
-	public void upLoadCV() {
-		String dataFile = "D:\\workSpace\\first_maven\\dataFile\\applicants.properties";
-		applicants.upLoadCV(dataFile);
-	}
+	
+//	@Test
+//	public void clickUploadCV() {
+//		applicants.clickUploadCV();
+//	}
+//
+//	@Test
+//	public void upLoadCV() {
+//		String dataFile = "D:\\workSpace\\first_maven\\dataFile\\applicants.properties";
+//		applicants.upLoadCV(dataFile);
+//	}
 	
 	@AfterTest
 	public void afterTest() throws InterruptedException {

@@ -54,7 +54,11 @@ public class VCinputPage {
 	
 	@FindBy(id = "workCompany")
 	@CacheLookup
-	private WebElement company;		
+	private WebElement company;	
+	
+	@FindBy(name = "jobDesc")
+	@CacheLookup
+	private WebElement jobDesc;	
 	
 	@FindBy(xpath = "//*[@id='attachment']/following-sibling::*[1]")
 	@CacheLookup
@@ -105,6 +109,7 @@ public class VCinputPage {
 		WebAction.defaultFrame(driver);
 		driver.findElement(By.xpath("//div[text()='确定']")).click();
 		WebAction.enterFirstFrame(driver, "//*[contains(@id,'ligerwindow')]");
+		jobDesc.sendKeys(pps.getProperty("jobDesc"));
 		saveBtn.click();
 		WebAction.clickWithWait(driver, "//*[text()='否']");
 		WebAction.enterFrameFromDef(driver, "10000004780032");

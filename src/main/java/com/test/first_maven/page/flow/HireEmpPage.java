@@ -121,7 +121,15 @@ public class HireEmpPage {
 	@FindBy(id = "empCardEnd")
 	@CacheLookup
 	private WebElement empCardEnd;
+	
+	@FindBy(xpath = "//*[@id='empApproachUserTd']/a")
+	@CacheLookup
+	private WebElement empApproachUser;	
 
+	@FindBy(id = "empApproachRelation")
+	@CacheLookup
+	private WebElement empApproachRelation;
+	
 	@FindBy(xpath = "//*[text()='提交']")
 	@CacheLookup
 	private WebElement submitBtn;
@@ -175,6 +183,17 @@ public class HireEmpPage {
 			noProbation.click();
 		}
 		WebAction.selectByValue(empApproach, pps.getProperty("empApproach"));
+		Tools.wait(1);
+		if (empApproachUser.isDisplayed()) {
+			empApproachUser.click();
+			SelectUserPage uPage = new SelectUserPage(driver);
+			uPage.search(pps.getProperty("empApproachUser"));
+			Tools.wait(1);
+			uPage.selectFirst();
+			if (empApproachRelation.isDisplayed()) {
+				WebAction.selectByValue(empApproachRelation, pps.getProperty("empApproachRelation"));
+			}
+		}
 		WebAction.jsSendKeys(driver, empEntryDate, pps.getProperty("empEntryDate"));
 		empProbationPeriod.sendKeys(pps.getProperty("empProbationPeriod"));		
 		empSalarym.sendKeys(pps.getProperty("empSalarym"));

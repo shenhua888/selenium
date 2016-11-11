@@ -29,7 +29,7 @@ public class AddCVTest extends UITest {
 	}
 
 	@Test
-	public void loginTest() throws InterruptedException {
+	public void login() throws InterruptedException {
 		oaLogin.login("admin", "1");
 	}
 
@@ -48,7 +48,7 @@ public class AddCVTest extends UITest {
 	
 	@AfterTest
 	public void afterTest() throws InterruptedException {
-//		driver.quit();
+		driver.quit();
 		// driver.close();
 		
 	}

@@ -7,14 +7,17 @@ For $i = 5 To 1 Step -1
 Next
 Sleep(2000)
 ControlSend("打开", "", "Edit1", $CmdLine[1])
-;ControlSend("打开", "", "Edit1", "F:\picture\dd5.png")
+;ControlSend("打开", "", "Edit1", "F;\picture\dd5.png")
 Local $value =  ControlGetText("打开", "", "Edit1")
 ConsoleWrite ( $value )
 For $j = 5 To 1 Step -1
    If $value == $CmdLine[1] Then ExitLoop
    ;If $value == "F:\picture\dd5.png" Then ExitLoop
+   ControlClick("打开", "", "Edit1")
    Send("{CTRLDOWN}")
+   Sleep(1000)
    Send("a")
+   Sleep(1000)
    Send("{CTRLUP}")
    Sleep(1000)
    ControlSend("打开", "", "Edit1", $CmdLine[1])

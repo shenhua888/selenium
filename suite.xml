@@ -7,7 +7,17 @@
 		<listener class-name="com.test.first_maven.base.TestNGCustomReportListener" /> <!-- 报告监听器 -->
 	</listeners>
 	<test name="test1">
+
 		<classes>
+<!-- 		
+ 			<class name="com.test.first_maven.test.AddCVTest">   
+				<methods>
+					<include name="login" />
+					<include name="enterCatalog" />
+					<include name="addCV" />  
+				</methods>
+			</class>
+
 			<class name="com.test.first_maven.test.HireEmployeeTest">
 				<methods>
 					<include name="login" />
@@ -15,7 +25,8 @@
 					<include name="hireEmployee" />
 				</methods>
 			</class>
-		<!-- 
+
+
 			<class name="com.test.first_maven.test.BaiduTest">
 				<methods>
 					<include name="searchTest2" /> 
@@ -24,18 +35,21 @@
 			</class>
 			<class name="com.test.first_maven.test.BaiduTest2">
 			</class>
-
+-->
+			
+<!-- 			<class name="com.test.first_maven.test.AddCVTest">   -->
 			<class name="com.test.first_maven.test.OATest">
-			<class name="com.test.first_maven.test.AddCVTest">
 				<methods>
 					<include name="login" />
 					<include name="enterCatalog" />
+					<include name="sendInterview" />
+<!-- 				
 					<include name="clickUploadCV" />
 					<include name="upLoadCV" /> 
-					<include name="addCV" />
+					<include name="addCV" />  
+ -->						
 				</methods>
 			</class>
-		 -->
 
 		</classes>
 	</test>
