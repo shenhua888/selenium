@@ -42,7 +42,7 @@ public class AddCVTest extends UITest {
 
 	@Test
 	public void addCV() {
-		String dataFile = "D:\\workSpace\\first_maven\\src\\main\\java\\applicants_add.properties";
+		String dataFile = "D:\\workSpace\\first_maven\\dataFile\\applicants_add.properties";
 		applicants.addCV(dataFile);
 	}
 	

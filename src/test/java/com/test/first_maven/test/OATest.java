@@ -49,7 +49,7 @@ public class OATest extends UITest {
 
 	@Test
 	public void upLoadCV() {
-		String dataFile = "D:\\workSpace\\first_maven\\src\\main\\java\\applicants.properties";
+		String dataFile = "D:\\workSpace\\first_maven\\dataFile\\applicants.properties";
 		applicants.upLoadCV(dataFile);
 	}
 	

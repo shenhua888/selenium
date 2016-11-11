@@ -43,7 +43,7 @@ public class HireEmployeeTest extends UITest {
 
 	@Test
 	public void hireEmployee() {
-		String dataFile = "D:\\workSpace\\first_maven\\src\\main\\java\\hire.properties";
+		String dataFile = "D:\\workSpace\\first_maven\\dataFile\\hire.properties";
 		flowPage.hireEmployee(dataFile);
 	}
 	
