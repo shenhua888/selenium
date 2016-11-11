@@ -10,7 +10,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
-import com.test.first_maven.base.ActionUtils;
+import com.test.first_maven.base.WebAction;
 import com.test.first_maven.base.Tools;
 
 public class HireEmpPage {
@@ -164,18 +164,18 @@ public class HireEmpPage {
 		education.click();
 		SelectFilePage selectFile2 = new SelectFilePage(driver);
 		selectFile2.selectFile(pps.getProperty("education"));		
-		ActionUtils.selectByValue(empType, pps.getProperty("empType"));
-		ActionUtils.selectByValue(empDemandSource, pps.getProperty("empDemandSource"));
-		ActionUtils.selectByValue(empJobCategory, pps.getProperty("empJobCategory"));
-		ActionUtils.selectByValue(empPosGrade, pps.getProperty("empPosGrade"));
+		WebAction.selectByValue(empType, pps.getProperty("empType"));
+		WebAction.selectByValue(empDemandSource, pps.getProperty("empDemandSource"));
+		WebAction.selectByValue(empJobCategory, pps.getProperty("empJobCategory"));
+		WebAction.selectByValue(empPosGrade, pps.getProperty("empPosGrade"));
 		if ("是".equals(pps.getProperty("probation"))) {
 			probation.click();
-			ActionUtils.selectByVisibleText(empUserType, pps.getProperty("empUserType"));
+			WebAction.selectByVisibleText(empUserType, pps.getProperty("empUserType"));
 		} else {
 			noProbation.click();
 		}
-		ActionUtils.selectByValue(empApproach, pps.getProperty("empApproach"));
-		ActionUtils.jsSendKeys(driver, empEntryDate, pps.getProperty("empEntryDate"));
+		WebAction.selectByValue(empApproach, pps.getProperty("empApproach"));
+		WebAction.jsSendKeys(driver, empEntryDate, pps.getProperty("empEntryDate"));
 		empProbationPeriod.sendKeys(pps.getProperty("empProbationPeriod"));		
 		empSalarym.sendKeys(pps.getProperty("empSalarym"));
 		empProbationSalarym.sendKeys(pps.getProperty("empProbationSalarym"));
@@ -193,10 +193,10 @@ public class HireEmpPage {
 		}
 		
 		empDesc.sendKeys(pps.getProperty("empDesc"));
-		ActionUtils.jsSendKeys(driver, empCardBegin, pps.getProperty("empCardBegin"));
-		ActionUtils.jsSendKeys(driver, empCardEnd, pps.getProperty("empCardEnd"));
+		WebAction.jsSendKeys(driver, empCardBegin, pps.getProperty("empCardBegin"));
+		WebAction.jsSendKeys(driver, empCardEnd, pps.getProperty("empCardEnd"));
 		submitBtn.click();
-		ActionUtils.waitUntilVisible(driver, "//div[text()='启动流程成功!']", 15);
+		WebAction.waitUntilVisible(driver, "//div[text()='启动流程成功!']", 15);
 		driver.findElement(By.xpath("//div[text()='确定']")).click();
 	}
 }

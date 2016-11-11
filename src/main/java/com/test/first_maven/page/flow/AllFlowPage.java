@@ -10,7 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 import org.testng.Assert;
 
-import com.test.first_maven.base.ActionUtils;
+import com.test.first_maven.base.WebAction;
 
 public class AllFlowPage {
 	@FindBy(xpath = "//a[text()='录用申请']")
@@ -23,15 +23,15 @@ public class AllFlowPage {
 	public AllFlowPage (WebDriver driver) {
 		this.driver = driver;
 		currentWin = driver.getWindowHandle();
-		ActionUtils.enterFrameFromDef(driver, "10000004810043");
+		WebAction.enterFrameFromDef(driver, "10000004810043");
 		PageFactory.initElements(new AjaxElementLocatorFactory(driver,10), this);
 	}
 	
 	public void hire (String dataFile) {
 		hireBtn.click();
-		ActionUtils.switchToNewWin(driver, currentWin);
+		WebAction.switchToNewWin(driver, currentWin);
 		Boolean flag = null;
-		flag = ActionUtils.waitUntilVisible(driver, "//*[@id='empUserType']", 10);
+		flag = WebAction.waitUntilVisible(driver, "//*[@id='empUserType']", 10);
 		Assert.assertTrue(flag);
 		HireEmpPage hireEmp = new HireEmpPage(driver);
 		hireEmp.hire(dataFile);

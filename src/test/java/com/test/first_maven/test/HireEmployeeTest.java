@@ -7,7 +7,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import com.test.first_maven.base.ActionUtils;
+import com.test.first_maven.base.WebAction;
 import com.test.first_maven.base.NewWebDriverEventListener;
 import com.test.first_maven.base.UITest;
 import com.test.first_maven.page.OALoginPage;
@@ -23,7 +23,7 @@ public class HireEmployeeTest extends UITest {
 		System.setProperty("webdriver.chrome.driver", "D:\\jar\\chromedriver.exe");
 		driver = new EventFiringWebDriver(new ChromeDriver()).register(new NewWebDriverEventListener());
 		String url = "http://172.21.204.23:8080/J2bpm/login.jsp";
-		ActionUtils.get(driver, url, "登录");
+		WebAction.get(driver, url, "登录");
 		driver.manage().window().maximize();
 		oaLogin = new OALoginPage(driver);
 		

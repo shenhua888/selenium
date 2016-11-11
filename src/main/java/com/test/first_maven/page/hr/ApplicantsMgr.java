@@ -12,7 +12,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 import org.testng.Assert;
 
-import com.test.first_maven.base.ActionUtils;
+import com.test.first_maven.base.WebAction;
 import com.test.first_maven.base.Tools;
 
 public class ApplicantsMgr {
@@ -40,26 +40,26 @@ public class ApplicantsMgr {
 		span.click();
 		applicantsMgr.click();
 		Boolean flag = null;
-		flag = ActionUtils.waitUntilVisible(driver, "//*[@id='10000004780032']", 10);
+		flag = WebAction.waitUntilVisible(driver, "//*[@id='10000004780032']", 10);
 		Assert.assertTrue(flag);
 	}
 	
 	public void clickUploadCV() {
-		ActionUtils.enterFrameFromDef(driver, "10000004780032");
+		WebAction.enterFrameFromDef(driver, "10000004780032");
 		ApplicantsMgrFrame applicantsFrame = new ApplicantsMgrFrame(driver);
 		applicantsFrame.enterUploadCV();
 		
 	}
 
 	public void upLoadCV(String dataFile) {
-		ActionUtils.defaultFrame(driver);
-		ActionUtils.enterFrameFromDef(driver, driver.findElement(By.xpath("//*[contains(@id,'ligerwindow')]")));
+		WebAction.defaultFrame(driver);
+		WebAction.enterFrameFromDef(driver, driver.findElement(By.xpath("//*[contains(@id,'ligerwindow')]")));
 		VCinputPage vcInput = new VCinputPage(driver);
 		vcInput.inputData(dataFile);		
 	}
 	
 	public void addCV(String dataFile) {
-		ActionUtils.enterFrameFromDef(driver, "10000004780032");
+		WebAction.enterFrameFromDef(driver, "10000004780032");
 		ApplicantsMgrFrame applicantsFrame = new ApplicantsMgrFrame(driver);
 		applicantsFrame.enterAddCV();
 		Tools.wait(2);

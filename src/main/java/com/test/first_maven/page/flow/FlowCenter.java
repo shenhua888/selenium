@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 import org.testng.Assert;
 
-import com.test.first_maven.base.ActionUtils;
+import com.test.first_maven.base.WebAction;
 import com.test.first_maven.base.Tools;
 
 public class FlowCenter {
@@ -32,7 +32,7 @@ public class FlowCenter {
 			flowCenter.click();
 			newFlow.click();			
 			Boolean flag = null;
-			flag = ActionUtils.waitUntilVisible(driver, "//*[@id='10000004810043']", 10);
+			flag = WebAction.waitUntilVisible(driver, "//*[@id='10000004810043']", 10);
 			Assert.assertTrue(flag);
 		}
 		

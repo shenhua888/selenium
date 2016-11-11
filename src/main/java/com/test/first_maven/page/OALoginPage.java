@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 import org.testng.Assert;
 
-import com.test.first_maven.base.ActionUtils;
+import com.test.first_maven.base.WebAction;
 
 public class OALoginPage {
 	
@@ -37,7 +37,7 @@ public class OALoginPage {
 		this.password.clear();
 		this.password.sendKeys(password);
 		loginBtn.click();
-		Boolean flag = ActionUtils.waitUntilVisible(driver, "//*[@name='home']", 10);
+		Boolean flag = WebAction.waitUntilVisible(driver, "//*[@name='home']", 10);
 		Assert.assertTrue(flag);
 	}
 }

@@ -15,8 +15,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class ActionUtils {
-	private static Logger log = LogManager.getFormatterLogger(ActionUtils.class);
+public class WebAction {
+	private static Logger log = LogManager.getFormatterLogger(WebAction.class);
 
 	public static void get(WebDriver driver, String url) throws InterruptedException {
 		Boolean flag = false;
@@ -195,14 +195,14 @@ public class ActionUtils {
 		driver.findElement(By.xpath(idOrXpath)).click();
 	}	
 	public static void enterRecentFrame (WebDriver driver, String idOrXpath) {	
-		ActionUtils.defaultFrame(driver);
+		WebAction.defaultFrame(driver);
 		List<WebElement> eles = driver.findElements(By.xpath(idOrXpath));
-		ActionUtils.enterFrameFromDef(driver, eles.get(eles.size()-1));
+		WebAction.enterFrameFromDef(driver, eles.get(eles.size()-1));
 	}
 	public static void enterFirstFrame (WebDriver driver, String idOrXpath) {
-		ActionUtils.defaultFrame(driver);
+		WebAction.defaultFrame(driver);
 		List<WebElement> eles = driver.findElements(By.xpath(idOrXpath));
-		ActionUtils.enterFrameFromDef(driver, eles.get(0));
+		WebAction.enterFrameFromDef(driver, eles.get(0));
 	}
 	
 	public static void selectByValue (WebElement ele, String value) {
@@ -227,7 +227,7 @@ public class ActionUtils {
 		return flag;
 	}
 	public static void switchToNewWin (WebDriver driver, String oldHanle) {
-		ActionUtils.defaultFrame(driver);
+		WebAction.defaultFrame(driver);
 		Set<String> handles = driver.getWindowHandles();
 		for (String winHandle : handles) {
 			if (!winHandle.equals(oldHanle)) {

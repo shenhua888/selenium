@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
-import com.test.first_maven.base.ActionUtils;
+import com.test.first_maven.base.WebAction;
 import com.test.first_maven.base.Tools;
 
 public class SelectFilePage {	
@@ -19,7 +19,7 @@ public class SelectFilePage {
 	private WebDriver driver;
 	
 	public SelectFilePage(WebDriver driver) {
-		ActionUtils.enterRecentFrame(driver, "//*[contains(@id,'ligerwindow')]");
+		WebAction.enterRecentFrame(driver, "//*[contains(@id,'ligerwindow')]");
 		this.driver = driver;
 		PageFactory.initElements(new AjaxElementLocatorFactory(driver,10), this);
 	}
@@ -28,9 +28,9 @@ public class SelectFilePage {
 		selectBtn.click();
 		Tools.selectFile(filePath);
 		Tools.wait(1);
-		ActionUtils.clickWithWait(driver, "//a[@ng-click='item.upload()']");
+		WebAction.clickWithWait(driver, "//a[@ng-click='item.upload()']");
 		Tools.wait(2);
-		ActionUtils.defaultFrame(driver);
+		WebAction.defaultFrame(driver);
 		driver.findElement(By.xpath("//div[text()='确定']")).click();
 	}
 }

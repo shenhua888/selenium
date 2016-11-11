@@ -11,7 +11,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 import org.testng.Assert;
 
-import com.test.first_maven.base.ActionUtils;
+import com.test.first_maven.base.WebAction;
 import com.test.first_maven.base.Tools;
 
 public class AddApplicants {
@@ -171,33 +171,33 @@ public class AddApplicants {
 		Properties pps = new Properties();
 		pps = Tools.readPropertiesFileObj(dataFile);
 		jobDeptName.click();		
-		ActionUtils.enterRecentFrame(driver, "//*[contains(@id,'ligerwindow')]");	
-		ActionUtils.enterFrame(driver, "orgFrame");
+		WebAction.enterRecentFrame(driver, "//*[contains(@id,'ligerwindow')]");	
+		WebAction.enterFrame(driver, "orgFrame");
 		driver.findElement(By.xpath("//*[@value='" + pps.getProperty("jobDeptName") + "']/../input")).click();
-		ActionUtils.enterRecentFrame(driver, "//*[contains(@id,'ligerwindow')]");
+		WebAction.enterRecentFrame(driver, "//*[contains(@id,'ligerwindow')]");
 		driver.findElement(By.xpath("//*[text()='选择']")).click();
-		ActionUtils.enterFrameFromDef(driver, "10000004780032");
+		WebAction.enterFrameFromDef(driver, "10000004780032");
 		jobPosition.click();
-		ActionUtils.enterFrameFromDef(driver, "frameDialog_");
-		ActionUtils.enterFrame(driver, "dialogFrame");
+		WebAction.enterFrameFromDef(driver, "frameDialog_");
+		WebAction.enterFrame(driver, "dialogFrame");
 		driver.findElement(By.xpath("//*[text()='" + pps.getProperty("jobPosition") + "']/../td/input")).click();
-		ActionUtils.defaultFrame(driver);
+		WebAction.defaultFrame(driver);
 		driver.findElement(By.xpath("//*[text()='确定']")).click();
-		ActionUtils.enterFrameFromDef(driver, "10000004780032");
+		WebAction.enterFrameFromDef(driver, "10000004780032");
 		picFile.click();
 		Tools.wait(2);
-		ActionUtils.enterRecentFrame(driver, "//*[contains(@id,'ligerwindow')]");
+		WebAction.enterRecentFrame(driver, "//*[contains(@id,'ligerwindow')]");
 		driver.findElement(By.xpath("//*[@class='pull-left']/input")).click();
 		Tools.selectFile(pps.getProperty("picFile"));
-		ActionUtils.clickWithWait(driver, "//a[@ng-click='item.upload()']");
+		WebAction.clickWithWait(driver, "//a[@ng-click='item.upload()']");
 		Tools.wait(2);
-		ActionUtils.defaultFrame(driver);
+		WebAction.defaultFrame(driver);
 		driver.findElement(By.xpath("//div[text()='确定']")).click();
 		Tools.wait(1);
-		ActionUtils.enterRecentFrame(driver, "//*[contains(@id,'ligerwindow')]");
+		WebAction.enterRecentFrame(driver, "//*[contains(@id,'ligerwindow')]");
 		driver.findElement(By.id("comCut")).click();
-		ActionUtils.clickWithWait(driver, "//a[text()='完成。']");
-		ActionUtils.enterFrameFromDef(driver, "10000004780032");
+		WebAction.clickWithWait(driver, "//a[text()='完成。']");
+		WebAction.enterFrameFromDef(driver, "10000004780032");
 		applicantName.sendKeys(pps.getProperty("applicantName"));
 		cellphone.sendKeys(pps.getProperty("cellphone"));
 		email.sendKeys(pps.getProperty("email"));
@@ -220,9 +220,9 @@ public class AddApplicants {
 		reEduMajor.sendKeys(pps.getProperty("reEduMajor"));
 		reHopeSalarym.sendKeys(pps.getProperty("reHopeSalarym"));
 		reForwordSalaryy.sendKeys(pps.getProperty("reForwordSalaryy"));
-		ActionUtils.jsSendKeys(driver, reAvailableToDate, pps.getProperty("reAvailableToDate"));
+		WebAction.jsSendKeys(driver, reAvailableToDate, pps.getProperty("reAvailableToDate"));
 		if (!"".equals(pps.getProperty("reBirthday"))) {
-			ActionUtils.jsSendKeys(driver, reBirthday, pps.getProperty("reBirthday"));
+			WebAction.jsSendKeys(driver, reBirthday, pps.getProperty("reBirthday"));
 		}
 		if (!"".equals(pps.getProperty("gender"))) {
 			if (pps.getProperty("gender").equals("男")) {
@@ -233,18 +233,18 @@ public class AddApplicants {
 				Assert.assertTrue(feMale.isSelected());
 			}			
 		}
-		ActionUtils.selectByValue(reCardType, pps.getProperty("reCardType"));
-		ActionUtils.selectByValue(reMarital, pps.getProperty("reMarital"));
-		ActionUtils.selectByValue(reNationality, pps.getProperty("reNationality"));
-		ActionUtils.selectByValue(reBloodtype, pps.getProperty("reBloodtype"));
-		ActionUtils.selectByValue(rePolity, pps.getProperty("rePolity"));
-		ActionUtils.selectByValue(reIsConstructor, pps.getProperty("reIsConstructor"));
-		ActionUtils.selectByValue(reEdu, pps.getProperty("reEdu"));
+		WebAction.selectByValue(reCardType, pps.getProperty("reCardType"));
+		WebAction.selectByValue(reMarital, pps.getProperty("reMarital"));
+		WebAction.selectByValue(reNationality, pps.getProperty("reNationality"));
+		WebAction.selectByValue(reBloodtype, pps.getProperty("reBloodtype"));
+		WebAction.selectByValue(rePolity, pps.getProperty("rePolity"));
+		WebAction.selectByValue(reIsConstructor, pps.getProperty("reIsConstructor"));
+		WebAction.selectByValue(reEdu, pps.getProperty("reEdu"));
 		String eduInfo = pps.getProperty("eduInfo");
 		if (!"".equals(eduInfo)) {
 			String[] arrayCon = eduInfo.split(";");
 			for (String mess : arrayCon) {
-				ActionUtils.jsClick(driver, eduAddBtn);
+				WebAction.jsClick(driver, eduAddBtn);
 				Tools.wait(1);
 				String[] detail = mess.split(",");
 				WebElement eduBeginDate = driver.findElement(By.id("eduBeginDate"));
@@ -253,16 +253,16 @@ public class AddApplicants {
 				WebElement eduEducation = driver.findElement(By.xpath("//*[@class='l-dialog-cc']//*[@name='eduEducation']"));
 				WebElement commit = driver.findElement(By.xpath("//*[text()='确定']"));
 				if (!"null".equals(detail[0])) {
-					ActionUtils.jsSendKeys(driver, eduBeginDate, detail[0]);
+					WebAction.jsSendKeys(driver, eduBeginDate, detail[0]);
 				}
 				if (!"null".equals(detail[1])) {
-					ActionUtils.jsSendKeys(driver, eduEndDate, detail[1]);
+					WebAction.jsSendKeys(driver, eduEndDate, detail[1]);
 				}
 				if (!"null".equals(detail[2])) {
-					ActionUtils.jsSendKeys(driver, eduSchool, detail[2]);
+					WebAction.jsSendKeys(driver, eduSchool, detail[2]);
 				}
 				if (!"null".equals(detail[4])) {
-					ActionUtils.selectByValue(eduEducation, detail[4]);
+					WebAction.selectByValue(eduEducation, detail[4]);
 				}
 				commit.click();
 				Tools.wait(1);
@@ -273,7 +273,7 @@ public class AddApplicants {
 		if (!"".equals(emergencyContact)) {
 			String[] arrayCon = emergencyContact.split(";");
 			for (String mess : arrayCon) {
-				ActionUtils.jsClick(driver, emgConAddBtn);
+				WebAction.jsClick(driver, emgConAddBtn);
 				Tools.wait(1);
 				String[] detail = mess.split(",");
 				WebElement contactName = driver.findElement(By.xpath("//*[@class='l-dialog-cc']//*[@name='contactName']"));
@@ -281,13 +281,13 @@ public class AddApplicants {
 				WebElement contactPhone = driver.findElement(By.xpath("//*[@class='l-dialog-cc']//*[@name='contactPhone']"));
 				WebElement commit = driver.findElement(By.xpath("//*[text()='确定']"));
 				if (!"null".equals(detail[0])) {
-					ActionUtils.jsSendKeys(driver, contactName, detail[0]);
+					WebAction.jsSendKeys(driver, contactName, detail[0]);
 				}
 				if (!"null".equals(detail[1])) {
-					ActionUtils.selectByValue(contactRelation, detail[1]);
+					WebAction.selectByValue(contactRelation, detail[1]);
 				}
 				if (!"null".equals(detail[2])) {
-					ActionUtils.jsSendKeys(driver, contactPhone, detail[2]);
+					WebAction.jsSendKeys(driver, contactPhone, detail[2]);
 				}
 				commit.click();
 				Tools.wait(1);
@@ -298,17 +298,17 @@ public class AddApplicants {
 		if (!"".equals(familyInfo)) {
 			String[] arrayCon = familyInfo.split(";");
 			for (String mess : arrayCon) {
-				ActionUtils.jsClick(driver, family);
+				WebAction.jsClick(driver, family);
 				Tools.wait(1);
 				String[] detail = mess.split(",");
 				WebElement famRelation = driver.findElement(By.xpath("//*[@class='l-dialog-cc']//*[@name='famRelation']"));
 				WebElement famName = driver.findElement(By.xpath("//*[@class='l-dialog-cc']//*[@name='famName']"));
 				WebElement commit = driver.findElement(By.xpath("//*[text()='确定']"));
 				if (!"null".equals(detail[0])) {
-					ActionUtils.selectByValue(famRelation, detail[0]);
+					WebAction.selectByValue(famRelation, detail[0]);
 				}
 				if (!"null".equals(detail[1])) {
-					ActionUtils.jsSendKeys(driver, famName, detail[1]);
+					WebAction.jsSendKeys(driver, famName, detail[1]);
 				}
 				commit.click();
 				Tools.wait(1);
@@ -319,7 +319,7 @@ public class AddApplicants {
 		if (!"".equals(workInfo)) {
 			String[] arrayCon = workInfo.split(";");
 			for (String mess : arrayCon) {
-				ActionUtils.jsClick(driver, workHistory);
+				WebAction.jsClick(driver, workHistory);
 				Tools.wait(1);
 				String[] detail = mess.split(",");
 				WebElement workBeginDate = driver.findElement(By.xpath("//*[@class='l-dialog-cc']//*[@name='workBeginDate']"));
@@ -327,22 +327,22 @@ public class AddApplicants {
 				WebElement workCompany = driver.findElement(By.xpath("//*[@class='l-dialog-cc']//*[@name='workCompany']"));
 				WebElement commit = driver.findElement(By.xpath("//*[text()='确定']"));
 				if (!"null".equals(detail[0])) {
-					ActionUtils.jsSendKeys(driver, workBeginDate, detail[0]);
+					WebAction.jsSendKeys(driver, workBeginDate, detail[0]);
 				}
 				if (!"null".equals(detail[1])) {
-					ActionUtils.jsSendKeys(driver, workEndDate, detail[1]);
+					WebAction.jsSendKeys(driver, workEndDate, detail[1]);
 				}
 				if (!"null".equals(detail[2])) {
-					ActionUtils.jsSendKeys(driver, workCompany, detail[2]);
+					WebAction.jsSendKeys(driver, workCompany, detail[2]);
 				}
 				commit.click();
 				Tools.wait(1);
 			}
 		}
 		saveBtn.click();
-		ActionUtils.clickWithWait(driver, "//*[text()='否']");
-		Boolean flag = ActionUtils.isAddSuccess(firstAppName, pps.getProperty("applicantName"));
-		ActionUtils.defaultFrame(driver);
+		WebAction.clickWithWait(driver, "//*[text()='否']");
+		Boolean flag = WebAction.isAddSuccess(firstAppName, pps.getProperty("applicantName"));
+		WebAction.defaultFrame(driver);
 		Assert.assertTrue(flag);
 	}
 }

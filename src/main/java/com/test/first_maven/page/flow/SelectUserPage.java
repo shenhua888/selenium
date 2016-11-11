@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
-import com.test.first_maven.base.ActionUtils;
+import com.test.first_maven.base.WebAction;
 
 public class SelectUserPage {
 	@FindBy(name = "Q_fullname_SL")
@@ -30,8 +30,8 @@ public class SelectUserPage {
 	private WebDriver driver;
 	
 	public SelectUserPage(WebDriver driver) {
-		ActionUtils.enterRecentFrame(driver, "//*[contains(@id,'ligerwindow')]");
-		ActionUtils.enterFrame(driver, "userListFrame");
+		WebAction.enterRecentFrame(driver, "//*[contains(@id,'ligerwindow')]");
+		WebAction.enterFrame(driver, "userListFrame");
 		this.driver = driver;
 		PageFactory.initElements(new AjaxElementLocatorFactory(driver,10), this);
 	}
@@ -52,8 +52,8 @@ public class SelectUserPage {
 //	}
 	
 	public void clickSubmit() {
-		ActionUtils.enterRecentFrame(driver, "//*[contains(@id,'ligerwindow')]");
+		WebAction.enterRecentFrame(driver, "//*[contains(@id,'ligerwindow')]");
 		driver.findElement(By.xpath("//span[text()='选择']")).click();
-		ActionUtils.defaultFrame(driver);
+		WebAction.defaultFrame(driver);
 	}	
 }

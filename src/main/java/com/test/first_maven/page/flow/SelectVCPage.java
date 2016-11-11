@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
-import com.test.first_maven.base.ActionUtils;
+import com.test.first_maven.base.WebAction;
 
 public class SelectVCPage {
 	@FindBy(name = "Q_re_name_S")
@@ -30,8 +30,8 @@ public class SelectVCPage {
 	private WebDriver driver;
 	
 	public SelectVCPage(WebDriver driver) {
-		ActionUtils.enterFrameFromDef(driver, "frameDialog_");
-		ActionUtils.enterFrame(driver, "dialogFrame");
+		WebAction.enterFrameFromDef(driver, "frameDialog_");
+		WebAction.enterFrame(driver, "dialogFrame");
 		this.driver = driver;
 		PageFactory.initElements(new AjaxElementLocatorFactory(driver,10), this);
 	}
@@ -47,7 +47,7 @@ public class SelectVCPage {
 	}	
 	
 	public void clickSubmit() {
-		ActionUtils.defaultFrame(driver);
+		WebAction.defaultFrame(driver);
 		driver.findElement(By.xpath("//*[@class='l-dialog-cc']//*[text()='确定']")).click();
 	}		
 }

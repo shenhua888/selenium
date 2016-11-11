@@ -12,7 +12,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import com.test.first_maven.base.ActionUtils;
+import com.test.first_maven.base.WebAction;
 import com.test.first_maven.base.NewWebDriverEventListener;
 import com.test.first_maven.base.UITest;
 import com.test.first_maven.page.BaiduHome;
@@ -27,7 +27,7 @@ public class BaiduTest extends UITest {
 		driver = new EventFiringWebDriver(new ChromeDriver()).register(new NewWebDriverEventListener());
 		// driver.get("http://www.baidu.com");
 		String url = "http://www.baidu.com";
-		ActionUtils.get(driver, url, "更多产品");
+		WebAction.get(driver, url, "更多产品");
 		driver.manage().window().maximize();
 		baidupage = new BaiduHome(driver);		
 	}
