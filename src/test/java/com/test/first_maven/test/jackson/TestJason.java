@@ -4,7 +4,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 
 public class TestJason {
@@ -22,11 +21,15 @@ public class TestJason {
 	    				  + "\"age\":28,"
 	    				  + "\"detail\":{\"name\":\"大大\",\"age\":88},"
 	    				  + "\"users\":[{\"loginname\":\"zhangfan\",\"password\":\"userpass\",\"email\":\"10371443@qq.com\"},{\"loginname\":\"zf\",\"password\":\"userpass\",\"email\":\"822393@qq.com\"}]}";  
-	    JSONObject json= new JSONObject(jsonString);
+		JSONObject json= new JSONObject2(jsonString);
 	    System.out.println(json.get("name"));
-//	    System.out.println(json.get("birthday"));
-//	    System.out.println(json.get("mail"));
-//	    System.out.println(json.get("age"));	    
+	    if (null != json.get("ddd")) {
+	    	System.out.println(json.get("ddd"));
+	    }
+	    if (null != json.get("mail")) {
+	    	System.out.println(json.get("mail"));
+	    }	    
+	    System.out.println(json.get("detail"));	    
 	    System.out.println(((JSONObject) json.get("detail")).get("name"));
 	    JSONArray jsonArray=json.getJSONArray("users"); 
 	    for(int i=0;i<jsonArray.length();i++){  
