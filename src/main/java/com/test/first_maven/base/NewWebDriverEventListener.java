@@ -139,7 +139,7 @@ public class NewWebDriverEventListener implements WebDriverEventListener {
         File scrFile = drivername.getScreenshotAs(OutputType.FILE);
         // Now you can do whatever you need to do with it, for example copy
         try {
-            log.info("onException save snapshot path is:" + picPath + path);
+            log.info("onException save snapshot path is:" + picPath + "\\" + path);
             FileUtils.copyFile(scrFile, new File(picPath + "\\" + path));
         } catch (Exception e) {
             log.error("Can't save screenshot");

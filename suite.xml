@@ -9,7 +9,7 @@
 	<test name="test1">
 
 		<classes>
-<!-- 		
+ 		
  			<class name="com.test.first_maven.test.AddCVTest">   
 				<methods>
 					<include name="login" />
@@ -17,7 +17,7 @@
 					<include name="addCV" />  
 				</methods>
 			</class>
-
+<!-- 
 			<class name="com.test.first_maven.test.HireEmployeeTest">
 				<methods>
 					<include name="login" />
@@ -37,19 +37,20 @@
 			</class>
 -->
 			
-<!-- 			<class name="com.test.first_maven.test.AddCVTest">   -->
+<!-- 			<class name="com.test.first_maven.test.AddCVTest">  
 			<class name="com.test.first_maven.test.OATest">
 				<methods>
 					<include name="login" />
 					<include name="enterCatalog" />
 					<include name="sendInterview" />
-<!-- 				
+				
 					<include name="clickUploadCV" />
 					<include name="upLoadCV" /> 
 					<include name="addCV" />  
- -->						
-				</methods>
+						
+				</methods>			
 			</class>
+-->	
 
 		</classes>
 	</test>

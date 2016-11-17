@@ -29,10 +29,14 @@ public class HireEmpPage {
 	@FindBy(xpath = "//*[@id='empHelpUserName']/following-sibling::*[1]")
 	@CacheLookup
 	private WebElement selectHelpUser;
+
+	@FindBy(xpath = "//*[@id='fileIds1']/following-sibling::*[1]")
+	@CacheLookup
+	private WebElement citizenCard;
 	
 	@FindBy(xpath = "//*[@id='fileIds2']/following-sibling::*[1]")
 	@CacheLookup
-	private WebElement IdCard;	
+	private WebElement idCard;	
 	
 	@FindBy(xpath = "//*[@id='fileIds3']/following-sibling::*[1]")
 	@CacheLookup
@@ -151,6 +155,7 @@ public class HireEmpPage {
 		Tools.wait(1);
 		vcPage.selectFirst();
 		Tools.wait(1);
+		
 		String interviewerValue = empIvUser.getAttribute("value");
 		if ("".equals(interviewerValue)) {
 			selectInterviewer.click();
@@ -166,12 +171,15 @@ public class HireEmpPage {
 		uPage2.search(pps.getProperty("helper"));
 		Tools.wait(1);
 		uPage2.selectFirst();
-		IdCard.click();
+		idCard.click();
 		SelectFilePage selectFile = new SelectFilePage(driver);
 		selectFile.selectFile(pps.getProperty("idCardPath"));
 		education.click();
 		SelectFilePage selectFile2 = new SelectFilePage(driver);
-		selectFile2.selectFile(pps.getProperty("education"));		
+		selectFile2.selectFile(pps.getProperty("education"));
+		citizenCard.click();
+		SelectFilePage selectFile3 = new SelectFilePage(driver);
+		selectFile3.selectFile(pps.getProperty("citizenCard"));		
 		WebAction.selectByValue(empType, pps.getProperty("empType"));
 		WebAction.selectByValue(empDemandSource, pps.getProperty("empDemandSource"));
 		WebAction.selectByValue(empJobCategory, pps.getProperty("empJobCategory"));
@@ -205,11 +213,11 @@ public class HireEmpPage {
 		if (empCompletedProduct.isDisplayed()) {
 			empCompletedProduct.sendKeys(pps.getProperty("empCompletedProduct"));
 		}
-		if ("是".equals(pps.getProperty("needCard"))) {
-			needCard.click();
-		} else {
-			noNeedCard.click();
-		}
+//		if ("是".equals(pps.getProperty("needCard"))) {
+//			needCard.click();
+//		} else {
+//			noNeedCard.click();
+//		}
 		
 		empDesc.sendKeys(pps.getProperty("empDesc"));
 		WebAction.jsSendKeys(driver, empCardBegin, pps.getProperty("empCardBegin"));

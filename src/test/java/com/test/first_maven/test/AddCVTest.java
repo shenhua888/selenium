@@ -48,7 +48,7 @@ public class AddCVTest extends UITest {
 	
 	@AfterTest
 	public void afterTest() throws InterruptedException {
-		driver.quit();
+//		driver.quit();
 		// driver.close();
 		
 	}
