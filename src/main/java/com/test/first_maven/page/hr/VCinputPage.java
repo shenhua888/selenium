@@ -104,7 +104,7 @@ public class VCinputPage {
 		WebAction.enterRecentFrame(driver, "//*[contains(@id,'ligerwindow')]");
 		driver.findElement(By.xpath("//*[@class='pull-left']/input")).click();
 		Tools.selectFile(pps.getProperty("attachement"));
-		WebAction.clickWithWait(driver, "//a[@ng-click='item.upload()']");
+		WebAction.clickWithWait(driver, "//span[text()='上传']");
 		Tools.wait(2);
 		WebAction.defaultFrame(driver);
 		driver.findElement(By.xpath("//div[text()='确定']")).click();

@@ -189,7 +189,7 @@ public class AddApplicants {
 		WebAction.enterRecentFrame(driver, "//*[contains(@id,'ligerwindow')]");
 		driver.findElement(By.xpath("//*[@class='pull-left']/input")).click();
 		Tools.selectFile(pps.getProperty("picFile"));
-		WebAction.clickWithWait(driver, "//a[@ng-click='item.upload()']");
+		WebAction.clickWithWait(driver, "//span[text()='上传']");
 		Tools.wait(2);
 		WebAction.defaultFrame(driver);
 		driver.findElement(By.xpath("//div[text()='确定']")).click();
@@ -340,9 +340,9 @@ public class AddApplicants {
 			}
 		}
 		saveBtn.click();
-//		WebAction.clickWithWait(driver, "//*[text()='否']");
-//		Boolean flag = WebAction.isAddSuccess(firstAppName, pps.getProperty("applicantName"));
-//		WebAction.defaultFrame(driver);
-//		Assert.assertTrue(flag);
+		WebAction.clickWithWait(driver, "//*[text()='否']");
+		Boolean flag = WebAction.isAddSuccess(firstAppName, pps.getProperty("applicantName"));
+		WebAction.defaultFrame(driver);
+		Assert.assertTrue(flag);
 	}
 }

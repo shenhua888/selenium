@@ -37,8 +37,19 @@ public class Tools {
     }  
     //执行exe
     public static void selectFile(String fielPath) {
+    	Process proc;
     	try {
-			Runtime.getRuntime().exec("D:\\workSpace\\first_maven\\au3\\selectFile.exe " + fielPath);
+    		proc = Runtime.getRuntime().exec("D:\\workSpace\\first_maven\\au3\\selectFile.exe " + fielPath);
+			InputStream stdin = proc.getInputStream();
+			InputStreamReader isr = new InputStreamReader(stdin);
+			BufferedReader br = new BufferedReader(isr);
+			String line = null;
+			if ((line = br.readLine()).equals("success")) {
+				log.info("selectFile result: "+line);
+			} else {
+				log.info("selectFile result: fail");
+			}
+				  
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

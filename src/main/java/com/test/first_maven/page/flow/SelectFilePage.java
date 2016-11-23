@@ -28,7 +28,7 @@ public class SelectFilePage {
 		selectBtn.click();
 		Tools.selectFile(filePath);
 		Tools.wait(1);
-		WebAction.clickWithWait(driver, "//a[@ng-click='item.upload()']");
+		WebAction.clickWithWait(driver, "//span[text()='上传']");
 		Tools.wait(2);
 		WebAction.defaultFrame(driver);
 		driver.findElement(By.xpath("//div[text()='确定']")).click();

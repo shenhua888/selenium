@@ -21,11 +21,11 @@ public class ApplicantsMgr {
 	@CacheLookup
 	private WebElement personnel_system;
 	
-	@FindBy(id = "leftTree_6_switch")
+	@FindBy(xpath = "//*[@title='招聘管理']/../span")
 	@CacheLookup
 	private WebElement span;
 	
-	@FindBy(id = "leftTree_7_span")
+	@FindBy(xpath = "//*[@id='leftTree']//*[text()='应聘人员管理']")
 	@CacheLookup
 	private WebElement applicantsMgr;	
 	
