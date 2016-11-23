@@ -186,7 +186,7 @@ public class TestNGCustomReportListener implements IReporter{
 						firstLine = scanner.nextLine();
 					}
 				}
-				DateFormat formatter = new SimpleDateFormat("hh:mm:ss");
+				DateFormat formatter = new SimpleDateFormat("HH:mm:ss");
 				Calendar calendar = Calendar.getInstance();
 			    calendar.setTimeInMillis(startMS);
 			     
@@ -453,7 +453,7 @@ public class TestNGCustomReportListener implements IReporter{
 				summaryCell(suite.getParameter("browserType"), true);
 				writer.println("</td>");
 							
-				SimpleDateFormat summaryFormat = new SimpleDateFormat("hh:mm:ss");
+				SimpleDateFormat summaryFormat = new SimpleDateFormat("HH:mm:ss");
 				summaryCell(summaryFormat.format(overview.getStartDate()),true);				
 				writer.println("</td>");
 				
@@ -602,8 +602,14 @@ public class TestNGCustomReportListener implements IReporter{
 		public int compare(ITestNGMethod obj1, ITestNGMethod obj2) {
 			int r = obj1.getTestClass().getName().compareTo(obj2.getTestClass().getName());
 			if (r == 0) {
-				r = obj1.getMethodName().compareTo(obj2.getMethodName());
+//				r = obj1.getMethodName().compareTo(obj2.getMethodName());
+				if (obj1.getDate() > obj2.getDate()) {
+					r = 1;
+				} else {
+					r = -1;
+				}
 			}
+			System.out.println(r);
 			return r;
 		}
 	}
