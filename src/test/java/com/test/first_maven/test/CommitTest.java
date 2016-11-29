@@ -11,11 +11,12 @@ import com.test.first_maven.base.WebAction;
 import com.test.first_maven.base.NewWebDriverEventListener;
 import com.test.first_maven.base.UITest;
 import com.test.first_maven.page.OALoginPage;
+import com.test.first_maven.page.flow.MyToDo;
 import com.test.first_maven.page.hr.ApplicantsMgr;
 
-public class AddCVTest extends UITest {
+public class CommitTest extends UITest {
 	OALoginPage oaLogin;
-	ApplicantsMgr applicants;
+	MyToDo myToDo;
 	
 	@BeforeTest
 	public void beforeTest() throws InterruptedException {
@@ -30,30 +31,21 @@ public class AddCVTest extends UITest {
 
 	@Test
 	public void login() throws InterruptedException {
-		oaLogin.login("admin", "1");
+		oaLogin.login("L015910", "1");
 	}
 
 	@Test
 	public void enterCatalog() {
-		applicants = new ApplicantsMgr(driver);
-		applicants.enterApplicantsMgr();
+		myToDo = new MyToDo(driver);
+		myToDo.enterMyToDo();
 	}
 	
 
 	@Test
-	public void addCV() {
-		String dataFile = "D:\\workSpace\\first_maven\\dataFile\\applicants_add.properties";
-		applicants.addCV(dataFile);
-		dataFile = "D:\\workSpace\\first_maven\\dataFile\\applicants_add2.properties";
-		applicants.addCV(dataFile);
-		dataFile = "D:\\workSpace\\first_maven\\dataFile\\applicants_add3.properties";
-		applicants.addCV(dataFile);
-		dataFile = "D:\\workSpace\\first_maven\\dataFile\\applicants_add4.properties";
-		applicants.addCV(dataFile);
-		dataFile = "D:\\workSpace\\first_maven\\dataFile\\applicants_add5.properties";
-		applicants.addCV(dataFile);
-		dataFile = "D:\\workSpace\\first_maven\\dataFile\\applicants_add6.properties";
-		applicants.addCV(dataFile);		
+	public void commit() {
+		String flowName = "录用申请V1";
+//		myToDo.commitOne(flowName);	
+		myToDo.commitAll(flowName);
 	}
 	
 	@AfterTest

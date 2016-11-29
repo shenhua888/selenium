@@ -13,7 +13,7 @@ import org.testng.Assert;
 import com.test.first_maven.base.WebAction;
 
 public class AllFlowPage {
-	@FindBy(xpath = "//a[text()='录用申请']")
+	@FindBy(xpath = "//a[text()='录用申请V1']")
 	@CacheLookup
 	private WebElement hireBtn;
 	
@@ -35,5 +35,6 @@ public class AllFlowPage {
 		Assert.assertTrue(flag);
 		HireEmpPage hireEmp = new HireEmpPage(driver);
 		hireEmp.hire(dataFile);
+		driver.switchTo().window(currentWin);
 	}
 }

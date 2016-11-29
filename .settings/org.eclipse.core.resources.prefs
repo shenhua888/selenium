@@ -1,7 +1,17 @@
 eclipse.preferences.version=1
 encoding//dataFile/applicants.properties=UTF-8
 encoding//dataFile/applicants_add.properties=UTF-8
+encoding//dataFile/applicants_add2.properties=UTF-8
+encoding//dataFile/applicants_add3.properties=UTF-8
+encoding//dataFile/applicants_add4.properties=UTF-8
+encoding//dataFile/applicants_add5.properties=UTF-8
+encoding//dataFile/applicants_add6.properties=UTF-8
 encoding//dataFile/hire.properties=UTF-8
+encoding//dataFile/hire2.properties=UTF-8
+encoding//dataFile/hire3.properties=UTF-8
+encoding//dataFile/hire4.properties=UTF-8
+encoding//dataFile/hire5.properties=UTF-8
+encoding//dataFile/hire6.properties=UTF-8
 encoding//dataFile/sendInterview.properties=UTF-8
 encoding//src/main/java=UTF-8
 encoding//src/test/java=UTF-8

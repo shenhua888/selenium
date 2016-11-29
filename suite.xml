@@ -6,10 +6,11 @@
 		<listener class-name="com.test.first_maven.base.ScreenShotListener" /> <!-- 异常截图监听器 -->
 		<listener class-name="com.test.first_maven.base.TestNGCustomReportListener" /> <!-- 报告监听器 -->
 	</listeners>
+	<parameter name="browserType" value="chrome" />
 	<test name="test1">
 
 		<classes>
- 		
+<!-- -->
  			<class name="com.test.first_maven.test.AddCVTest">   
 				<methods>
 					<include name="login" />
@@ -17,7 +18,7 @@
 					<include name="addCV" />  
 				</methods>
 			</class>
- 
+
 			<class name="com.test.first_maven.test.HireEmployeeTest">
 				<methods>
 					<include name="login" />
@@ -26,7 +27,14 @@
 				</methods>
 			</class>
 
- <!--
+			<class name="com.test.first_maven.test.CommitTest">   
+				<methods>
+					<include name="login" />
+					<include name="enterCatalog" />
+					<include name="commit" />  
+				</methods>
+			</class>
+<!-- 			
 			<class name="com.test.first_maven.test.BaiduTest">
 				<methods>
 					<include name="searchTest2" /> 
@@ -35,9 +43,9 @@
 			</class>
 			<class name="com.test.first_maven.test.BaiduTest2">
 			</class>
--->
+
 			
-<!-- 			<class name="com.test.first_maven.test.AddCVTest">  
+ 			<class name="com.test.first_maven.test.AddCVTest">  
 			<class name="com.test.first_maven.test.OATest">
 				<methods>
 					<include name="login" />

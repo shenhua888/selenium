@@ -52,11 +52,21 @@ public class HireEmployeeTest extends UITest {
 	public void hireEmployee() {
 		String dataFile = "D:\\workSpace\\first_maven\\dataFile\\hire.properties";
 		flowPage.hireEmployee(dataFile);
+		dataFile = "D:\\workSpace\\first_maven\\dataFile\\hire2.properties";
+		flowPage.hireEmployee(dataFile);	
+		dataFile = "D:\\workSpace\\first_maven\\dataFile\\hire3.properties";
+		flowPage.hireEmployee(dataFile);
+		dataFile = "D:\\workSpace\\first_maven\\dataFile\\hire4.properties";
+		flowPage.hireEmployee(dataFile);
+		dataFile = "D:\\workSpace\\first_maven\\dataFile\\hire5.properties";
+		flowPage.hireEmployee(dataFile);
+		dataFile = "D:\\workSpace\\first_maven\\dataFile\\hire6.properties";
+		flowPage.hireEmployee(dataFile);		
 	}
 	
 	@AfterTest
 	public void afterTest() throws InterruptedException {
-//		driver.quit();
+		driver.quit();
 		// driver.close();
 		
 	}

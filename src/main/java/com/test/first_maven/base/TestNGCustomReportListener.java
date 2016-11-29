@@ -609,7 +609,6 @@ public class TestNGCustomReportListener implements IReporter{
 					r = -1;
 				}
 			}
-			System.out.println(r);
 			return r;
 		}
 	}

@@ -173,7 +173,9 @@ public class AddApplicants {
 		jobDeptName.click();		
 		WebAction.enterRecentFrame(driver, "//*[contains(@id,'ligerwindow')]");	
 		WebAction.enterFrame(driver, "orgFrame");
-		driver.findElement(By.xpath("//*[@value='" + pps.getProperty("jobDeptName") + "']/../input")).click();
+		driver.findElement(By.id("orgName")).sendKeys(pps.getProperty("jobDeptName"));
+		driver.findElement(By.id("searchForm")).submit();
+		driver.findElement(By.xpath("//*[@id='sysOrgItem']//*[@value='" + pps.getProperty("jobDeptName") + "']/../input")).click();
 		WebAction.enterRecentFrame(driver, "//*[contains(@id,'ligerwindow')]");
 		driver.findElement(By.xpath("//*[text()='选择']")).click();
 		WebAction.enterFrameFromDef(driver, "10000004780032");
