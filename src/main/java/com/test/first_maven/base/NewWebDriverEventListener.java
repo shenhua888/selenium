@@ -130,8 +130,7 @@ public class NewWebDriverEventListener implements WebDriverEventListener {
      * @param path
      */
     public void takeScreenShot(TakesScreenshot drivername, String path) {
-        // this method will take screen shot ,require two parameters ,one is
-        // driver name, another is file name
+        // this method will take screen shot ,require two parameters ,one is driver name, another is file name
         String currentPath = System.getProperty("user.dir"); // get current work
         File file = new File(currentPath + "\\" + "pic");
         file.mkdir();

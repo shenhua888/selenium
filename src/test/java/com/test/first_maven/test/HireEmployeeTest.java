@@ -22,7 +22,7 @@ public class HireEmployeeTest extends UITest {
 	FlowCenter flowPage;
 	
 	@BeforeTest
-	public void beforeTest() throws InterruptedException {
+	public void beforeTest() {
 		System.setProperty("webdriver.chrome.driver", "D:\\jar\\chromedriver.exe");
 		driver = new EventFiringWebDriver(new ChromeDriver()).register(new NewWebDriverEventListener());
 //		driver2 = new EventFiringWebDriver(new ChromeDriver()).register(new NewWebDriverEventListener());
@@ -36,7 +36,7 @@ public class HireEmployeeTest extends UITest {
 	}
 
 	@Test
-	public void login() throws InterruptedException {
+	public void login() {
 		oaLogin.login("admin", "1");
 //		oaLogin2.login("admin", "1");
 	}
@@ -65,14 +65,14 @@ public class HireEmployeeTest extends UITest {
 	}
 	
 	@AfterTest
-	public void afterTest() throws InterruptedException {
+	public void afterTest() {
 		driver.quit();
 		// driver.close();
 		
 	}
 
 	@AfterSuite
-	public void afterSuite() throws InterruptedException {
+	public void afterSuite() {
 
 	}
 }

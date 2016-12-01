@@ -15,13 +15,13 @@ public class TestJason {
 		test.jsonTest();
 	}
 	public void jsonTest() throws JSONException{  
-	    String jsonString="{ \"name\":\"小民\","
+	    String jsonString="{\"name\":\"小民\","
 	    				  + "\"birthday\":\"1996年09月30日\","
 	    				  + "\"mail\":\"xiaomin@sina.com\","
 	    				  + "\"age\":28,"
 	    				  + "\"detail\":{\"name\":\"大大\",\"age\":88},"
-	    				  + "\"users\":[{\"loginname\":\"zhangfan\",\"password\":\"userpass\",\"email\":\"10371443@qq.com\"},{\"loginname\":\"zf\",\"password\":\"userpass\",\"email\":\"822393@qq.com\"}]}";  
-		JSONObject json= new JSONObject2(jsonString);
+	    				  + "\"users\":[{\"loginname\":\"zhangfan\",\"password\":\"userpass\",\"email\":\"10371443@qq.com\"},{\"loginname\":\"zf\",\"password\":\"userpass\",\"email\":\"822393@qq.com\"}]}";   
+	    JSONObject json= new JSONObject2(jsonString);
 	    System.out.println(json.get("name"));
 	    if (null != json.get("ddd")) {
 	    	System.out.println(json.get("ddd"));

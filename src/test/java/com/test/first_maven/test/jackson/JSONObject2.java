@@ -382,6 +382,7 @@ public class JSONObject2 extends JSONObject {
 	public JSONObject2(String source) throws JSONException {
 		super(source);
 		// TODO Auto-generated constructor stub
+
 	}
 
 	public JSONObject2(JSONObject jo, String[] names) {

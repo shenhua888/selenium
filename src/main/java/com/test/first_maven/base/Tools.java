@@ -55,5 +55,16 @@ public class Tools {
 			e.printStackTrace();
 		}
     }
-    //
+    //杀浏览器进程
+    public static void killChrome() {
+    	try {
+    		log.info("start kill chrome");
+    		Runtime.getRuntime().exec("taskkill /im chromedriver.exe /F");
+    		Runtime.getRuntime().exec("taskkill /im chrome.exe /F");
+    		log.info("kill chrome over");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    }
 }

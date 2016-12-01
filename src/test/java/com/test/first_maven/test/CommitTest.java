@@ -19,7 +19,7 @@ public class CommitTest extends UITest {
 	MyToDo myToDo;
 	
 	@BeforeTest
-	public void beforeTest() throws InterruptedException {
+	public void beforeTest() {
 		System.setProperty("webdriver.chrome.driver", "D:\\jar\\chromedriver.exe");
 		driver = new EventFiringWebDriver(new ChromeDriver()).register(new NewWebDriverEventListener());
 		String url = "http://172.21.204.23:8080/J2bpm/login.jsp";
@@ -30,8 +30,8 @@ public class CommitTest extends UITest {
 	}
 
 	@Test
-	public void login() throws InterruptedException {
-		oaLogin.login("L015910", "1");
+	public void login() {
+		oaLogin.login("L0314862", "1");
 	}
 
 	@Test
@@ -43,14 +43,15 @@ public class CommitTest extends UITest {
 
 	@Test
 	public void commit() {
-		String flowName = "录用申请V1";
-//		myToDo.commitOne(flowName);	
-		myToDo.commitAll(flowName);
+		String flowName = "入职确认";
+		myToDo.commitAll(flowName);	
+//		myToDo.commitEntryAll(flowName);
+//		myToDo.commitEntryConfirmAll(flowName);
 	}
 	
 	@AfterTest
 	public void afterTest() throws InterruptedException {
-		driver.quit();
+//		driver.quit();
 		// driver.close();
 		
 	}

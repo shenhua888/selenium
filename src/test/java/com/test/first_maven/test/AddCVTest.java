@@ -18,7 +18,7 @@ public class AddCVTest extends UITest {
 	ApplicantsMgr applicants;
 	
 	@BeforeTest
-	public void beforeTest() throws InterruptedException {
+	public void beforeTest() {
 		System.setProperty("webdriver.chrome.driver", "D:\\jar\\chromedriver.exe");
 		driver = new EventFiringWebDriver(new ChromeDriver()).register(new NewWebDriverEventListener());
 		String url = "http://172.21.204.23:8080/J2bpm/login.jsp";
@@ -29,7 +29,7 @@ public class AddCVTest extends UITest {
 	}
 
 	@Test
-	public void login() throws InterruptedException {
+	public void login() {
 		oaLogin.login("admin", "1");
 	}
 

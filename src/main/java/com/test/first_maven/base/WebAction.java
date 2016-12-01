@@ -108,6 +108,7 @@ public class WebAction {
 					log.info(idOrXpath + ": not exist!");
 					return false;
 				} else {
+					log.info(idOrXpath + ": not exist! Wait 1s!");
 					Tools.wait(1);
 					continue;
 				}

@@ -23,7 +23,7 @@ public class OATest extends UITest {
 	OALoginPage oaLogin;
 	ApplicantsMgr applicants;
 	@BeforeTest
-	public void beforeTest() throws InterruptedException {
+	public void beforeTest() {
 		System.setProperty("webdriver.chrome.driver", "D:\\jar\\chromedriver.exe");
 		driver = new EventFiringWebDriver(new ChromeDriver()).register(new NewWebDriverEventListener());
 //		String url = "http://172.21.204.23:8080/J2bpm/login.jsp";
@@ -43,7 +43,7 @@ public class OATest extends UITest {
 	}
 
 	@Test
-	public void login() throws InterruptedException {
+	public void login() {
 //		System.out.println("searchTest");
 //		oaLogin.login("admin", "1");
 	}
@@ -72,14 +72,14 @@ public class OATest extends UITest {
 //	}
 	
 	@AfterTest
-	public void afterTest() throws InterruptedException {
+	public void afterTest() {
 //		driver.quit();
 		// driver.close();
 		
 	}
 
 	@AfterSuite
-	public void afterSuite() throws InterruptedException {
+	public void afterSuite() {
 
 	}
 }

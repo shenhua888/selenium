@@ -182,7 +182,7 @@ public class HireEmpPage {
 		selectFile3.selectFile(pps.getProperty("citizenCard"));		
 		WebAction.selectByValue(empType, pps.getProperty("empType"));
 		WebAction.selectByValue(empDemandSource, pps.getProperty("empDemandSource"));
-		WebAction.selectByValue(empJobCategory, pps.getProperty("empJobCategory"));
+		WebAction.selectByVisibleText(empJobCategory, pps.getProperty("empJobCategory"));
 		WebAction.selectByValue(empPosGrade, pps.getProperty("empPosGrade"));
 		if ("是".equals(pps.getProperty("probation"))) {
 			probation.click();

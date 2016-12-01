@@ -31,13 +31,13 @@ public class OALoginPage {
 		PageFactory.initElements(new AjaxElementLocatorFactory(driver,10), this);
 	}
 	
-	public void login (String uName, String password) throws InterruptedException {
+	public void login (String uName, String password) {
 		userName.clear();
 		userName.sendKeys(uName);
 		this.password.clear();
 		this.password.sendKeys(password);
 		loginBtn.click();
 		Boolean flag = WebAction.waitUntilVisible(driver, "//*[@name='home']", 10);
-		Assert.assertTrue(flag);
+		Assert.assertTrue(flag);	
 	}
 }
