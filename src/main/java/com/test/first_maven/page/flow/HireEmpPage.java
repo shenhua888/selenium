@@ -9,6 +9,7 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
+import org.testng.Assert;
 
 import com.test.first_maven.base.WebAction;
 import com.test.first_maven.base.Tools;
@@ -222,8 +223,9 @@ public class HireEmpPage {
 		empDesc.sendKeys(pps.getProperty("empDesc"));
 		WebAction.jsSendKeys(driver, empCardBegin, pps.getProperty("empCardBegin"));
 		WebAction.jsSendKeys(driver, empCardEnd, pps.getProperty("empCardEnd"));
-		submitBtn.click();
-		WebAction.waitUntilVisible(driver, "//div[text()='启动流程成功!']", 15);
+		submitBtn.click();	
+		Boolean flag = WebAction.waitUntilVisible(driver, "//div[text()='启动流程成功!']", 15);
+		Assert.assertTrue(flag);		
 		driver.findElement(By.xpath("//div[text()='确定']")).click();
 	}
 }

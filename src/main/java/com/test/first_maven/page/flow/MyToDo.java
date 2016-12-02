@@ -116,7 +116,8 @@ public class MyToDo {
 		WebAction.enterFrameFromDef(driver, driver.findElement(By.xpath("//*[contains(@id,'ligerwindow')]")));
 		driver.findElement(By.id("opinion")).sendKeys("同意");
 		driver.findElement(By.id("dataFormSave")).click();
-		WebAction.waitUntilVisible(driver, "//div[text()='执行任务成功!']", 15);
+		Boolean flag = WebAction.waitUntilVisible(driver, "//div[text()='执行任务成功!']", 15);
+		Assert.assertTrue(flag);
 		driver.findElement(By.xpath("//div[text()='确定']")).click();
 		driver.switchTo().window(currentWin);
 	}

@@ -130,7 +130,7 @@ public class WebAction {
 			}
 			
 		}
-		return null;
+		return false;
 	}
 	
 	public static void enterFrameFromDef (WebDriver driver, String idOrName) {
@@ -194,8 +194,12 @@ public class WebAction {
 		clickWithWait(driver, idOrXpath, 5);
 	}
 	public static void clickWithWait (WebDriver driver, String idOrXpath, int second) {
-		waitUntilVisible(driver, idOrXpath, second);
-		driver.findElement(By.xpath(idOrXpath)).click();
+		Boolean flag = waitUntilVisible(driver, idOrXpath, second);
+		if (flag.equals(true)) {
+			driver.findElement(By.xpath(idOrXpath)).click();
+		} else {
+			log.error(idOrXpath + "not visible! so can not click!");
+		}
 	}	
 	public static void enterRecentFrame (WebDriver driver, String idOrXpath) {	
 		WebAction.defaultFrame(driver);
