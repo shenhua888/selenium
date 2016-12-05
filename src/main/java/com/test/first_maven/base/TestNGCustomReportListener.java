@@ -47,6 +47,7 @@ public class TestNGCustomReportListener implements IReporter{
 	private String reportFileName = "custom-report.html";
 
 	/** Creates summary of the run */
+	@Override
 	public void generateReport(List<XmlSuite> xmlSuites, List<ISuite> suites,
 			String outdir) {
 		try {
@@ -592,6 +593,7 @@ public class TestNGCustomReportListener implements IReporter{
 		// -------------------------------------------------------------
 
 		/** Arranges methods by classname and method name */
+		@Override
 		public int compare(IInvokedMethod obj1, IInvokedMethod obj2) {
 			int r = obj1.getTestMethod().getTestClass().getName().compareTo(obj2.getTestMethod().getTestClass().getName());
 			return r;
@@ -599,6 +601,7 @@ public class TestNGCustomReportListener implements IReporter{
 	}
 	
 	private class TestMethodSorter implements Comparator<ITestNGMethod> {
+		@Override
 		public int compare(ITestNGMethod obj1, ITestNGMethod obj2) {
 			int r = obj1.getTestClass().getName().compareTo(obj2.getTestClass().getName());
 			if (r == 0) {
@@ -614,6 +617,7 @@ public class TestNGCustomReportListener implements IReporter{
 	}
 
 	private class TestResultsSorter implements Comparator<ITestResult> {
+		@Override
 		public int compare(ITestResult obj1, ITestResult obj2) {
 			int result = obj1.getTestClass().getName().compareTo(obj2.getTestClass().getName());
 			if (result == 0) {

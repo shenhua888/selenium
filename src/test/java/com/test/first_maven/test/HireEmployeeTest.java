@@ -1,6 +1,5 @@
 package com.test.first_maven.test;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.annotations.AfterSuite;
@@ -13,7 +12,6 @@ import com.test.first_maven.base.NewWebDriverEventListener;
 import com.test.first_maven.base.UITest;
 import com.test.first_maven.page.OALoginPage;
 import com.test.first_maven.page.flow.FlowCenter;
-import com.test.first_maven.page.hr.ApplicantsMgr;
 
 public class HireEmployeeTest extends UITest {
 	OALoginPage oaLogin;

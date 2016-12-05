@@ -1,7 +1,5 @@
 package com.test.first_maven.page.hr;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.Properties;
 
 import org.openqa.selenium.By;

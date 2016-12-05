@@ -12,7 +12,6 @@ import com.test.first_maven.base.NewWebDriverEventListener;
 import com.test.first_maven.base.UITest;
 import com.test.first_maven.page.OALoginPage;
 import com.test.first_maven.page.flow.MyToDo;
-import com.test.first_maven.page.hr.ApplicantsMgr;
 
 public class CommitTest extends UITest {
 	OALoginPage oaLogin;

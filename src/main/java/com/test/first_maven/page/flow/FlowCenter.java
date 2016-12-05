@@ -1,6 +1,5 @@
 package com.test.first_maven.page.flow;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
@@ -10,7 +9,6 @@ import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 import org.testng.Assert;
 
 import com.test.first_maven.base.WebAction;
-import com.test.first_maven.base.Tools;
 
 public class FlowCenter {
 		@FindBy(id = "10000004810038")

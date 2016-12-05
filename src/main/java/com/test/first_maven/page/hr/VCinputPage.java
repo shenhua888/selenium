@@ -1,9 +1,5 @@
 package com.test.first_maven.page.hr;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.util.List;
 import java.util.Properties;
 
 import org.openqa.selenium.By;
@@ -13,7 +9,6 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
 import com.test.first_maven.base.WebAction;

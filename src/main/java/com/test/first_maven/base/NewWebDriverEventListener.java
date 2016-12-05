@@ -21,56 +21,67 @@ public class NewWebDriverEventListener implements WebDriverEventListener {
 	private By lastFindBy;
 	private String originalValue;
 	
+	@Override
 	public void beforeNavigateTo(String url, WebDriver driver) {
 		 log.info("WebDriver navigating to:‘"+url+"‘");
 
 	}
 
+	@Override
 	public void afterNavigateTo(String url, WebDriver driver) {
 		// TODO Auto-generated method stub
 
 	}
 
+	@Override
 	public void beforeNavigateBack(WebDriver driver) {
 		// TODO Auto-generated method stub
 
 	}
 
+	@Override
 	public void afterNavigateBack(WebDriver driver) {
 		// TODO Auto-generated method stub
 
 	}
 
+	@Override
 	public void beforeNavigateForward(WebDriver driver) {
 		// TODO Auto-generated method stub
 
 	}
 
+	@Override
 	public void afterNavigateForward(WebDriver driver) {
 		// TODO Auto-generated method stub
 
 	}
 
+	@Override
 	public void beforeNavigateRefresh(WebDriver driver) {
 		// TODO Auto-generated method stub
 
 	}
 
+	@Override
 	public void afterNavigateRefresh(WebDriver driver) {
 		// TODO Auto-generated method stub
 
 	}
 
+	@Override
 	public void beforeFindBy(By by, WebElement element, WebDriver driver) {
 		lastFindBy = by;
 		log.info("beforeFindBy:‘"+lastFindBy.toString()+"‘");
 	}
 
+	@Override
 	public void afterFindBy(By by, WebElement element, WebDriver driver) {
 		// TODO Auto-generated method stub
 
 	}
 
+	@Override
 	public void beforeClickOn(WebElement element, WebDriver driver) {
 		log.info("beforeClickOn:‘"+lastFindBy.toString()+"‘");
 		try {
@@ -81,31 +92,37 @@ public class NewWebDriverEventListener implements WebDriverEventListener {
 		}
 	}
 
+	@Override
 	public void afterClickOn(WebElement element, WebDriver driver) {
 		// TODO Auto-generated method stub
 
 	}
 
+	@Override
 	public void beforeChangeValueOf(WebElement element, WebDriver driver) {
 		originalValue = element.getAttribute("value");
 
 	}
 
+	@Override
 	public void afterChangeValueOf(WebElement element, WebDriver driver) {
 		 log.info("WebDriver changing value in element found "+lastFindBy+" from ‘"+originalValue+"‘ to ‘"+element.getAttribute("value")+"‘");
 
 	}
 
+	@Override
 	public void beforeScript(String script, WebDriver driver) {
 		// TODO Auto-generated method stub
 
 	}
 
+	@Override
 	public void afterScript(String script, WebDriver driver) {
 		// TODO Auto-generated method stub
 
 	}
 
+	@Override
 	public void onException(Throwable throwable, WebDriver driver) {
 		// TODO Auto-generated method stub
 		log.info("onException:‘"+throwable.getMessage()+"‘");
