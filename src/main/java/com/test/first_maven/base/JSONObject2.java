@@ -1,4 +1,4 @@
-package com.test.first_maven.test.jackson;
+package com.test.first_maven.base;
 
 import java.io.Writer;
 import java.math.BigDecimal;

@@ -12,7 +12,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
 import com.test.first_maven.base.WebAction;
-import com.test.first_maven.test.jackson.JSONObject2;
+import com.test.first_maven.base.JSONObject2;
 import com.test.first_maven.base.Tools;
 
 public class EntryConfirm {

@@ -1,6 +1,5 @@
 package com.test.first_maven.test;
 
-import org.json.JSONObject;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.annotations.AfterSuite;
@@ -10,13 +9,11 @@ import org.testng.annotations.Test;
 
 import com.test.first_maven.base.WebAction;
 import com.test.first_maven.base.NewWebDriverEventListener;
-import com.test.first_maven.base.Tools;
 import com.test.first_maven.base.UITest;
 import com.test.first_maven.page.OALoginPage;
 import com.test.first_maven.page.flow.FlowCenter;
 import com.test.first_maven.page.flow.MyToDo;
 import com.test.first_maven.page.hr.ApplicantsMgr;
-import com.test.first_maven.test.jackson.JSONObject2;
 
 public class SmokeTest extends UITest {
 	OALoginPage oaLogin;
