@@ -199,6 +199,7 @@ public class TestNGCustomReportListener implements IReporter{
 				String description = method.getDescription();
 				String testInstanceName = resultSet
 						.toArray(new ITestResult[] {})[0].getTestName();
+				
 				buff.append("<td><a href=\"#m"
 						+ m_methodIndex
 						+ "\">"
@@ -213,7 +214,7 @@ public class TestNGCustomReportListener implements IReporter{
 										+ "<td class=\"numi\" style=\"text-align:left;padding-right:2em\">" + firstLine+"<br/></td>"
 										+ "<td style=\"text-align:right\">" + formatter.format(calendar.getTime()) + "</td>" 
 										+ "<td class=\"numi\">" + timeConversion(end - start) + "</td>" 
-										+ "<td class=\"log\"><a href=\"D:/workSpace/first_maven/logs\" target=\"_blank\" type=\"text/plain\">show log</a>"+"</td>"+ "</tr>");
+										+ "<td class=\"log\"><a href=\"C:/Users/" + System.getenv("USERNAME") + "/logs\" target=\"_blank\" type=\"text/plain\">show log</a>"+"</td>"+ "</tr>");
 				
 			}
 			if (mq > 0) {

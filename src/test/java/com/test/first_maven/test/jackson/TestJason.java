@@ -1,5 +1,9 @@
 package com.test.first_maven.test.jackson;
 
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -17,6 +21,15 @@ public class TestJason {
 		test.jsonTest();
 	}
 	public void jsonTest() throws JSONException{  
+		System.out.println(System.getenv("USERNAME"));  
+//		Map map = System.getenv();
+//		Iterator it = map.entrySet().iterator();  
+//		while(it.hasNext())  
+//		{  
+//		    Entry entry = (Entry)it.next();  
+//		    System.out.print(entry.getKey()+"=");  
+//		    System.out.println(entry.getValue());  
+//		}  
 	    String jsonString="{\"name\":\"小民\","
 	    				  + "\"birthday\":\"1996年09月30日\","
 	    				  + "\"mail\":\"xiaomin@sina.com\","
