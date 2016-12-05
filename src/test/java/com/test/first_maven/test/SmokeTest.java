@@ -70,7 +70,7 @@ public class SmokeTest extends UITest {
 	
 	@Test
 	public void employ1() {
-		login("L015910");
+		login("J160389");
 		enterMyToDo();
 		String flowName = "录用申请V1";
 		myToDo.commitAll(flowName);	
