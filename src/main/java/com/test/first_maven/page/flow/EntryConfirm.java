@@ -61,7 +61,6 @@ public class EntryConfirm {
 	}
 	
 	public void input(String paras) {
-		System.out.println(paras);
 		JSONObject json= new JSONObject2(paras);
 		register.click();
 		WebAction.jsSendKeys(driver, firstDay, (String)json.get("firstDay"));

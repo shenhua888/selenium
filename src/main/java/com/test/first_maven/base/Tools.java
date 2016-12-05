@@ -39,7 +39,7 @@ public class Tools {
     public static void selectFile(String fielPath) {
     	Process proc;
     	try {
-    		proc = Runtime.getRuntime().exec("D:\\workSpace\\first_maven\\au3\\selectFile.exe " + fielPath);
+    		proc = Runtime.getRuntime().exec("au3/selectFile.exe " + fielPath);
 			InputStream stdin = proc.getInputStream();
 			InputStreamReader isr = new InputStreamReader(stdin);
 			BufferedReader br = new BufferedReader(isr);

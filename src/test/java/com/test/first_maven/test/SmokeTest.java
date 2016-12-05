@@ -54,7 +54,7 @@ public class SmokeTest extends UITest {
 	public void addCV() {
 		login("admin");
 		enterApplicantsMgr();
-		String dataFile = "D:\\workSpace\\first_maven\\dataFile\\applicants_add.properties";
+		String dataFile = "dataFile/applicants_add.properties";
 		applicants.addCV(dataFile);
 		driver.quit();
 	}
@@ -63,7 +63,7 @@ public class SmokeTest extends UITest {
 	public void hire() {
 		login("admin");
 		enterFlowCenter();
-		String dataFile = "D:\\workSpace\\first_maven\\dataFile\\hire.properties";
+		String dataFile = "dataFile/hire.properties";
 		flowPage.hireEmployee(dataFile);
 		driver.quit();
 	}
