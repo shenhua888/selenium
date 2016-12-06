@@ -35,72 +35,70 @@
 			<artifactId>log4j-core</artifactId>
 			<version>2.6.2</version>
 		</dependency>
-		<!-- 
+		<!-- <dependency> <groupId>com.fasterxml.jackson.core</groupId> <artifactId>jackson-core</artifactId> 
+			<version>2.8.4</version> </dependency> <dependency> <groupId>com.fasterxml.jackson.core</groupId> 
+			<artifactId>jackson-annotations</artifactId> <version>2.8.4</version> </dependency> -->
 		<dependency>
-    		<groupId>com.fasterxml.jackson.core</groupId>
-    		<artifactId>jackson-core</artifactId>
-    		<version>2.8.4</version>
-		</dependency>
-		<dependency>
-    		<groupId>com.fasterxml.jackson.core</groupId>
-    		<artifactId>jackson-annotations</artifactId>
-    		<version>2.8.4</version>
-		</dependency>		 -->
-		<dependency>
-    		<groupId>com.fasterxml.jackson.core</groupId>
-    		<artifactId>jackson-databind</artifactId>
-    		<version>2.8.4</version>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.8.4</version>
 		</dependency>
 
 		<dependency>
-    		<groupId>org.json</groupId>
-    		<artifactId>json</artifactId>
-    		<version>20160810</version>
-		</dependency>	
-					
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20160810</version>
+		</dependency>
+
 	</dependencies>
 	<build>
-	<plugins>
-		<plugin>
-			<groupId>org.apache.maven.plugins</groupId>
-			<artifactId>maven-compiler-plugin</artifactId>
-			<version>3.6.0</version>
-			<configuration>
-				<encoding>UTF-8</encoding>
-				<source>1.8</source>
-				<target>1.8</target>
-			</configuration>
-		</plugin>
-		<plugin>
-			<groupId>org.apache.maven.plugins</groupId>
-			<artifactId>maven-war-plugin</artifactId>
-			<configuration>
-				<webResources>
-					<resource>
-						<targetPath>target/classes</targetPath>
-						<directory>src/main/java</directory>
-						<includes>
-							<include>
-								log4j2.xml
-							</include>
-						</includes>
-					</resource>
-				</webResources>
-			</configuration>
-		</plugin>
-        <plugin>  
-            <groupId>org.apache.maven.plugins</groupId>  
-            <artifactId>maven-surefire-plugin</artifactId>  
-            <version>2.19.1</version>  
-            <configuration>  
-  
-                <!--<testFailureIgnore>true</testFailureIgnore>-->  
-  				<!-- <groups>util,medium</groups> -->
-                <suiteXmlFiles>  
-                    <suiteXmlFile>suite.xml</suiteXmlFile>  
-                </suiteXmlFiles>  
-            </configuration>  
-        </plugin>  
-    </plugins>  
-</build>  
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.6.0</version>
+				<configuration>
+					<encoding>UTF-8</encoding>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.6</version>
+				<executions>
+					<execution>
+						<id>copy-resources</id>
+						<!-- here the phase you need -->
+						<phase>validate</phase>
+						<goals>
+							<goal>copy-resources</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>${basedir}/target/classes</outputDirectory>
+							<resources>
+								<resource>
+									<directory>src/main/java</directory>
+									<filtering>true</filtering>
+								</resource>
+							</resources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.19.1</version>
+				<configuration>
+
+					<!--<testFailureIgnore>true</testFailureIgnore> -->
+					<!-- <groups>util,medium</groups> -->
+					<suiteXmlFiles>
+						<suiteXmlFile>suite.xml</suiteXmlFile>
+					</suiteXmlFiles>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>
