@@ -77,7 +77,7 @@
 			<configuration>
 				<webResources>
 					<resource>
-						<targetPath>WEB-INF</targetPath>
+						<targetPath>target/classes</targetPath>
 						<directory>src/main/java</directory>
 						<includes>
 							<include>
