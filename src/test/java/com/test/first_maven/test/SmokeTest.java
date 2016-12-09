@@ -56,6 +56,16 @@ public class SmokeTest extends UITest {
 		enterApplicantsMgr();
 		String dataFile = "dataFile/applicants_add.properties";
 		applicants.addCV(dataFile);
+		dataFile = "dataFile/applicants_add2.properties";
+		applicants.addCV(dataFile);
+		dataFile = "dataFile/applicants_add3.properties";
+		applicants.addCV(dataFile);
+		dataFile = "dataFile/applicants_add4.properties";
+		applicants.addCV(dataFile);
+		dataFile = "dataFile/applicants_add5.properties";
+		applicants.addCV(dataFile);
+		dataFile = "dataFile/applicants_add6.properties";
+		applicants.addCV(dataFile);	
 		driver.quit();
 	}
 	
@@ -64,6 +74,16 @@ public class SmokeTest extends UITest {
 		login("admin");
 		enterFlowCenter();
 		String dataFile = "dataFile/hire.properties";
+		flowPage.hireEmployee(dataFile);
+		dataFile = "dataFile/hire2.properties";
+		flowPage.hireEmployee(dataFile);	
+		dataFile = "dataFile/hire3.properties";
+		flowPage.hireEmployee(dataFile);
+		dataFile = "dataFile/hire4.properties";
+		flowPage.hireEmployee(dataFile);
+		dataFile = "dataFile/hire5.properties";
+		flowPage.hireEmployee(dataFile);
+		dataFile = "dataFile/hire6.properties";
 		flowPage.hireEmployee(dataFile);
 		driver.quit();
 	}

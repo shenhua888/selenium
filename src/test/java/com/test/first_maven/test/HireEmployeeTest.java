@@ -48,17 +48,17 @@ public class HireEmployeeTest extends UITest {
 
 	@Test
 	public void hireEmployee() {
-		String dataFile = "D:\\workSpace\\first_maven\\dataFile\\hire.properties";
+		String dataFile = "dataFile/hire.properties";
 		flowPage.hireEmployee(dataFile);
-		dataFile = "D:\\workSpace\\first_maven\\dataFile\\hire2.properties";
+		dataFile = "dataFile/hire2.properties";
 		flowPage.hireEmployee(dataFile);	
-		dataFile = "D:\\workSpace\\first_maven\\dataFile\\hire3.properties";
+		dataFile = "dataFile/hire3.properties";
 		flowPage.hireEmployee(dataFile);
-		dataFile = "D:\\workSpace\\first_maven\\dataFile\\hire4.properties";
+		dataFile = "dataFile/hire4.properties";
 		flowPage.hireEmployee(dataFile);
-		dataFile = "D:\\workSpace\\first_maven\\dataFile\\hire5.properties";
+		dataFile = "dataFile/hire5.properties";
 		flowPage.hireEmployee(dataFile);
-		dataFile = "D:\\workSpace\\first_maven\\dataFile\\hire6.properties";
+		dataFile = "dataFile/hire6.properties";
 		flowPage.hireEmployee(dataFile);		
 	}
 	

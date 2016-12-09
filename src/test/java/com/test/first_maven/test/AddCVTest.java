@@ -42,17 +42,17 @@ public class AddCVTest extends UITest {
 
 	@Test
 	public void addCV() {
-		String dataFile = "D:\\workSpace\\first_maven\\dataFile\\applicants_add.properties";
+		String dataFile = "dataFile/applicants_add.properties";
 		applicants.addCV(dataFile);
-		dataFile = "D:\\workSpace\\first_maven\\dataFile\\applicants_add2.properties";
+		dataFile = "dataFile/applicants_add2.properties";
 		applicants.addCV(dataFile);
-		dataFile = "D:\\workSpace\\first_maven\\dataFile\\applicants_add3.properties";
+		dataFile = "dataFile/applicants_add3.properties";
 		applicants.addCV(dataFile);
-		dataFile = "D:\\workSpace\\first_maven\\dataFile\\applicants_add4.properties";
+		dataFile = "dataFile/applicants_add4.properties";
 		applicants.addCV(dataFile);
-		dataFile = "D:\\workSpace\\first_maven\\dataFile\\applicants_add5.properties";
+		dataFile = "dataFile/applicants_add5.properties";
 		applicants.addCV(dataFile);
-		dataFile = "D:\\workSpace\\first_maven\\dataFile\\applicants_add6.properties";
+		dataFile = "dataFile/applicants_add6.properties";
 		applicants.addCV(dataFile);		
 	}
 	
