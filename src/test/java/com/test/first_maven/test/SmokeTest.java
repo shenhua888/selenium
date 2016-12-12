@@ -20,10 +20,10 @@ public class SmokeTest extends UITest {
 	ApplicantsMgr applicants;
 	FlowCenter flowPage;
 	MyToDo myToDo;
-	
+
 	@BeforeTest
 	public void beforeTest() {
-		System.setProperty("webdriver.chrome.driver", "D:\\jar\\chromedriver.exe");				
+		System.setProperty("webdriver.chrome.driver", "D:\\jar\\chromedriver.exe");
 	}
 
 	public void login(String userName) {
@@ -39,7 +39,7 @@ public class SmokeTest extends UITest {
 		myToDo = new MyToDo(driver);
 		myToDo.enterMyToDo();
 	}
-	
+
 	public void enterApplicantsMgr() {
 		applicants = new ApplicantsMgr(driver);
 		applicants.enterApplicantsMgr();
@@ -49,135 +49,98 @@ public class SmokeTest extends UITest {
 		flowPage = new FlowCenter(driver);
 		flowPage.enterFlowCenter();
 	}
-	
+
 	@Test
 	public void addCV() {
-		try {
-			login("admin");
-			enterApplicantsMgr();
-			String dataFile = "dataFile/applicants_add.properties";
-			applicants.addCV(dataFile);
-//			dataFile = "dataFile/applicants_add2.properties";
-//			applicants.addCV(dataFile);
-//			dataFile = "dataFile/applicants_add3.properties";
-//			applicants.addCV(dataFile);
-//			dataFile = "dataFile/applicants_add4.properties";
-//			applicants.addCV(dataFile);
-//			dataFile = "dataFile/applicants_add5.properties";
-//			applicants.addCV(dataFile);
-//			dataFile = "dataFile/applicants_add6.properties";
-//			applicants.addCV(dataFile);
-		} finally {
-			driver.quit();
-		}	
+		login("admin");
+		enterApplicantsMgr();
+		String dataFile = "dataFile/applicants_add.properties";
+		applicants.addCV(dataFile);
+		// dataFile = "dataFile/applicants_add2.properties";
+		// applicants.addCV(dataFile);
+		// dataFile = "dataFile/applicants_add3.properties";
+		// applicants.addCV(dataFile);
+		// dataFile = "dataFile/applicants_add4.properties";
+		// applicants.addCV(dataFile);
+		// dataFile = "dataFile/applicants_add5.properties";
+		// applicants.addCV(dataFile);
+		// dataFile = "dataFile/applicants_add6.properties";
+		// applicants.addCV(dataFile);
 	}
-	
+
 	@Test
 	public void hire() {
-		try {
-			login("admin");
-			enterFlowCenter();
-			String dataFile = "dataFile/hire.properties";
-			flowPage.hireEmployee(dataFile);
-//			dataFile = "dataFile/hire2.properties";
-//			flowPage.hireEmployee(dataFile);	
-//			dataFile = "dataFile/hire3.properties";
-//			flowPage.hireEmployee(dataFile);
-//			dataFile = "dataFile/hire4.properties";
-//			flowPage.hireEmployee(dataFile);
-//			dataFile = "dataFile/hire5.properties";
-//			flowPage.hireEmployee(dataFile);
-//			dataFile = "dataFile/hire6.properties";
-//			flowPage.hireEmployee(dataFile);
-		} finally {
-			driver.quit();
-		}
-		
+		login("admin");
+		enterFlowCenter();
+		String dataFile = "dataFile/hire.properties";
+		flowPage.hireEmployee(dataFile);
+		// dataFile = "dataFile/hire2.properties";
+		// flowPage.hireEmployee(dataFile);
+		// dataFile = "dataFile/hire3.properties";
+		// flowPage.hireEmployee(dataFile);
+		// dataFile = "dataFile/hire4.properties";
+		// flowPage.hireEmployee(dataFile);
+		// dataFile = "dataFile/hire5.properties";
+		// flowPage.hireEmployee(dataFile);
+		// dataFile = "dataFile/hire6.properties";
+		// flowPage.hireEmployee(dataFile);
 	}
-	
+
 	@Test
 	public void employ1() {
-		try {
-			login("J160389");
-			enterMyToDo();
-			String flowName = "录用申请V1";
-			myToDo.commitAll(flowName);
-		} finally {
-			driver.quit();
-		}	
+		login("J160389");
+		enterMyToDo();
+		String flowName = "录用申请V1";
+		myToDo.commitAll(flowName);
 	}
-	
+
 	@Test
 	public void employ2() {
-		try {
-			login("L0314862");
-			enterMyToDo();
-			String flowName = "录用申请V1";
-			myToDo.commitAll(flowName);	
-		} finally {
-			driver.quit();
-		}	
+		login("L0314862");
+		enterMyToDo();
+		String flowName = "录用申请V1";
+		myToDo.commitAll(flowName);
 	}
-	
+
 	@Test
 	public void entryPre1() {
-		try {
-			login("000023408");
-			enterMyToDo();
-			String flowName = "入职准备";
-			String paras="test";  
-			myToDo.commitAll(flowName, paras);
-		} finally {
-			driver.quit();
-		}	
-	}	
-	
+		login("000023408");
+		enterMyToDo();
+		String flowName = "入职准备";
+		String paras = "test";
+		myToDo.commitAll(flowName, paras);
+	}
+
 	@Test
 	public void entryPre2() {
-		try {
-			login("L0314862");
-			enterMyToDo();
-			String flowName = "入职准备";
-			myToDo.commitAll(flowName);
-		} finally {
-			driver.quit();
-		}	
-	}	
-	
+		login("L0314862");
+		enterMyToDo();
+		String flowName = "入职准备";
+		myToDo.commitAll(flowName);
+	}
+
 	@Test
 	public void entryConfirm1() {
-		try {
-			login("000023408");
-			enterMyToDo();
-			String flowName = "入职确认";
-			String paras="{\"firstDay\":\"2017-01-01\","
-					  + "\"place\":\"苏州园区\","
-					  + "\"contractType\":\"劳动合同\","
-					  + "\"contractType2\":\"固定期限\","
-					  + "\"contractUnit\":\"金螳螂\","
-					  + "\"years\":\"3\"}"; 
-			myToDo.commitAll(flowName, paras);
-		} finally {
-			driver.quit();
-		}		
-	}	
-	
+		login("000023408");
+		enterMyToDo();
+		String flowName = "入职确认";
+		String paras = "{\"firstDay\":\"2017-01-01\"," + "\"place\":\"苏州园区\"," + "\"contractType\":\"劳动合同\","
+				+ "\"contractType2\":\"固定期限\"," + "\"contractUnit\":\"金螳螂\"," + "\"years\":\"3\"}";
+		myToDo.commitAll(flowName, paras);
+	}
+
 	@Test
 	public void entryConfirm2() {
-		try {
-			login("L0314862");
-			enterMyToDo();
-			String flowName = "入职确认";
-			myToDo.commitAll(flowName);
-		} finally {
-			driver.quit();
-		}	
+		login("L0314862");
+		enterMyToDo();
+		String flowName = "入职确认";
+		myToDo.commitAll(flowName);
 	}
-	
+
 	@AfterTest
 	public void afterTest() {
-//		Tools.killChrome();
-		
+		// Tools.killChrome();
+
 	}
 
 	@AfterSuite

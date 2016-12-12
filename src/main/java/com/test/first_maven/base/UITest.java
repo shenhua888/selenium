@@ -66,7 +66,7 @@ public class UITest {
 	 * @param drivername
 	 * @param path
 	 */
-	public void takeScreenShot(TakesScreenshot drivername, String path) {
+	private void takeScreenShot(TakesScreenshot drivername, String path) {
 		// this method will take screen shot ,require two parameters ,one is
 		// driver name, another is file name
 		String currentPath = System.getProperty("user.dir"); // get current work

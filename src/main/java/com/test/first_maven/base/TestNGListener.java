@@ -14,38 +14,52 @@ import org.testng.TestListenerAdapter;
  */
 public class TestNGListener extends TestListenerAdapter {
     private Logger log = LogManager.getFormatterLogger(this.getClass());
+    private UITest ut;
+    private WebDriver driver;
+    
+    private void quit(WebDriver driver) {
+    	log.info("qiut chrome");
+    	driver.quit();
+    }   
+    private void setDriver(ITestResult tr) {
+    	ut = (UITest) tr.getInstance();
+        driver = ut.getDriver();
+    }
 
     @Override
     public void onTestSuccess(ITestResult tr) {
         log.info("Test Success");
         super.onTestSuccess(tr);
+        setDriver(tr);
+        quit(driver);
     }
 
     @Override
     public void onTestFailure(ITestResult tr) {
         log.error("Test Failure");
         super.onTestFailure(tr);
+        setDriver(tr);
         takeScreenShot(tr);
+        quit(driver);
     }
 
     private void takeScreenShot(ITestResult tr) {
-        UITest b = (UITest) tr.getInstance();
-        WebDriver currentDirver = b.getDriver();
-        log.info("The title of current page is :" + currentDirver.getTitle());
-        b.takeScreenShot();
-
+        log.info("The title of current page is :" + driver.getTitle());
+        ut.takeScreenShot();
     }
 
     @Override
     public void onTestSkipped(ITestResult tr) {
         log.error("Test Skipped");
-        super.onTestSkipped(tr);
+        super.onTestSkipped(tr);  
+        setDriver(tr);
+        quit(driver);
     }
 
     @Override
-    public void onTestStart(ITestResult result) {
-        log.info("Test Finsh");
-        super.onTestStart(result);
+    public void onTestStart(ITestResult tr) {
+        log.info("TestCase Start");
+        super.onTestStart(tr);
     }
 
     @Override
