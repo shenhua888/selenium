@@ -36,8 +36,7 @@ public class FlowCenter {
 		
 		public void hireEmployee(String dataFile) {
 			AllFlowPage allFlow = new AllFlowPage(driver);
-			allFlow.hire(dataFile);
-			
+			allFlow.hire(dataFile);			
 		}
 		
 		

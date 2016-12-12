@@ -147,7 +147,7 @@ public class HireEmpPage {
 		driver.manage().window().maximize();
 	}
 	
-	public void hire(String dataFile) {
+	final void hire(String dataFile) {
 		Properties pps = new Properties();
 		pps = Tools.readPropertiesFileObj(dataFile);
 		selectAptName.click();

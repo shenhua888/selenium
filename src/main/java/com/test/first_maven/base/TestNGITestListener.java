@@ -6,7 +6,7 @@ import org.testng.ITestListener;
 import org.testng.ITestNGMethod;
 import org.testng.ITestResult;
 
-public class TestListener implements ITestListener {
+public class TestNGITestListener implements ITestListener {
 
 	@Override
 	public void onFinish(ITestContext context) {

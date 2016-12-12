@@ -57,13 +57,7 @@ public class TestNGCustomReportListener implements IReporter{
 			e.printStackTrace();
 			return;
 		}
-		
-//		System.out.println("--------------------------");
-//		for (ISuite s : suites) {
-//			System.out.println(s.getName());
-//		}
-//		System.out.println("--------------------------");
-		
+			
 		startHtml(writer);
 		writeReportTitle(reportTitle);
 		generateSuiteSummaryReport(suites);

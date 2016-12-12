@@ -167,7 +167,7 @@ public class AddApplicants {
 		PageFactory.initElements(new AjaxElementLocatorFactory(driver,10), this);
 	}
 	
-	public void addCV(String dataFile) {
+	final void addCV(String dataFile) {
 		Properties pps = new Properties();
 		pps = Tools.readPropertiesFileObj(dataFile);
 		jobDeptName.click();		

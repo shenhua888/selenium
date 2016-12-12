@@ -9,11 +9,11 @@ import org.testng.TestListenerAdapter;
 
 /**
  * 
- * @author Young
+ * @author ShenHua
  *
  */
-public class ScreenShotListener extends TestListenerAdapter {
-    Logger log = LogManager.getFormatterLogger(this.getClass());
+public class TestNGListener extends TestListenerAdapter {
+    private Logger log = LogManager.getFormatterLogger(this.getClass());
 
     @Override
     public void onTestSuccess(ITestResult tr) {

@@ -25,7 +25,7 @@ public class AllFlowPage {
 		PageFactory.initElements(new AjaxElementLocatorFactory(driver,10), this);
 	}
 	
-	public void hire (String dataFile) {
+	final void hire (String dataFile) {
 		hireBtn.click();
 		WebAction.switchToNewWin(driver, currentWin);
 		Boolean flag = null;

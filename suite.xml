@@ -2,8 +2,8 @@
 <suite name="Suite1" parallel="classes" thread-count="1">
 	<listeners>
 		<listener class-name="com.test.first_maven.base.RetryListener" /> <!-- @test失败重试监听器 -->
-		<listener class-name="com.test.first_maven.base.TestListener" /> <!-- 用例失败截图监听器 -->
-		<listener class-name="com.test.first_maven.base.ScreenShotListener" /> <!-- 异常截图监听器 -->
+		<listener class-name="com.test.first_maven.base.TestNGITestListener" /> <!-- 用例失败截图监听器 -->
+		<listener class-name="com.test.first_maven.base.TestNGListener" /> <!-- TestNG异常截图监听器 -->
 		<listener class-name="com.test.first_maven.base.TestNGCustomReportListener" /> <!-- 报告监听器 -->
 	</listeners>
 	<parameter name="browserType" value="chrome" />
