@@ -1,5 +1,6 @@
 package com.test.first_maven.test.jackson;
 
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -15,21 +16,11 @@ import com.test.first_maven.base.JSONObject2;
 public class TestJason {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		TestJason test = new TestJason();
+//		TestJason test = new TestJason();
 //		System.out.println(test.jsonTest2());
-		test.jsonTest();
+//		test.jsonTest();
 	}
-	public void jsonTest() throws JSONException{  
-		System.out.println(System.getenv("USERNAME"));  
-//		Map map = System.getenv();
-//		Iterator it = map.entrySet().iterator();  
-//		while(it.hasNext())  
-//		{  
-//		    Entry entry = (Entry)it.next();  
-//		    System.out.print(entry.getKey()+"=");  
-//		    System.out.println(entry.getValue());  
-//		}  
+	public void jsonTest() throws JSONException{    
 	    String jsonString="{\"name\":\"小民\","
 	    				  + "\"birthday\":\"1996年09月30日\","
 	    				  + "\"mail\":\"xiaomin@sina.com\","

@@ -11,7 +11,7 @@ import org.testng.Assert;
 import com.test.first_maven.base.WebAction;
 
 public class AllFlowPage {
-	@FindBy(xpath = "//a[text()='录用申请V1']")
+	@FindBy(xpath = "//a[text()='员工录用V2']")
 	@CacheLookup
 	private WebElement hireBtn;
 	

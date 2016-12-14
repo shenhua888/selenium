@@ -1,5 +1,7 @@
 package com.test.first_maven.test;
 
+import java.io.File;
+
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.annotations.AfterSuite;
@@ -9,6 +11,7 @@ import org.testng.annotations.Test;
 
 import com.test.first_maven.base.WebAction;
 import com.test.first_maven.base.NewWebDriverEventListener;
+import com.test.first_maven.base.Tools;
 import com.test.first_maven.base.UITest;
 import com.test.first_maven.page.OALoginPage;
 import com.test.first_maven.page.flow.FlowCenter;
@@ -23,6 +26,7 @@ public class SmokeTest extends UITest {
 
 	@BeforeTest
 	public void beforeTest() {
+		Tools.deleteDirectory("pic");
 		System.setProperty("webdriver.chrome.driver", "D:\\jar\\chromedriver.exe");
 	}
 
@@ -90,7 +94,7 @@ public class SmokeTest extends UITest {
 	public void employ1() {
 		login("J160389");
 		enterMyToDo();
-		String flowName = "录用申请V1";
+		String flowName = "员工录用V2";
 		myToDo.commitAll(flowName);
 	}
 
@@ -98,7 +102,7 @@ public class SmokeTest extends UITest {
 	public void employ2() {
 		login("L0314862");
 		enterMyToDo();
-		String flowName = "录用申请V1";
+		String flowName = "员工录用V2";
 		myToDo.commitAll(flowName);
 	}
 
