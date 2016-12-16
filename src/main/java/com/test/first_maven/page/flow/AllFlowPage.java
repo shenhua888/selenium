@@ -11,7 +11,7 @@ import org.testng.Assert;
 import com.test.first_maven.base.WebAction;
 
 public class AllFlowPage {
-	@FindBy(xpath = "//a[text()='员工录用V2']")
+	@FindBy(xpath = "//a[text()='录用申请V1']")
 	@CacheLookup
 	private WebElement hireBtn;
 	
@@ -26,7 +26,8 @@ public class AllFlowPage {
 	}
 	
 	final void hire (String dataFile) {
-		hireBtn.click();
+//		hireBtn.click();
+		WebAction.clickWithScroll(driver, hireBtn);
 		WebAction.switchToNewWin(driver, currentWin);
 		Boolean flag = null;
 		flag = WebAction.waitUntilVisible(driver, "//*[@id='empUserType']", 10);

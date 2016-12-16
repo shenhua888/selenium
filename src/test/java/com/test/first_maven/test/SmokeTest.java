@@ -2,6 +2,7 @@ package com.test.first_maven.test;
 
 import java.io.File;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.annotations.AfterSuite;
@@ -33,7 +34,7 @@ public class SmokeTest extends UITest {
 	public void login(String userName) {
 		driver = new EventFiringWebDriver(new ChromeDriver()).register(new NewWebDriverEventListener());
 		String url = "http://172.21.204.23:8080/J2bpm/login.jsp";
-		WebAction.get(driver, url, "登录");
+		WebAction.get(driver, url, "//*[@name='username']");
 		driver.manage().window().maximize();
 		oaLogin = new OALoginPage(driver);
 		oaLogin.login(userName, "1");
@@ -60,16 +61,16 @@ public class SmokeTest extends UITest {
 		enterApplicantsMgr();
 		String dataFile = "dataFile/applicants_add.properties";
 		applicants.addCV(dataFile);
-		// dataFile = "dataFile/applicants_add2.properties";
-		// applicants.addCV(dataFile);
-		// dataFile = "dataFile/applicants_add3.properties";
-		// applicants.addCV(dataFile);
-		// dataFile = "dataFile/applicants_add4.properties";
-		// applicants.addCV(dataFile);
-		// dataFile = "dataFile/applicants_add5.properties";
-		// applicants.addCV(dataFile);
-		// dataFile = "dataFile/applicants_add6.properties";
-		// applicants.addCV(dataFile);
+		dataFile = "dataFile/applicants_add2.properties";
+		applicants.addCV(dataFile);
+		dataFile = "dataFile/applicants_add3.properties";
+		applicants.addCV(dataFile);
+		dataFile = "dataFile/applicants_add4.properties";
+		applicants.addCV(dataFile);
+		dataFile = "dataFile/applicants_add5.properties";
+		applicants.addCV(dataFile);
+		dataFile = "dataFile/applicants_add6.properties";
+		applicants.addCV(dataFile);
 	}
 
 	@Test
@@ -78,23 +79,23 @@ public class SmokeTest extends UITest {
 		enterFlowCenter();
 		String dataFile = "dataFile/hire.properties";
 		flowPage.hireEmployee(dataFile);
-		// dataFile = "dataFile/hire2.properties";
-		// flowPage.hireEmployee(dataFile);
-		// dataFile = "dataFile/hire3.properties";
-		// flowPage.hireEmployee(dataFile);
-		// dataFile = "dataFile/hire4.properties";
-		// flowPage.hireEmployee(dataFile);
-		// dataFile = "dataFile/hire5.properties";
-		// flowPage.hireEmployee(dataFile);
-		// dataFile = "dataFile/hire6.properties";
-		// flowPage.hireEmployee(dataFile);
+		dataFile = "dataFile/hire2.properties";
+		flowPage.hireEmployee(dataFile);
+		dataFile = "dataFile/hire3.properties";
+		flowPage.hireEmployee(dataFile);
+		dataFile = "dataFile/hire4.properties";
+		flowPage.hireEmployee(dataFile);
+		dataFile = "dataFile/hire5.properties";
+		flowPage.hireEmployee(dataFile);
+		dataFile = "dataFile/hire6.properties";
+		flowPage.hireEmployee(dataFile);
 	}
 
 	@Test
 	public void employ1() {
-		login("J160389");
+		login("L0314862");
 		enterMyToDo();
-		String flowName = "员工录用V2";
+		String flowName = "录用申请V1";
 		myToDo.commitAll(flowName);
 	}
 
@@ -102,7 +103,7 @@ public class SmokeTest extends UITest {
 	public void employ2() {
 		login("L0314862");
 		enterMyToDo();
-		String flowName = "员工录用V2";
+		String flowName = "录用申请V1";
 		myToDo.commitAll(flowName);
 	}
 
@@ -128,8 +129,12 @@ public class SmokeTest extends UITest {
 		login("000023408");
 		enterMyToDo();
 		String flowName = "入职确认";
-		String paras = "{\"firstDay\":\"2017-01-01\"," + "\"place\":\"苏州园区\"," + "\"contractType\":\"劳动合同\","
-				+ "\"contractType2\":\"固定期限\"," + "\"contractUnit\":\"金螳螂\"," + "\"years\":\"3\"}";
+		String paras = "{\"firstDay\":\"2017-01-01\"," 
+						+ "\"place\":\"苏州园区\"," 
+						+ "\"contractType\":\"劳动合同\","
+						+ "\"contractType2\":\"固定期限\"," 
+						+ "\"contractUnit\":\"金螳螂\"," 
+						+ "\"years\":\"3\"}";
 		myToDo.commitAll(flowName, paras);
 	}
 

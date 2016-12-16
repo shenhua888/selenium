@@ -13,7 +13,16 @@ import org.apache.logging.log4j.Logger;
 
 public class Tools {
 	private static Logger log = LogManager.getFormatterLogger(Tools.class);
-	// 读取资源文件,并处理中文乱码
+
+    /**
+     * 读取资源文件,并处理中文乱码
+     * 
+     * @param filename 文件全路径
+     *            
+     * @return 无
+     * 
+     * @author shenhua
+     */
     public static Properties readPropertiesFileObj(String filename) {
         Properties properties = new Properties();
         try {
@@ -27,7 +36,15 @@ public class Tools {
         return properties;
     }
     
-	// 等待
+    /**
+     * 等待
+     * 
+     * @param second 秒
+     *            
+     * @return 无
+     * 
+     * @author shenhua
+     */
     public static void wait(int second) {
         try {
 			Thread.sleep(second*1000);
@@ -36,7 +53,15 @@ public class Tools {
 			e.printStackTrace();
 		}
     }  
-    //执行exe
+    /**
+     * 执行exe,上传文件
+     * 
+     * @param fielPath 文件所在目录
+     *            
+     * @return 无
+     * 
+     * @author shenhua
+     */
     public static void selectFile(String fielPath) {
     	Process proc;
     	try {
@@ -56,7 +81,15 @@ public class Tools {
 			e.printStackTrace();
 		}
     }
-    //杀浏览器进程
+    /**
+     * 关闭chrome
+     * 
+     * @param 无
+     *            
+     * @return 无
+     * 
+     * @author shenhua
+     */
     public static void killChrome() {
     	try {
     		log.info("start kill chrome");
@@ -71,9 +104,11 @@ public class Tools {
     /**
      * 删除单个文件
      * 
-     * @param sPath
-     *            被删除文件的路径+文件名
+     * @param sPath 被删除文件的路径+文件名
+     *            
      * @return 单个文件删除成功返回true，否则返回false
+     * 
+     * @author shenhua     
      */
     public static boolean deleteFile(String sPath) {
         Boolean flag = false;
@@ -89,9 +124,11 @@ public class Tools {
     /**
      * 删除目录（文件夹）以及目录下的文件
      * 
-     * @param sPath
-     *            被删除目录的文件路径
+     * @param sPath 被删除目录的文件路径
+     *         
      * @return 目录删除成功返回true，否则返回false
+     * 
+     * @author shenhua
      */
     public static boolean deleteDirectory(String sPath) {
         // 如果sPath不以文件分隔符结尾，自动添加文件分隔符
@@ -101,6 +138,7 @@ public class Tools {
         File dirFile = new File(sPath);
         // 如果dir对应的文件不存在，或者不是一个目录，则退出
         if (!dirFile.exists() || !dirFile.isDirectory()) {
+        	log.info("File path " + sPath + " not exist!");
             return false;
         }
         Boolean flag = true;
@@ -119,12 +157,16 @@ public class Tools {
                     break;
             }
         }
-        if (!flag)
-            return false;
+        if (!flag) {
+        	log.info("delete " + sPath + " failed!");
+        	return false;
+        }            
         // 删除当前目录
         if (dirFile.delete()) {
+        	log.info("delete " + sPath + " success!");
             return true;
         } else {
+        	log.info("delete " + sPath + " failed!");
             return false;
         }
     }

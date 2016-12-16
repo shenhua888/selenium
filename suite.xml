@@ -10,20 +10,20 @@
 	<test name="test1">
 
 		<classes>
-<!-- 
+
 			<class name="com.test.first_maven.test.SmokeTest">   
 				<methods>
- 					<include name="addCV" /> 
-  					<include name="hire" /> 
+<!-- 					<include name="addCV" />
+ 					<include name="hire" />   --> 
 					<include name="employ1" />  
-					<include name="employ2" /> 
+<!--					<include name="employ2" /> 
 					<include name="entryPre1" />
 					<include name="entryPre2" /> 
 					<include name="entryConfirm1" />
-					<include name="entryConfirm2" />   
+					<include name="entryConfirm2" /> --> 
 				</methods>
 			</class>
--->
+
 <!-- 
  			<class name="com.test.first_maven.test.AddCVTest">   
 				<methods>
@@ -41,6 +41,7 @@
 				</methods>
 			</class>
  -->
+ <!--
 			<class name="com.test.first_maven.test.CommitTest">   
 				<methods>
 					<include name="pass1" />
@@ -57,7 +58,7 @@
 					<include name="pass12" />
 				</methods>
 			</class>
-<!--  			
+  			
 			<class name="com.test.first_maven.test.BaiduTest">
 				<methods>
 					<include name="searchTest2" /> 
