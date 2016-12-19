@@ -12,6 +12,7 @@ import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 import org.testng.Assert;
 
 import com.test.first_maven.base.WebAction;
+import com.test.first_maven.page.flow.SelectFilePage;
 import com.test.first_maven.base.Tools;
 
 public class AddApplicants {
@@ -186,23 +187,20 @@ public class AddApplicants {
 		WebAction.defaultFrame(driver);
 		driver.findElement(By.xpath("//*[text()='确定']")).click();
 		WebAction.enterFrameFromDef(driver, "10000004780032");
+		//上传照片
 		picFile.click();
-		Tools.wait(2);
-		WebAction.enterRecentFrame(driver, "//*[contains(@id,'ligerwindow')]");
-		driver.findElement(By.xpath("//*[@class='pull-left']/input")).click();
-		Tools.selectFile(pps.getProperty("picFile"));
-		WebAction.clickWithWait(driver, "//span[text()='上传']");
-		Tools.wait(2);
-		WebAction.defaultFrame(driver);
-		driver.findElement(By.xpath("//div[text()='确定']")).click();
 		Tools.wait(1);
+		SelectFilePage selectFile = new SelectFilePage(driver);
+		selectFile.selectFile(pps.getProperty("picFile"));
 		WebAction.enterRecentFrame(driver, "//*[contains(@id,'ligerwindow')]");
 		driver.findElement(By.id("comCut")).click();
 		WebAction.clickWithWait(driver, "//a[text()='完成。']");
+		
 		WebAction.enterFrameFromDef(driver, "10000004780032");
 		applicantName.sendKeys(pps.getProperty("applicantName"));
 		cellphone.sendKeys(pps.getProperty("cellphone"));
 		email.sendKeys(pps.getProperty("email"));
+		WebAction.selectByVisibleText(reCardType, pps.getProperty("reCardType"));
 		reCardNumber.sendKeys(pps.getProperty("reCardNumber"));
 		reHeight.sendKeys(pps.getProperty("reHeight"));
 		reNation.sendKeys(pps.getProperty("reNation"));
@@ -234,14 +232,13 @@ public class AddApplicants {
 				feMale.click();
 				Assert.assertTrue(feMale.isSelected());
 			}			
-		}
-		WebAction.selectByValue(reCardType, pps.getProperty("reCardType"));
-		WebAction.selectByValue(reMarital, pps.getProperty("reMarital"));
-		WebAction.selectByValue(reNationality, pps.getProperty("reNationality"));
-		WebAction.selectByValue(reBloodtype, pps.getProperty("reBloodtype"));
-		WebAction.selectByValue(rePolity, pps.getProperty("rePolity"));
-		WebAction.selectByValue(reIsConstructor, pps.getProperty("reIsConstructor"));
-		WebAction.selectByValue(reEdu, pps.getProperty("reEdu"));
+		}		
+		WebAction.selectByVisibleText(reMarital, pps.getProperty("reMarital"));
+		WebAction.selectByVisibleText(reNationality, pps.getProperty("reNationality"));
+		WebAction.selectByVisibleText(reBloodtype, pps.getProperty("reBloodtype"));
+		WebAction.selectByVisibleText(rePolity, pps.getProperty("rePolity"));
+		WebAction.selectByVisibleText(reIsConstructor, pps.getProperty("reIsConstructor"));
+		WebAction.selectByVisibleText(reEdu, pps.getProperty("reEdu"));
 		String eduInfo = pps.getProperty("eduInfo");
 		if (!"".equals(eduInfo)) {
 			String[] arrayCon = eduInfo.split(";");

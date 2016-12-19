@@ -19,7 +19,7 @@ public class TestNGListener extends TestListenerAdapter {
     
     private void quit(WebDriver driver) {
     	log.info("qiut chrome");
-    	driver.quit();
+//    	driver.quit();
     }   
     private void setDriver(ITestResult tr) {
     	ut = (UITest) tr.getInstance();

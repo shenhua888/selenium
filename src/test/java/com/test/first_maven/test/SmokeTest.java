@@ -75,18 +75,18 @@ public class SmokeTest extends UITest {
 
 	@Test
 	public void hire() {
-		login("admin");
+		login("L0314862");
 		enterFlowCenter();
 		String dataFile = "dataFile/hire.properties";
-		flowPage.hireEmployee(dataFile);
-		dataFile = "dataFile/hire2.properties";
-		flowPage.hireEmployee(dataFile);
-		dataFile = "dataFile/hire3.properties";
-		flowPage.hireEmployee(dataFile);
-		dataFile = "dataFile/hire4.properties";
-		flowPage.hireEmployee(dataFile);
-		dataFile = "dataFile/hire5.properties";
-		flowPage.hireEmployee(dataFile);
+//		flowPage.hireEmployee(dataFile);
+//		dataFile = "dataFile/hire2.properties";
+//		flowPage.hireEmployee(dataFile);
+//		dataFile = "dataFile/hire3.properties";
+//		flowPage.hireEmployee(dataFile);
+//		dataFile = "dataFile/hire4.properties";
+//		flowPage.hireEmployee(dataFile);
+//		dataFile = "dataFile/hire5.properties";
+//		flowPage.hireEmployee(dataFile);
 		dataFile = "dataFile/hire6.properties";
 		flowPage.hireEmployee(dataFile);
 	}
@@ -99,13 +99,13 @@ public class SmokeTest extends UITest {
 		myToDo.commitAll(flowName);
 	}
 
-	@Test
-	public void employ2() {
-		login("L0314862");
-		enterMyToDo();
-		String flowName = "录用申请V1";
-		myToDo.commitAll(flowName);
-	}
+//	@Test
+//	public void employ2() {
+//		login("L0314862");
+//		enterMyToDo();
+//		String flowName = "录用申请V1";
+//		myToDo.commitAll(flowName);
+//	}
 
 	@Test
 	public void entryPre1() {

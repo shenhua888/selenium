@@ -386,16 +386,44 @@ public class WebAction {
 		log.info("scrollTo:" + ele);
         js.executeScript("arguments[0].scrollIntoView();", ele);
 	}
-	
+    /**
+     * 下拉框选择，根据value
+     * 
+     * @param ele 			元素	
+     * 		  value 		value属性值
+     *            
+     * @return 无
+     * 
+     * @author shenhua
+     */	
 	public static void selectByValue (WebElement ele, String value) {
 		Select sel = new Select(ele);
 		sel.selectByValue(value);
 	}
-	
+    /**
+     * 下拉框选择，根据显示文本
+     * 
+     * @param ele 			元素	
+     * 		  value 		text()显示的文本
+     *            
+     * @return 无
+     * 
+     * @author shenhua
+     */	
 	public static void selectByVisibleText (WebElement ele, String value) {
 		Select sel = new Select(ele);
 		sel.selectByVisibleText(value);
 	}
+    /**
+     * 判断是否增加成功
+     * 
+     * @param ele 			元素	
+     * 		  expect 		预期值
+     *            
+     * @return true:成功；false:失败
+     * 
+     * @author shenhua
+     */	
 	public static Boolean isAddSuccess (WebElement ele, String expect) {
 		Boolean flag = false;
 		for (int i=0; i<5; i++) {
@@ -408,6 +436,16 @@ public class WebAction {
 		}
 		return flag;
 	}
+    /**
+     * 切换到新打开的窗口
+     * 
+     * @param driver 			驱动
+     * 		  oldHanle 		              旧窗口的handle
+     *            
+     * @return 无
+     * 
+     * @author shenhua
+     */		
 	public static void switchToNewWin (WebDriver driver, String oldHanle) {
 		WebAction.defaultFrame(driver);
 		Set<String> handles = driver.getWindowHandles();
@@ -417,7 +455,15 @@ public class WebAction {
 			}
 		}
 	}
-	
+    /**
+     * alert处理，确定（等待出现，最长10秒）
+     * 
+     * @param driver 			驱动
+     *            
+     * @return 无
+     * 
+     * @author shenhua
+     */		
 	public static void alertAccept (WebDriver driver) {
 		for (int i=0; i<10; i++) {
 			try {
@@ -430,7 +476,15 @@ public class WebAction {
 			}	
 		}				
 	}
-	
+    /**
+     * alert处理，取消（等待出现，最长10秒）
+     * 
+     * @param driver 			驱动
+     *            
+     * @return 无
+     * 
+     * @author shenhua
+     */	
 	public static void alertDismiss (WebDriver driver) {
 		for (int i=0; i<10; i++) {
 			try {

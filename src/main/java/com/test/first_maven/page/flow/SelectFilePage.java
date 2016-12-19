@@ -27,9 +27,15 @@ public class SelectFilePage {
 	public void selectFile(String filePath) {
 		selectBtn.click();
 		Tools.selectFile(filePath);
-		Tools.wait(1);
 		WebAction.clickWithWait(driver, "//span[text()='上传']");
-		Tools.wait(2);
+		WebElement ele = driver.findElement(By.xpath("//*[@role='progressbar']"));
+		for (int i=0;i<10;i++) {
+			if (ele.getAttribute("style").equals("width: 100%;")) {
+				break;
+			} else {
+				Tools.wait(1);
+			}
+		}		
 		WebAction.defaultFrame(driver);
 		driver.findElement(By.xpath("//div[text()='确定']")).click();
 	}
