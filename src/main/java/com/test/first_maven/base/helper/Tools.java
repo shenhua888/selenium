@@ -10,6 +10,7 @@ import java.util.Properties;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.WebElement;
 
 public class Tools {
 	private static Logger log = LogManager.getFormatterLogger(Tools.class);
@@ -56,30 +57,53 @@ public class Tools {
     /**
      * 执行exe,上传文件
      * 
-     * @param fielPath 文件所在目录
+     * @param filePath 文件所在目录
      *            
-     * @return 无
+     * @return true：成功；false：失败
      * 
      * @author shenhua
      */
-    public static void selectFile(String fielPath) {
+    public static Boolean selectFile(String filePath) {
     	Process proc;
     	try {
-    		proc = Runtime.getRuntime().exec("au3/selectFile.exe " + fielPath);
+    		proc = Runtime.getRuntime().exec("au3/selectFile.exe " + filePath);
 			InputStream stdin = proc.getInputStream();
 			InputStreamReader isr = new InputStreamReader(stdin);
 			BufferedReader br = new BufferedReader(isr);
 			String line = null;
 			if ((line = br.readLine()).equals("success")) {
 				log.info("selectFile result: "+line);
+				return true;
 			} else {
 				log.info("selectFile result: fail");
+				return false;
 			}
 				  
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return false;
+    }
+    /**
+     * 执行exe,上传文件（带重试）
+     * 
+     * @param filePath 文件所在目录
+     *            
+     * @return true：成功；false：失败
+     * 
+     * @author shenhua
+     */
+    public static Boolean selectFileWithRetry(String filePath, WebElement ele) {
+    	Boolean flag = false;
+    	for (int i=0;i<3;i++) {
+    		ele.click();
+    		flag = selectFile(filePath);
+    		if (flag.equals(true)) {
+    			break;
+    		}
+    	}  	
+		return flag;
     }
     /**
      * 关闭chrome
