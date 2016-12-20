@@ -9,10 +9,10 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import com.test.first_maven.base.WebAction;
-import com.test.first_maven.base.NewWebDriverEventListener;
-import com.test.first_maven.base.Tools;
 import com.test.first_maven.base.UITest;
+import com.test.first_maven.base.helper.Tools;
+import com.test.first_maven.base.selenium.NewWebDriverEventListener;
+import com.test.first_maven.base.selenium.WebAction;
 import com.test.first_maven.page.OALoginPage;
 import com.test.first_maven.page.flow.FlowCenter;
 import com.test.first_maven.page.flow.MyToDo;

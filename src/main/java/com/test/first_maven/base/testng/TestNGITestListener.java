@@ -1,4 +1,4 @@
-package com.test.first_maven.base;
+package com.test.first_maven.base.testng;
 
 import java.util.Iterator;
 import org.testng.ITestContext;

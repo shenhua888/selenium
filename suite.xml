@@ -13,11 +13,11 @@
 
 			<class name="com.test.first_maven.test.SmokeTest">   
 				<methods>
-<!-- 					<include name="addCV" />
- 					<include name="hire" />   --> 
+					<include name="addCV" /> 
+ 					<include name="hire" />   
 					<include name="employ1" />  
 <!--					<include name="employ2" /> 
-					<include name="entryPre1" />
+ 					<include name="entryPre1" />
 					<include name="entryPre2" /> 
 					<include name="entryConfirm1" />
 					<include name="entryConfirm2" /> --> 

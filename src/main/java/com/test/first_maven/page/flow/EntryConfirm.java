@@ -8,8 +8,8 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 
-import com.test.first_maven.base.WebAction;
-import com.test.first_maven.base.JSONObject2;
+import com.test.first_maven.base.helper.JSONObject2;
+import com.test.first_maven.base.selenium.WebAction;
 
 public class EntryConfirm {
 	@FindBy(xpath = "//input[@value='报到']")

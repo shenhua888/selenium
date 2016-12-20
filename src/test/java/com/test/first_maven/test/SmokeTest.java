@@ -10,10 +10,10 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import com.test.first_maven.base.WebAction;
-import com.test.first_maven.base.NewWebDriverEventListener;
-import com.test.first_maven.base.Tools;
 import com.test.first_maven.base.UITest;
+import com.test.first_maven.base.helper.Tools;
+import com.test.first_maven.base.selenium.NewWebDriverEventListener;
+import com.test.first_maven.base.selenium.WebAction;
 import com.test.first_maven.page.OALoginPage;
 import com.test.first_maven.page.flow.FlowCenter;
 import com.test.first_maven.page.flow.MyToDo;
@@ -63,14 +63,14 @@ public class SmokeTest extends UITest {
 		applicants.addCV(dataFile);
 		dataFile = "dataFile/applicants_add2.properties";
 		applicants.addCV(dataFile);
-		dataFile = "dataFile/applicants_add3.properties";
-		applicants.addCV(dataFile);
-		dataFile = "dataFile/applicants_add4.properties";
-		applicants.addCV(dataFile);
-		dataFile = "dataFile/applicants_add5.properties";
-		applicants.addCV(dataFile);
-		dataFile = "dataFile/applicants_add6.properties";
-		applicants.addCV(dataFile);
+//		dataFile = "dataFile/applicants_add3.properties";
+//		applicants.addCV(dataFile);
+//		dataFile = "dataFile/applicants_add4.properties";
+//		applicants.addCV(dataFile);
+//		dataFile = "dataFile/applicants_add5.properties";
+//		applicants.addCV(dataFile);
+//		dataFile = "dataFile/applicants_add6.properties";
+//		applicants.addCV(dataFile);
 	}
 
 	@Test
@@ -78,17 +78,17 @@ public class SmokeTest extends UITest {
 		login("L0314862");
 		enterFlowCenter();
 		String dataFile = "dataFile/hire.properties";
-//		flowPage.hireEmployee(dataFile);
-//		dataFile = "dataFile/hire2.properties";
-//		flowPage.hireEmployee(dataFile);
+		flowPage.hireEmployee(dataFile);
+		dataFile = "dataFile/hire2.properties";
+		flowPage.hireEmployee(dataFile);
 //		dataFile = "dataFile/hire3.properties";
 //		flowPage.hireEmployee(dataFile);
 //		dataFile = "dataFile/hire4.properties";
 //		flowPage.hireEmployee(dataFile);
 //		dataFile = "dataFile/hire5.properties";
 //		flowPage.hireEmployee(dataFile);
-		dataFile = "dataFile/hire6.properties";
-		flowPage.hireEmployee(dataFile);
+//		dataFile = "dataFile/hire6.properties";
+//		flowPage.hireEmployee(dataFile);
 	}
 
 	@Test

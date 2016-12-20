@@ -7,9 +7,9 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import com.test.first_maven.base.WebAction;
-import com.test.first_maven.base.NewWebDriverEventListener;
 import com.test.first_maven.base.UITest;
+import com.test.first_maven.base.selenium.NewWebDriverEventListener;
+import com.test.first_maven.base.selenium.WebAction;
 import com.test.first_maven.page.BaiduHome;
 
 public class BaiduTest extends UITest {

@@ -1,4 +1,4 @@
-package com.test.first_maven.base;
+package com.test.first_maven.base.testng;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -6,6 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestResult;
 import org.testng.TestListenerAdapter;
+
+import com.test.first_maven.base.UITest;
 
 /**
  * 

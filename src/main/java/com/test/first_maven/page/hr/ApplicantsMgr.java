@@ -11,8 +11,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 import org.testng.Assert;
 
-import com.test.first_maven.base.WebAction;
-import com.test.first_maven.base.Tools;
+import com.test.first_maven.base.helper.Tools;
+import com.test.first_maven.base.selenium.WebAction;
 
 public class ApplicantsMgr {
 	@FindBy(id = "10000004780011")

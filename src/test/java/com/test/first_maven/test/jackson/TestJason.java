@@ -9,7 +9,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import com.test.first_maven.base.JSONObject2;
+import com.test.first_maven.base.helper.JSONObject2;
 
 
 

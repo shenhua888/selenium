@@ -1,4 +1,4 @@
-package com.test.first_maven.base;
+package com.test.first_maven.base.selenium;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
