@@ -1,7 +1,5 @@
 package com.test.first_maven.test;
 
-import java.io.File;
-
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.annotations.AfterSuite;

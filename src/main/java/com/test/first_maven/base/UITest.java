@@ -13,7 +13,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
 /**
- * @author Young
+ * @author shenhua
  *
  */
 public class UITest {
@@ -24,34 +24,16 @@ public class UITest {
 		return driver;
 	}
 
-	// /**
-	// * init test case
-	// *
-	// * @param driver
-	// */
-	// public void setDriver(WebDriver driver) {
-	// this.driver = driver;
-	// }
-	//
-	// public void init(WebDriver driver) {
-	//// log.info("Start WebDriver");
-	// setDriver(driver);
-	// }
 
-	/**
-	 * stop webdriver
-	 * 
-	 * @param driver
-	 */
-	public void stop() {
-		// log.info("Stop WebDriver");
-		driver.quit();
-
-	}
-
-	/**
-	 * @author Young
-	 */
+    /**
+     * 截图
+     * 
+     * @param 无
+     *            
+     * @return 无
+     * 
+     * @author shenhua
+     */
 	public void takeScreenShot() {
 		SimpleDateFormat sf = new SimpleDateFormat("yyyy_MM_dd_HH_mm_ss");
 		Calendar cal = Calendar.getInstance();
@@ -61,22 +43,27 @@ public class UITest {
 		takeScreenShot((TakesScreenshot) this.getDriver(), path);
 	}
 
-	/**
-	 * @author Young
-	 * @param drivername
-	 * @param path
-	 */
-	private void takeScreenShot(TakesScreenshot drivername, String path) {
+    /**
+     * 截图
+     * 
+     * @param driver 驱动
+     *        path   图片保存目录
+     *            
+     * @return 无
+     * 
+     * @author shenhua
+     */
+	private void takeScreenShot(TakesScreenshot driver, String path) {
 		// this method will take screen shot ,require two parameters ,one is
 		// driver name, another is file name
 		String currentPath = System.getProperty("user.dir"); // get current work
 		File file = new File(currentPath + "\\" + "pic");
 		file.mkdir();
 		String picPath = file.getPath();
-		File scrFile = drivername.getScreenshotAs(OutputType.FILE);
+		File scrFile = driver.getScreenshotAs(OutputType.FILE);
 		// Now you can do whatever you need to do with it, for example copy
 		try {
-			log.info("save snapshot path is:" + picPath + path);
+			log.info("save snapshot path is:" + picPath + "\\" + path);
 			FileUtils.copyFile(scrFile, new File(picPath + "\\" + path));
 		} catch (Exception e) {
 			log.error("Can't save screenshot");

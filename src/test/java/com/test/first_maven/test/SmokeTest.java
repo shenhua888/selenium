@@ -1,8 +1,5 @@
 package com.test.first_maven.test;
 
-import java.io.File;
-
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.annotations.AfterSuite;
@@ -63,14 +60,14 @@ public class SmokeTest extends UITest {
 		applicants.addCV(dataFile);
 		dataFile = "dataFile/applicants_add2.properties";
 		applicants.addCV(dataFile);
-//		dataFile = "dataFile/applicants_add3.properties";
-//		applicants.addCV(dataFile);
-//		dataFile = "dataFile/applicants_add4.properties";
-//		applicants.addCV(dataFile);
-//		dataFile = "dataFile/applicants_add5.properties";
-//		applicants.addCV(dataFile);
-//		dataFile = "dataFile/applicants_add6.properties";
-//		applicants.addCV(dataFile);
+		dataFile = "dataFile/applicants_add3.properties";
+		applicants.addCV(dataFile);
+		dataFile = "dataFile/applicants_add4.properties";
+		applicants.addCV(dataFile);
+		dataFile = "dataFile/applicants_add5.properties";
+		applicants.addCV(dataFile);
+		dataFile = "dataFile/applicants_add6.properties";
+		applicants.addCV(dataFile);
 	}
 
 	@Test
@@ -81,14 +78,14 @@ public class SmokeTest extends UITest {
 		flowPage.hireEmployee(dataFile);
 		dataFile = "dataFile/hire2.properties";
 		flowPage.hireEmployee(dataFile);
-//		dataFile = "dataFile/hire3.properties";
-//		flowPage.hireEmployee(dataFile);
-//		dataFile = "dataFile/hire4.properties";
-//		flowPage.hireEmployee(dataFile);
-//		dataFile = "dataFile/hire5.properties";
-//		flowPage.hireEmployee(dataFile);
-//		dataFile = "dataFile/hire6.properties";
-//		flowPage.hireEmployee(dataFile);
+		dataFile = "dataFile/hire3.properties";
+		flowPage.hireEmployee(dataFile);
+		dataFile = "dataFile/hire4.properties";
+		flowPage.hireEmployee(dataFile);
+		dataFile = "dataFile/hire5.properties";
+		flowPage.hireEmployee(dataFile);
+		dataFile = "dataFile/hire6.properties";
+		flowPage.hireEmployee(dataFile);
 	}
 
 	@Test
