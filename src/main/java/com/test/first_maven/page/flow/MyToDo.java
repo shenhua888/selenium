@@ -16,7 +16,7 @@ public class MyToDo {
 	@CacheLookup
 	private WebElement flowCenter;
 
-	@FindBy(id = "leftTree_8_span")
+	@FindBy(id = "leftTree_7_span")
 	@CacheLookup
 	private WebElement myToDo;
 
@@ -47,13 +47,42 @@ public class MyToDo {
 			Boolean flag = null;
 			flag = WebAction.waitUntilVisible(driver, "//*[@id='btnAgree']", 10);
 			Assert.assertTrue(flag);
+			switch (flowName) {
+			case "入职准备":
+				if (WebAction.waitUntilVisible(driver, "//th[text()='推荐账号: ']", 15)) {
+					driver.findElement(By.id("tjAccount1")).click();
+					for (int i = 2; i <= 12; i++) {
+						driver.findElement(By.xpath("//*[@id='reEntryPreNotes']/tbody/tr[" + i + "]/td[2]/input"))
+								.click();
+					}
+
+				};
+				break;
+			}
 			clickAgree();
 			return true;
 		} else {
 			return false;
 		}
 	}
-
+	
+	public Boolean commitOne() {
+		WebAction.enterFrameFromDef(driver, "10000004810059");
+		WebAction.enterFrame(driver, "defFrame");
+		String path = "//*[@id='taskItem']/tbody/tr";
+		String classValue = driver.findElement(By.xpath(path)).getAttribute("class");
+		if (classValue.equals("empty")) {
+			return false;
+		}
+		driver.findElement(By.xpath("//*[@id='taskItem']/tbody/tr/td[3]")).click();
+		WebAction.switchToNewWin(driver, currentWin);
+		Boolean flag = null;
+		flag = WebAction.waitUntilVisible(driver, "//*[@id='btnAgree']", 10);
+		Assert.assertTrue(flag);
+		clickAgree();
+		return true;		
+	}
+	
 	public Boolean commitOne(String flowName, String paras) {
 		WebAction.enterFrameFromDef(driver, "10000004810059");
 		WebAction.enterFrame(driver, "defFrame");
@@ -87,6 +116,16 @@ public class MyToDo {
 			return true;
 		} else {
 			return false;
+		}
+	}
+
+	public void commitAll() {
+		while (true) {
+			Boolean flag = commitOne();
+			if (flag.equals(false)) {
+				break;
+			}
+
 		}
 	}
 	

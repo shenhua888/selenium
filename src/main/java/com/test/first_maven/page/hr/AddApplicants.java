@@ -339,7 +339,7 @@ public class AddApplicants {
 			}
 		}
 		saveBtn.click();
-		WebAction.clickWithWait(driver, "//*[text()='否']");
+		WebAction.clickWithWait(driver, "//*[text()='确定']");
 		Boolean flag = WebAction.isAddSuccess(firstAppName, pps.getProperty("applicantName"));
 		WebAction.defaultFrame(driver);
 		Assert.assertTrue(flag);
