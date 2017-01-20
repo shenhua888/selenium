@@ -14,14 +14,16 @@ import com.mysql.jdbc.Statement;
 public class MySqlConnect {
 
 	    private Statement statement;
-
+	    private Connection connection;
+	    private ResultSet result = null;
+	    
 	    public MySqlConnect() {
 	        try
 	        {
 	            Class.forName(MySqlValues.DRIVER_MYSQL);     //加载JDBC驱动
 	            System.out.println("Driver Load Success.");
 
-	            Connection connection = DriverManager.getConnection(MySqlValues.URL);    //创建数据库连接对象
+	            connection = DriverManager.getConnection(MySqlValues.URL);    //创建数据库连接对象
 	            statement = (Statement) connection.createStatement();       //创建Statement对象
 	        } catch (Exception e)
 	        {
@@ -30,14 +32,26 @@ public class MySqlConnect {
 	        }
 	    }
 
+	    public void closeConnect() {
+	        try
+	        {
+	        	result.close();
+	        	statement.close();
+	        	connection.close();
+
+	        } catch (SQLException e)
+	        {
+	            // TODO Auto-generated catch block
+	            e.printStackTrace();
+	        }
+	    }
 	    /*
 	     * 根据sql查询数据库，返回一个结果集
 	     * 输    入:SQL语句
 	     * 返回值:ResultSet 查询结果
 	     */
 	    public ResultSet query(String sql) {
-	        ResultSet result = null;
-
+	        
 	        try
 	        {
 	            result = statement.executeQuery(sql);

@@ -43,14 +43,15 @@ public class Thread1 extends UITest {
 		driver.manage().window().maximize();
 		oaLogin = new OALoginPage(driver);
 		oaLogin.login(userName, "jtlhrpsd");
-		
-		String sql = "SELECT job_number FROM sys_user WHERE userid IN (SELECT ASSIGNEE_ FROM act_ru_task WHERE proc_inst_id_ IN (SELECT actinstid FROM bpm_pro_run_his WHERE STATUS = 1 AND PROCESSNAME IN ('面试安排')))";
+		//数据库查询
+		String sql = "SELECT job_number FROM sys_user WHERE userid IN (SELECT ASSIGNEE_ FROM act_ru_task WHERE proc_inst_id_ IN (SELECT actinstid FROM bpm_pro_run_his WHERE STATUS = 1 AND PROCESSNAME IN ('员工离职')))";
         MySqlConnect db = new MySqlConnect();
         ResultSet result = db.query(sql);
         ArrayList<String> list = db.getResultSet(result);
         System.out.println(list.size());      
         jobNumber1 = list.get(list.size()-1);
         System.out.println(jobNumber1);
+        db.closeConnect();
 	}
 
 	public void enterMyToDo() {
@@ -89,8 +90,8 @@ public class Thread1 extends UITest {
 				+ "\"years\":\"3\"}";
 		myToDo.enterMyToDo();
 //		myToDo.commitAll(flowName);
-		myToDo.commitAll(flowName, paras1);
-//		myToDo.commitAll();
+//		myToDo.commitAll(flowName, paras1);
+		myToDo.commitAll();
 	}
 
 	@AfterTest
