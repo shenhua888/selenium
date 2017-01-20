@@ -1,5 +1,9 @@
 package com.test.first_maven.test;
 
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.HashSet;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
@@ -7,6 +11,7 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import com.test.first_maven.base.UITest;
+import com.test.first_maven.base.helper.MySqlConnect;
 import com.test.first_maven.base.helper.Tools;
 import com.test.first_maven.base.selenium.NewWebDriverEventListener;
 import com.test.first_maven.base.selenium.WebAction;
@@ -18,15 +23,33 @@ import com.test.first_maven.page.hr.ApplicantsMgr;
 
 public class ImitateUserTest extends UITest {
 		OALoginPage oaLogin;
-//		ApplicantsMgr applicants;
-//		FlowCenter flowPage;
-//		MyToDo myToDo;
-//		UserMgr uMgr;
+
+		String jobNumber1 = "";
+		String jobNumber2 = "";
+		String jobNumber3 = "";
+		String jobNumber4 = "";
+		String jobNumber5 = "";		
 		
 		@BeforeTest
 		public void beforeTest() {
+			Tools.killChrome();
 			Tools.deleteDirectory("pic");
 			System.setProperty("webdriver.chrome.driver", "D:\\jar\\chromedriver.exe");
+			
+			String sql = "SELECT job_number FROM sys_user WHERE userid IN (SELECT ASSIGNEE_ FROM act_ru_task WHERE proc_inst_id_ IN (SELECT actinstid FROM bpm_pro_run_his WHERE STATUS = 1 AND PROCESSNAME IN ('入职确认')))";
+	        MySqlConnect db = new MySqlConnect();
+	        ResultSet result = db.query(sql);
+	        ArrayList<String> list = db.getResultSet(result);
+//	        System.out.println(list.size());
+//	        list.remove("J171927");
+//	        list.remove("00020180");
+	        System.out.println(list.size());
+	        
+	        jobNumber1 = list.get(list.size()-1);
+	        jobNumber2 = list.get(list.size()-2);
+	        jobNumber3 = list.get(list.size()-3);
+	        jobNumber4 = list.get(list.size()-4);
+	        jobNumber5 = list.get(list.size()-5);
 		}
 
 		public void login(String userName) {
@@ -38,26 +61,6 @@ public class ImitateUserTest extends UITest {
 			oaLogin.login(userName, "jtlhrpsd");
 		}
 
-//		public void enterMyToDo() {
-//			myToDo = new MyToDo(driver);
-//			myToDo.enterMyToDo();
-//		}
-
-//		public void enterApplicantsMgr() {
-//			applicants = new ApplicantsMgr(driver);
-//			applicants.enterApplicantsMgr();
-//		}
-
-//		public void enterFlowCenter() {
-//			flowPage = new FlowCenter(driver);
-//			flowPage.enterFlowCenter();
-//		}
-		
-//		public void enterUserMgr() {
-//			uMgr = new UserMgr(driver);
-//			uMgr.enterUserMgr();
-//		}
-
 		@Test
 		public void pass1() {
 			WebDriver driver = new EventFiringWebDriver(new ChromeDriver()).register(new NewWebDriverEventListener());
@@ -68,7 +71,7 @@ public class ImitateUserTest extends UITest {
 			oaLogin.login("admin", "jtlhrpsd");
 			UserMgr uMgr = new UserMgr(driver);
 			uMgr.enterUserMgr();
-			String paras = "{\"jobNumber\":\"J161361\"}";
+			String paras = "{\"jobNumber\":\""+jobNumber1+"\"}";
 			uMgr.imitateUser(paras);
 			MyToDo myToDo = new MyToDo(driver);
 			String flowName = "入职确认";
@@ -79,7 +82,8 @@ public class ImitateUserTest extends UITest {
 					+ "\"contractUnit\":\"金螳螂\"," 
 					+ "\"years\":\"3\"}";
 			myToDo.enterMyToDo();
-//			myToDo.commitAll(flowName, paras1);
+//			myToDo.commitAll(flowName);
+			myToDo.commitAll(flowName, paras1);
 			myToDo.commitAll();
 		}
 
@@ -93,7 +97,7 @@ public class ImitateUserTest extends UITest {
 			oaLogin.login("admin", "jtlhrpsd");
 			UserMgr uMgr = new UserMgr(driver);
 			uMgr.enterUserMgr();
-			String paras = "{\"jobNumber\":\"00029611\"}";
+			String paras = "{\"jobNumber\":\""+jobNumber2+"\"}";
 			uMgr.imitateUser(paras);
 			MyToDo myToDo = new MyToDo(driver);
 			String flowName = "入职确认";
@@ -104,7 +108,8 @@ public class ImitateUserTest extends UITest {
 					+ "\"contractUnit\":\"金螳螂\"," 
 					+ "\"years\":\"3\"}";
 			myToDo.enterMyToDo();
-//			myToDo.commitAll(flowName, paras1);
+//			myToDo.commitAll(flowName);
+			myToDo.commitAll(flowName, paras1);
 			myToDo.commitAll();
 		}
 		@Test
@@ -117,7 +122,7 @@ public class ImitateUserTest extends UITest {
 			oaLogin.login("admin", "jtlhrpsd");
 			UserMgr uMgr = new UserMgr(driver);
 			uMgr.enterUserMgr();
-			String paras = "{\"jobNumber\":\"J410746\"}";
+			String paras = "{\"jobNumber\":\""+jobNumber3+"\"}";
 			uMgr.imitateUser(paras);
 			MyToDo myToDo = new MyToDo(driver);
 			String flowName = "入职确认";
@@ -128,7 +133,8 @@ public class ImitateUserTest extends UITest {
 					+ "\"contractUnit\":\"金螳螂\"," 
 					+ "\"years\":\"3\"}";
 			myToDo.enterMyToDo();
-//			myToDo.commitAll(flowName, paras1);
+//			myToDo.commitAll(flowName);
+			myToDo.commitAll(flowName, paras1);
 			myToDo.commitAll();
 		}
 		@Test
@@ -141,7 +147,7 @@ public class ImitateUserTest extends UITest {
 			oaLogin.login("admin", "jtlhrpsd");
 			UserMgr uMgr = new UserMgr(driver);
 			uMgr.enterUserMgr();
-			String paras = "{\"jobNumber\":\"J171927\"}";
+			String paras = "{\"jobNumber\":\""+jobNumber4+"\"}";
 			uMgr.imitateUser(paras);
 			MyToDo myToDo = new MyToDo(driver);
 			String flowName = "入职确认";
@@ -152,7 +158,8 @@ public class ImitateUserTest extends UITest {
 					+ "\"contractUnit\":\"金螳螂\"," 
 					+ "\"years\":\"3\"}";
 			myToDo.enterMyToDo();
-//			myToDo.commitAll(flowName, paras1);
+//			myToDo.commitAll(flowName);
+			myToDo.commitAll(flowName, paras1);
 			myToDo.commitAll();
 		}
 		@Test
@@ -165,7 +172,7 @@ public class ImitateUserTest extends UITest {
 			oaLogin.login("admin", "jtlhrpsd");
 			UserMgr uMgr = new UserMgr(driver);
 			uMgr.enterUserMgr();
-			String paras = "{\"jobNumber\":\"00020842\"}";
+			String paras = "{\"jobNumber\":\""+jobNumber5+"\"}";
 			uMgr.imitateUser(paras);
 			MyToDo myToDo = new MyToDo(driver);
 			String flowName = "入职确认";
@@ -176,8 +183,9 @@ public class ImitateUserTest extends UITest {
 					+ "\"contractUnit\":\"金螳螂\"," 
 					+ "\"years\":\"3\"}";
 			myToDo.enterMyToDo();
-//			myToDo.commitAll(flowName, paras1);
-			myToDo.commitAll();
+//			myToDo.commitAll(flowName);
+			myToDo.commitAll(flowName, paras1);
+//			myToDo.commitAll();
 		}
 
 }
