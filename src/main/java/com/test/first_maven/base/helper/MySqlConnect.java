@@ -7,12 +7,15 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashSet;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.mysql.jdbc.Statement;
 
 
 
 public class MySqlConnect {
-
+		private Logger log = LogManager.getFormatterLogger(this.getClass());
 	    private Statement statement;
 	    private Connection connection;
 	    private ResultSet result = null;
@@ -21,8 +24,8 @@ public class MySqlConnect {
 	        try
 	        {
 	            Class.forName(MySqlValues.DRIVER_MYSQL);     //加载JDBC驱动
-	            System.out.println("Driver Load Success.");
-
+//	            System.out.println("Driver Load Success.");
+	            log.info("MySql Driver Load Success.");
 	            connection = DriverManager.getConnection(MySqlValues.URL);    //创建数据库连接对象
 	            statement = (Statement) connection.createStatement();       //创建Statement对象
 	        } catch (Exception e)
@@ -35,7 +38,10 @@ public class MySqlConnect {
 	    public void closeConnect() {
 	        try
 	        {
-	        	result.close();
+	        	log.info("Begin to close MySql connection!");
+	        	if (!result.equals(null)) {
+	        		result.close();
+	        	}	        	
 	        	statement.close();
 	        	connection.close();
 
@@ -50,10 +56,10 @@ public class MySqlConnect {
 	     * 输    入:SQL语句
 	     * 返回值:ResultSet 查询结果
 	     */
-	    public ResultSet query(String sql) {
-	        
+	    public ResultSet query(String sql) {        
 	        try
 	        {
+	        	log.info("executeSql: "+sql);
 	            result = statement.executeQuery(sql);
 	        } catch (SQLException e)
 	        {
@@ -65,7 +71,7 @@ public class MySqlConnect {
 	    }
 	    
 	    /*
-	     * 获取查询结果，存入set
+	     * 获取查询结果，存入list
 	     * 输    入:结果集(数据表)
 	     * 返回值:list
 	     */
@@ -84,25 +90,6 @@ public class MySqlConnect {
 	        return list;
 	    }
 
-	    /*
-	     * 打印UserInfo表的数据
-	     * 输    入:结果集(数据表)
-	     * 返回值:空
-	     */
-	    public void printUserInfo(ResultSet result) {
-	        try
-	        {
-	            while(result.next()) {
-	                System.out.println("userNname:" + result.getString(1) 
-	                        + ", password:" + result.getString(2));
-	            }
-	        } catch (SQLException e)
-	        {
-	            // TODO Auto-generated catch block
-	            e.printStackTrace();
-	        }
-	    }
-
 	    
 	    /*
 	     * 执行数据操作
@@ -112,6 +99,7 @@ public class MySqlConnect {
 	    public void executeSql(String sql) {
 	        try
 	        {
+	        	log.info("executeSql: "+sql);
 	            statement.execute(sql);
 	        } catch (SQLException e)
 	        {

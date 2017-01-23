@@ -32,7 +32,7 @@ public class Thread1 extends UITest {
 	
 	@BeforeTest
 	public void beforeTest() {
-		Tools.deleteDirectory("pic");
+//		Tools.deleteDirectory("pic");
 		System.setProperty("webdriver.chrome.driver", "D:\\jar\\chromedriver.exe");
 	}
 
@@ -44,7 +44,7 @@ public class Thread1 extends UITest {
 		oaLogin = new OALoginPage(driver);
 		oaLogin.login(userName, "jtlhrpsd");
 		//数据库查询
-		String sql = "SELECT job_number FROM sys_user WHERE userid IN (SELECT ASSIGNEE_ FROM act_ru_task WHERE proc_inst_id_ IN (SELECT actinstid FROM bpm_pro_run_his WHERE STATUS = 1 AND PROCESSNAME IN ('员工离职')))";
+		String sql = "SELECT job_number FROM sys_user WHERE userid IN (SELECT ASSIGNEE_ FROM act_ru_task WHERE proc_inst_id_ IN (SELECT actinstid FROM bpm_pro_run_his WHERE STATUS = 1 AND PROCESSNAME IN ('员工调动')))";
         MySqlConnect db = new MySqlConnect();
         ResultSet result = db.query(sql);
         ArrayList<String> list = db.getResultSet(result);
@@ -88,7 +88,6 @@ public class Thread1 extends UITest {
 				+ "\"contractType2\":\"固定期限\"," 
 				+ "\"contractUnit\":\"金螳螂\"," 
 				+ "\"years\":\"3\"}";
-		myToDo.enterMyToDo();
 //		myToDo.commitAll(flowName);
 //		myToDo.commitAll(flowName, paras1);
 		myToDo.commitAll();
