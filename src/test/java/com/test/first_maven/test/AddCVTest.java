@@ -1,5 +1,6 @@
 package com.test.first_maven.test;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.annotations.AfterSuite;
@@ -22,15 +23,16 @@ public class AddCVTest extends UITest {
 		System.setProperty("webdriver.chrome.driver", "D:\\jar\\chromedriver.exe");
 		driver = new EventFiringWebDriver(new ChromeDriver()).register(new NewWebDriverEventListener());
 		String url = "http://172.21.204.23:8080/J2bpm/login.jsp";
-		WebAction.get(driver, url, "登录");
+		WebAction.get(driver, url, "//*[@name='username']");
 		driver.manage().window().maximize();
 		oaLogin = new OALoginPage(driver);
 		
+		driver.findElement(By.xpath("//input[starts-with(@id,'check')]")).click(); //chrome不支持方法ends-with
 	}
 
 	@Test
 	public void login() {
-		oaLogin.login("admin", "1");
+		oaLogin.login("admin", "jtlhrpsd");
 	}
 
 	@Test

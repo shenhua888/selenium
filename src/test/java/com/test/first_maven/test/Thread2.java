@@ -44,7 +44,7 @@ public class Thread2 extends UITest {
 		oaLogin = new OALoginPage(driver);
 		oaLogin.login(userName, "jtlhrpsd");
 		// 数据库查询
-		String sql = "SELECT job_number FROM sys_user WHERE userid IN (SELECT ASSIGNEE_ FROM act_ru_task WHERE proc_inst_id_ IN (SELECT actinstid FROM bpm_pro_run_his WHERE STATUS = 1 AND PROCESSNAME IN ('员工转岗')))";
+		String sql = "SELECT job_number FROM sys_user WHERE userid IN (SELECT ASSIGNEE_ FROM act_ru_task WHERE proc_inst_id_ IN (SELECT actinstid FROM bpm_pro_run_his WHERE STATUS = 1 AND PROCESSNAME IN ('出国考察申请')))";
 		MySqlConnect db = new MySqlConnect();
 		ResultSet result = db.query(sql);
 		ArrayList<String> list = db.getResultSet(result);
@@ -82,8 +82,12 @@ public class Thread2 extends UITest {
 		uMgr.imitateUser(paras);
 		enterMyToDo();
 		String flowName = "入职准备";
-		String paras1 = "{\"firstDay\":\"2017-02-01\"," + "\"place\":\"苏州园区\"," + "\"contractType\":\"劳动合同\","
-				+ "\"contractType2\":\"固定期限\"," + "\"contractUnit\":\"金螳螂\"," + "\"years\":\"3\"}";
+		String paras1 = "{\"firstDay\":\"2017-02-01\"," 
+						+ "\"place\":\"苏州园区\"," 
+						+ "\"contractType\":\"劳动合同\","
+						+ "\"contractType2\":\"固定期限\"," 
+						+ "\"contractUnit\":\"金螳螂\"," 
+						+ "\"years\":\"3\"}";
 		// myToDo.commitAll(flowName);
 		// myToDo.commitAll(flowName, paras1);
 		myToDo.commitAll();
