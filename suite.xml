@@ -49,13 +49,13 @@
 					<include name="pass5" /> 
 				</methods>
 			</class>
-
+-->
 			<class name="com.test.first_maven.test.Thread1">   
 				<methods>
 					<include name="pass1" />
 				</methods>
 			</class>
--->
+
 			<class name="com.test.first_maven.test.Thread2">   
 				<methods>
 					<include name="pass1" />
